@@ -1,11 +1,11 @@
-import { Injectable, Input, OnDestroy } from "@angular/core";
+import { Injectable, Input, OnDestroy, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
 
 import { IConfig } from "../interfaces/config.interface";
 import { ITERATE } from "../utils/modify-object.functions";
 
 @Injectable()
-export abstract class Configurable implements OnDestroy {
+export abstract class Configurable implements OnInit, OnDestroy {
 
     /**
      * Config
@@ -23,6 +23,14 @@ export abstract class Configurable implements OnDestroy {
      * @memberof Configurable
      */
     protected _subscriptions: any = {};
+
+    /**
+     * Init
+     *
+     * @abstract
+     * @memberof Configurable
+     */
+    abstract ngOnInit(): void;
 
     /**
      * Destroy

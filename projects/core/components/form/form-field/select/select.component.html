@@ -1,0 +1,33 @@
+<section *ngIf="field && formControl && field.type !== 'hidden'" [formGroup]="group" [ngClass]="class" [id]="id">
+
+    <!-- md field -->
+    <mat-form-field [ngClass]="class" [floatLabel]="field?.floatLabel">
+        <!-- label -->
+        <mat-label>
+            <mat-progress-bar *ngIf="!loading?.closed" mode="indeterminate"></mat-progress-bar>
+            <span *ngIf="loading?.closed" [innerHTML]="field?.label"></span>
+        </mat-label>
+        <!-- select -->
+        <mat-select [formControl]="formControl" [pattern]="field?.validation?.rule" [required]="field?.required"
+            [placeholder]="field?.placeholder" [multiple]="field?.multiple || false"
+            [tabIndex]="field.tabindex">
+            <!-- options -->
+            <mat-option *ngIf="!field?.multiple && !field?.emptyHidden"
+                [disabled]="formControl?.disabled || field?.readonly">
+                --</mat-option>
+            <mat-option *ngFor="let option of field?.options" [value]="option?.value"
+                [disabled]="option?.disabled || formControl?.disabled || field?.readonly" [matTooltip]="option?.label">
+                {{ option?.label }}
+            </mat-option>
+        </mat-select>
+        <!-- errors -->
+        <mat-error *ngIf="formControl?.touched && formControl?.invalid && formControl?.errors">
+            {{ getErrorMessage(formControl?.errors) }}
+        </mat-error>
+        <!-- hints -->
+        <mat-hint *ngIf="hint">
+            {{ hint }}
+        </mat-hint>
+    </mat-form-field>
+
+</section>

@@ -1,0 +1,27 @@
+<section *ngIf="field && formControl && field.type !== 'hidden'" [formGroup]="group" [ngClass]="class" [id]="id">
+
+    <mat-label *ngIf="field?.label">
+        <span [ngClass]="{'mat-checkbox-invalid': formControl?.touched && formControl?.invalid}">
+            <span [innerHTML]="field?.label"></span>
+            <span *ngIf="field?.required"> *</span>
+        </span>
+    </mat-label>
+
+    <!-- md field -->
+    <mat-radio-group [formControl]="formControl" [labelPosition]="field?.labelPosition" [required]="field?.required">
+        <mat-radio-button *ngFor="let option of field?.options" [value]="option?.value">
+            <span [innerHTML]="option?.label"></span>
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <!-- info and errors -->
+    <mat-hint *ngIf="hint">
+        {{ hint }}
+    </mat-hint>
+    <ng-container *ngIf="formControl?.touched">
+        <mat-error *ngIf="formControl?.invalid && formControl?.errors">
+            {{ getErrorMessage(formControl?.errors) }}
+        </mat-error>
+    </ng-container>
+
+</section>

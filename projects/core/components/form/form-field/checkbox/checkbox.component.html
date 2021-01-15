@@ -1,0 +1,22 @@
+<section *ngIf="field && formControl && field.type !== 'hidden'" [formGroup]="group" [ngClass]="class" [id]="id">
+
+    <!-- md field -->
+    <mat-checkbox [formControl]="formControl" [labelPosition]="field?.labelPosition" [required]="field?.required"
+        [tabIndex]="field.tabindex">
+        <span [ngClass]="{'mat-checkbox-invalid': formControl?.touched && formControl.invalid}">
+            <span [innerHTML]="field?.label"></span>
+            <span *ngIf="field?.required"> *</span>
+        </span>
+    </mat-checkbox>
+
+    <!-- info and errors -->
+    <ng-container *ngIf="formControl?.touched">
+        <mat-hint *ngIf="hint">
+            {{ hint }}
+        </mat-hint>
+        <mat-error *ngIf="formControl?.invalid && formControl?.errors">
+            {{ getErrorMessage(formControl?.errors) }}
+        </mat-error>
+    </ng-container>
+
+</section>
