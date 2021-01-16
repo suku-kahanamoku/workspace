@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { Configurable } from 'projects/core/abstracts/configurable.abstract';
-import { IConfig } from 'projects/core/interfaces/config.interface';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +9,14 @@ import { IConfig } from 'projects/core/interfaces/config.interface';
 })
 export class AppComponent extends Configurable {
 
-  config: IConfig;
-
   title = 'jaspar';
 
   constructor() {
     super();
-    this.config = {};
+  }
+
+  ngOnInit(): void {
+    this.config = { params: {} };
   }
 
 }
