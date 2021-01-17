@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import * as data from '../../assets/data/menu';
-import { BranchBrnoComponent } from './branch-brno/branch-brno.component';
-import { BranchPrahaComponent } from './branch-praha/branch-praha.component';
+import data from '../../assets/data/data.json';
 import { IMenu } from 'projects/core/interfaces/menu.interface';
+import { InfoComponent } from './info/info.component';
 
 const GET_ROUTES = (menuList: IMenu[], cmpList: any[]): any => menuList.map(menu => {
   const result: any = { path: menu.url };
@@ -30,15 +29,14 @@ const GET_ROUTES = (menuList: IMenu[], cmpList: any[]): any => menuList.map(menu
 });
 
 const CMP_LIST = [
-  BranchBrnoComponent,
-  BranchPrahaComponent
+  InfoComponent,
 ];
 
 @NgModule({
   declarations: CMP_LIST,
   imports: [
     CommonModule,
-    RouterModule.forChild(GET_ROUTES(data.contact, CMP_LIST)),
+    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '5'), CMP_LIST)),
   ]
 })
 export class ContactModule { }

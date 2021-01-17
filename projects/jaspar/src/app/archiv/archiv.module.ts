@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import * as data from '../../assets/data/menu';
-import { HomeComponent } from './home/home.component';
+import data from '../../assets/data/data.json';
+import { InfoComponent } from './info/info.component';
 import { IMenu } from 'projects/core/interfaces/menu.interface';
 
 const GET_ROUTES = (menuList: IMenu[], cmpList: any[]): any => menuList.map(menu => {
@@ -29,14 +29,14 @@ const GET_ROUTES = (menuList: IMenu[], cmpList: any[]): any => menuList.map(menu
 });
 
 const CMP_LIST = [
-  HomeComponent,
+  InfoComponent,
 ];
 
 @NgModule({
   declarations: CMP_LIST,
   imports: [
     CommonModule,
-    RouterModule.forChild(GET_ROUTES(data.archiv, CMP_LIST)),
+    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '3'), CMP_LIST)),
   ]
 })
 export class ArchivModule { }

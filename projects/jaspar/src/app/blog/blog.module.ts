@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import * as data from '../../assets/data/menu';
+import data from '../../assets/data/data.json';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { IMenu } from 'projects/core/interfaces/menu.interface';
@@ -38,7 +38,7 @@ const CMP_LIST = [
   declarations: CMP_LIST,
   imports: [
     CommonModule,
-    RouterModule.forChild(GET_ROUTES(data.blog, CMP_LIST)),
+    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '6'), CMP_LIST)),
   ]
 })
 export class BlogModule { }

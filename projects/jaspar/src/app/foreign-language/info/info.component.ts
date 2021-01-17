@@ -4,11 +4,11 @@ import { Loadable } from 'projects/core/abstracts/loadable.abstract';
 import { IConfig } from 'projects/core/interfaces/config.interface';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-info',
+  templateUrl: './info.component.html',
+  styleUrls: ['./info.component.scss']
 })
-export class HomeComponent extends Loadable {
+export class InfoComponent extends Loadable {
 
   constructor() {
     super()

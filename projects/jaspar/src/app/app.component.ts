@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 
-import * as data from '../assets/data/menu';
-import { Configurable } from 'projects/core/abstracts/configurable.abstract';
+import data from '../assets/data/data.json';
+import { Loadable } from 'projects/core/abstracts/loadable.abstract';
+import { IConfig } from 'projects/core/interfaces/config.interface';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent extends Configurable {
+export class AppComponent extends Loadable {
 
   title = 'jaspar';
 
@@ -17,7 +18,12 @@ export class AppComponent extends Configurable {
   }
 
   ngOnInit(): void {
-    console.log(data)
+    this.itemList = data.menu;
+    console.log(this.itemList)
+  }
+
+  load(config: IConfig): void {
+
   }
 
 }

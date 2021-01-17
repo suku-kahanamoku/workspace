@@ -1,0 +1,122 @@
+{
+  "menu": [
+    {
+      "_id": "1",
+      "module": "HomeModule",
+      "url": "about-us"
+    },
+    {
+      "_id": "2",
+      "module": "BookkeepingModule",
+      "url": "bookkeeping"
+    },
+    {
+      "_id": "3",
+      "module": "ArchivModule",
+      "url": "archiv"
+    },
+    {
+      "_id": "4",
+      "module": "ForeignLanguageModule",
+      "url": "foreign-language"
+    },
+    {
+      "_id": "5",
+      "module": "ContactModule",
+      "url": "contact"
+    },
+    {
+      "_id": "6",
+      "module": "BlogModule",
+      "url": "blog"
+    },
+    {
+      "_id": "7",
+      "redirectTo": "about-us",
+      "url": ""
+    },
+    {
+      "_id": "8",
+      "cmp": "PageNotFoundComponent",
+      "url": "**"
+    },
+    {
+      "_id": "11",
+      "cmp": "AboutComponent",
+      "url": "",
+      "parentId": "1"
+    },
+    {
+      "_id": "12",
+      "cmp": "ReferenceComponent",
+      "url": "reference",
+      "parentId": "1"
+    },
+    {
+      "_id": "21",
+      "cmp": "AccountancyComponent",
+      "url": "accountancy",
+      "parentId": "2"
+    },
+    {
+      "_id": "22",
+      "cmp": "TaxRecordsComponent",
+      "url": "tax-records",
+      "parentId": "2"
+    },
+    {
+      "_id": "23",
+      "cmp": "TaxAdviceComponent",
+      "url": "tax-advice",
+      "parentId": "2"
+    },
+    {
+      "_id": "24",
+      "cmp": "WagePersonalistComponent",
+      "url": "wage-personalist",
+      "parentId": "2"
+    },
+    {
+      "_id": "25",
+      "cmp": "AnalyzeManagementComponent",
+      "url": "analyze-management",
+      "parentId": "2"
+    },
+    {
+      "_id": "26",
+      "redirectTo": "accountancy",
+      "url": "",
+      "parentId": "2"
+    },
+    {
+      "_id": "31",
+      "cmp": "InfoComponent",
+      "url": "",
+      "parentId": "3"
+    },
+    {
+      "_id": "41",
+      "cmp": "InfoComponent",
+      "url": "",
+      "parentId": "4"
+    },
+    {
+      "_id": "51",
+      "cmp": "InfoComponent",
+      "url": "",
+      "parentId": "5"
+    },
+    {
+      "_id": "61",
+      "cmp": "ArticleListComponent",
+      "url": "",
+      "parentId": "6"
+    },
+    {
+      "_id": "62",
+      "cmp": "ArticleDetailComponent",
+      "url": "detail",
+      "parentId": "6"
+    }
+  ]
+}

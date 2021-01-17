@@ -1,4 +1,4 @@
-import * as equal from 'fast-deep-equal';
+import equal from 'fast-deep-equal';
 
 /**
  * Kontrola zda dana hodnota obsahuje jenom cislo

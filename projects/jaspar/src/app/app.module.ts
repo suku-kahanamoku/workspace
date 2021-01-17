@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 
-import * as data from '../assets/data/menu';
+import data from '../assets/data/data.json';
 import { AppComponent } from './app.component';
 import { IMenu } from 'projects/core/interfaces/menu.interface';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -55,7 +55,7 @@ const CMP_LIST = [
   declarations: CMP_LIST,
   imports: [
     BrowserModule,
-    RouterModule.forRoot(GET_ROUTES(data.app, CMP_LIST)),
+    RouterModule.forRoot(GET_ROUTES(data.menu.filter(menu => !menu.parentId), CMP_LIST)),
     BrowserAnimationsModule,
     MatSidenavModule
   ],

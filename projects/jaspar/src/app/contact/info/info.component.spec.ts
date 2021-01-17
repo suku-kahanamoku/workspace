@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BranchBrnoComponent } from './branch-brno.component';
+import { InfoComponent } from './info.component';
 
-describe('BranchBrnoComponent', () => {
-  let component: BranchBrnoComponent;
-  let fixture: ComponentFixture<BranchBrnoComponent>;
+describe('InfoComponent', () => {
+  let component: InfoComponent;
+  let fixture: ComponentFixture<InfoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BranchBrnoComponent ]
+      declarations: [ InfoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BranchBrnoComponent);
+    fixture = TestBed.createComponent(InfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

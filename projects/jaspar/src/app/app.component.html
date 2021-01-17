@@ -9,9 +9,9 @@
       Toggle sidenav
     </button>
 
-    <button routerLink="/about-us">O nas</button>
-    <button routerLink="/blog">Blog</button>
-    <button routerLink="/blog/aaaa">detail</button>
+    <div *ngFor="let menu of itemList">
+      <a [routerLink]="menu.url">{{ menu.url }}</a>
+    </div>
 
     <router-outlet></router-outlet>
 
