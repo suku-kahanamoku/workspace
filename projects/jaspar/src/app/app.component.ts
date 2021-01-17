@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import * as data from '../assets/data/menu';
 import { Configurable } from 'projects/core/abstracts/configurable.abstract';
 
 @Component({
@@ -16,7 +17,7 @@ export class AppComponent extends Configurable {
   }
 
   ngOnInit(): void {
-    this.config = { params: {} };
+    console.log(data)
   }
 
 }

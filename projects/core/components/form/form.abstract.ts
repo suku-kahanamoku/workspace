@@ -102,7 +102,7 @@ export abstract class MpForm extends Loadable {
      */
     protected _onLoad(data?: any[]): void {
         if (data) {
-            this.items = data;
+            this.itemList = data;
         }
     }
 

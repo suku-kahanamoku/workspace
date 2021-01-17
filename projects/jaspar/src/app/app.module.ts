@@ -1,18 +1,61 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatSidenavModule } from '@angular/material/sidenav';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { RouterModule } from '@angular/router';
+
+import * as data from '../assets/data/menu';
+import { AppComponent } from './app.component';
+import { IMenu } from 'projects/core/interfaces/menu.interface';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+const GET_ROUTES = (menuList: IMenu[], cmpList: any[]): any => menuList.map(menu => {
+  const result: any = { path: menu.url };
+  // component routa
+  if (menu.cmp) {
+    result.component = cmpList.find(tmpCmp => tmpCmp.name === menu.cmp);
+  }
+  // loadChildren routa
+  else if (menu.module) {
+    switch (menu.module) {
+      case 'HomeModule':
+        result.loadChildren = () => import('./home/home.module').then(m => m.HomeModule);
+        break;
+      case 'BookkeepingModule':
+        result.loadChildren = () => import('./bookkeeping/bookkeeping.module').then(m => m.BookkeepingModule);
+        break;
+      case 'ArchivModule':
+        result.loadChildren = () => import('./archiv/archiv.module').then(m => m.ArchivModule);
+        break;
+      case 'ForeignLanguageModule':
+        result.loadChildren = () => import('./foreign-language/foreign-language.module').then(m => m.ForeignLanguageModule);
+        break;
+      case 'ContactModule':
+        result.loadChildren = () => import('./contact/contact.module').then(m => m.ContactModule);
+        break;
+      case 'BlogModule':
+        result.loadChildren = () => import('./blog/blog.module').then(m => m.BlogModule);
+        break;
+    }
+  }
+  else if (menu.redirectTo) {
+    result.redirectTo = menu.redirectTo;
+    result.pathMatch = 'full'
+  }
+  //
+  return result;
+});
+
+const CMP_LIST = [
+  AppComponent,
+  PageNotFoundComponent
+];
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: CMP_LIST,
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RouterModule.forRoot(GET_ROUTES(data.app, CMP_LIST)),
     BrowserAnimationsModule,
     MatSidenavModule
   ],

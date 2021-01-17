@@ -20,7 +20,7 @@ export abstract class Loadable extends Configurable {
      * @type {any[]}
      * @memberof Loadable
      */
-    items: any[] = [];
+    itemList: any[] = [];
 
     /**
      * Pomocna promena, podle ktere se da urcit, zda probiha dotaz na backend

@@ -1,5 +1,3 @@
-export interface IConfig {
+import { IItem } from "./item.interface";
 
-    params: any;
-    
-}
+export interface IConfig extends IItem { }

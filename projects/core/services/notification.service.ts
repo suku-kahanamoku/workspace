@@ -82,8 +82,7 @@ export class NotificationService {
             if (this._subscriptions[idSyscode]) this._subscriptions[idSyscode].unsubscribe();
             this._subscriptions[idSyscode] = this._http.get(url)
                 .pipe(
-                    filter(data => IS_DEFINED(data)),
-                    map((data: any) => data._items || data._children || data)
+                    filter(data => IS_DEFINED(data))
                 )
                 .subscribe(data => {
                     this.set(data);
