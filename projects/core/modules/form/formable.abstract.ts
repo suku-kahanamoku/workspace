@@ -9,35 +9,19 @@ import { IConfig } from "projects/core/interfaces/config.interface";
 import { AppService } from "projects/core/services/app.service";
 import { IS_DEFINED } from "projects/core/utils/check-basic.functions";
 import { ITERATE, GET_VALUE } from "projects/core/utils/modify-object.functions";
+import { IItem } from "projects/core/interfaces/item.interface";
+import { Injectable } from "@angular/core";
 
 
-/**
- * Abstrakce pro formulare
- *
- * @export
- * @abstract
- * @class MpForm
- * @extends {MpItemComponent}
- */
-export abstract class MpForm extends Loadable {
-
-    /**
-     * Servis, spolecna data, store
-     *
-     * @readonly
-     * @type {AppService}
-     * @memberof MpForm
-     */
-    get appService(): AppService {
-        return this.formService.appService;
-    };
+@Injectable()
+export abstract class Formable extends Loadable {
 
     /**
      * Pomocna promena, podle ktere se da urcit, zda probiha dotaz na backend
      *
      * @readonly
      * @type {Subscription}
-     * @memberof MpForm
+     * @memberof Formable
      */
     get loading(): Subscription {
         return this._subscriptions.submit || this._subscriptions.load || { closed: true };
@@ -47,14 +31,14 @@ export abstract class MpForm extends Loadable {
      * Data pro ng formular
      *
      * @type {FormGroup}
-     * @memberof MpForm
+     * @memberof Formable
      */
     readonly group: FormGroup = this.formService.formBuilder.group({});
 
     /**
-     * Creates an instance of MpForm.
+     * Creates an instance of Formable.
      * @param {FormService} formService
-     * @memberof MpForm
+     * @memberof Formable
      */
     constructor(
         public readonly formService: FormService
@@ -65,7 +49,7 @@ export abstract class MpForm extends Loadable {
     /**
      * Init
      *
-     * @memberof MpForm
+     * @memberof Formable
      */
     ngOnInit(): void {
         if (this.config) {
@@ -81,12 +65,12 @@ export abstract class MpForm extends Loadable {
      * @param {IConfig} config
      * @param {boolean} [keepData]
      * @returns
-     * @memberof MpForm
+     * @memberof Formable
      */
     load(config: IConfig, successClbk = this._onLoad, errorClbk = this._onLoadError): void {
         if (config?.params?.restUrl) {
             if (this._subscriptions.load) this._subscriptions.load.unsubscribe();
-            this._subscriptions.load = this.appService.http.load(config.params.restUrl)
+            this._subscriptions.load = this.formService.appService.http.load(config.params.restUrl)
                 .subscribe(successClbk, errorClbk);
         }
     }
@@ -95,12 +79,10 @@ export abstract class MpForm extends Loadable {
      * Udalosti po nacteni dat
      *
      * @protected
-     * @param {IConfig} config
-     * @param {any[]} [data]
-     * @returns {void}
-     * @memberof MpForm
+     * @param {IItem[]} [data]
+     * @memberof Formable
      */
-    protected _onLoad(data?: any[]): void {
+    protected _onLoad(data?: IItem[]): void {
         if (data) {
             this.itemList = data;
         }
@@ -111,7 +93,7 @@ export abstract class MpForm extends Loadable {
      *
      * @protected
      * @param {HttpErrorResponse} error
-     * @memberof MpForm
+     * @memberof Formable
      */
     protected _onLoadError(error: HttpErrorResponse): void {
         if (error) {
@@ -129,7 +111,7 @@ export abstract class MpForm extends Loadable {
      * @param {string} path
      * @param {FormGroup} root
      * @param {IFormField[]} [allFields]
-     * @memberof MpForm
+     * @memberof Formable
      */
     protected _initReactiveForm(fields: any, group: FormGroup, path?: string): void {
         if (fields) {
@@ -157,7 +139,7 @@ export abstract class MpForm extends Loadable {
      *
      * @abstract
      * @param {*} [values]
-     * @memberof MpForm
+     * @memberof Formable
      */
     submit(successClbk = this._onSuccesSubmit, errorClbk = this._onErrorSubmit): void {
         // get a delete nemusi byt validni
@@ -166,19 +148,19 @@ export abstract class MpForm extends Loadable {
             const fields = this.group.value;
             switch (this.config.params.method) {
                 case 'post':
-                    subscriber = this.appService.http.post(this.config.params.submitUrl, fields);
+                    subscriber = this.formService.appService.http.post(this.config.params.submitUrl, fields);
                     break;
 
                 case 'put':
-                    subscriber = this.appService.http.put(this.config.params.submitUrl, fields);
+                    subscriber = this.formService.appService.http.put(this.config.params.submitUrl, fields);
                     break;
 
                 case 'patch':
-                    /* subscriber = this.appService.http.patch(this.config.params.submitUrl, fields, this.item._etag); */
+                    /* subscriber = this.formService.appService.http.patch(this.config.params.submitUrl, fields, this.item._etag); */
                     break;
 
                 case 'delete':
-                    subscriber = this.appService.http.delete(this.config.params.submitUrl);
+                    subscriber = this.formService.appService.http.delete(this.config.params.submitUrl);
                     break;
 
                 case 'get':
@@ -190,7 +172,7 @@ export abstract class MpForm extends Loadable {
                 this._subscriptions.submit = subscriber.subscribe(successClbk, errorClbk);
             }
         } else {
-            this.appService.notification.load('form-invalid');
+            this.formService.appService.notification.load('form-invalid');
         }
     }
 
@@ -200,9 +182,9 @@ export abstract class MpForm extends Loadable {
      *
      * @protected
      * @param {*} data
-     * @memberof MpForm
+     * @memberof Formable
      */
-    protected _onSuccesSubmit(data: any): void {
+    protected _onSuccesSubmit(data: IItem[]): void {
         if (data) {
 
         }
@@ -215,7 +197,7 @@ export abstract class MpForm extends Loadable {
      * @protected
      * @param {HttpErrorResponse} error
      * @param {*} [options]
-     * @memberof MpForm
+     * @memberof Formable
      */
     protected _onErrorSubmit(error: HttpErrorResponse): void {
         if (error) {
@@ -228,9 +210,9 @@ export abstract class MpForm extends Loadable {
      *
      * @protected
      * @param {*} [data]
-     * @memberof MpForm
+     * @memberof Formable
      */
-    protected _setFieldsValue(data?: any): void {
+    protected _setFieldsValue(data?: IItem[]): void {
         if (data) {
             // nastavi vsem fieldum hodnoty dle zadanych dat
             this.formService.getFormControls(this.group).map((formControl: AbstractControl) => {

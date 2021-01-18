@@ -9,9 +9,9 @@
       Toggle sidenav
     </button>
 
-    <div *ngFor="let menu of itemList">
-      <a [routerLink]="menu.url">{{ menu.url }}</a>
-    </div>
+    <ng-container *ngFor="let menu of itemTree?.data">
+      <app-md-menu *ngIf="menu" [menu]="menu"></app-md-menu>
+    </ng-container>
 
     <router-outlet></router-outlet>
 

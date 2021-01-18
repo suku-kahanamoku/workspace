@@ -73,11 +73,9 @@ export class FormService {
     /**
      * Vrati validacni funkci
      *
-     * @param {string} name
-     * @returns {*}
      * @memberof FormService
      */
-    getValidator = (name: any): any => {
+    getValidator = (name: string): any => {
         switch (name) {
             case 'required': return Validators.required;
             case 'max': return Validators.max;
@@ -125,7 +123,7 @@ export class FormService {
      * @memberof FormService
      */
     getFormControls(group: FormGroup): AbstractControl[] {
-        let result: any[] = [];
+        let result: AbstractControl[] = [];
         ITERATE(group.controls, (formControl: AbstractControl) => {
             // pokud je to instance FromGroup, rekurzivne se zavolat tato funkce a vrati vsechny formControls
             if (formControl instanceof FormGroup)

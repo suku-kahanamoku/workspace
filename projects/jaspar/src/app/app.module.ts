@@ -6,11 +6,11 @@ import { RouterModule } from '@angular/router';
 
 import data from '../assets/data/data.json';
 import { AppComponent } from './app.component';
-import { IMenu } from 'projects/core/interfaces/menu.interface';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MenuModule } from 'projects/core/modules/menu/menu.module';
 
-const GET_ROUTES = (menuList: IMenu[], cmpList: any[]): any => menuList.map(menu => {
-  const result: any = { path: menu.url };
+const GET_ROUTES = (menuList: any[], cmpList: any[]): any => menuList.map(menu => {
+  const result: any = { path: menu.path };
   // component routa
   if (menu.cmp) {
     result.component = cmpList.find(tmpCmp => tmpCmp.name === menu.cmp);
@@ -57,7 +57,8 @@ const CMP_LIST = [
     BrowserModule,
     RouterModule.forRoot(GET_ROUTES(data.menu.filter(menu => !menu.parentId), CMP_LIST)),
     BrowserAnimationsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

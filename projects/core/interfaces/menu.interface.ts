@@ -1,9 +1,11 @@
-import { IItem } from "./item.interface";
+import { ITreeItem } from "./item.interface";
 
-export interface IMenu extends IItem {
+export interface IMenu extends ITreeItem {
     cmp?: string;
     module?: string;
     redirectTo?: string;
+    path: string;
     url: string;
-    parentId?: string;
+    name: string;
+    children?: IMenu[];
 }

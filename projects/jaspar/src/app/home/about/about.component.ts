@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Loadable } from 'projects/core/abstracts/loadable.abstract';
+import { Themeable } from 'projects/core/abstracts/themeable.abstract';
 import { IConfig } from 'projects/core/interfaces/config.interface';
 
 @Component({
@@ -8,7 +8,7 @@ import { IConfig } from 'projects/core/interfaces/config.interface';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent extends Loadable {
+export class AboutComponent extends Themeable {
 
   constructor() {
     super()

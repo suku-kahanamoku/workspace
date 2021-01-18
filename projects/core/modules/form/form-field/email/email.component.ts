@@ -15,7 +15,7 @@ import { FormFieldAbstract } from '../form-field.abstract';
     templateUrl: './email.component.html',
     styles: []
 })
-export class FormFieldDatetimeComponent extends FormFieldAbstract {
+export class FormFieldEmailComponent extends FormFieldAbstract {
 
     /**
      * Creates an instance of FormFieldDatetimeComponent.

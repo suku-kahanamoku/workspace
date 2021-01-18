@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Loadable } from 'projects/core/abstracts/loadable.abstract';
+
+import { Themeable } from 'projects/core/abstracts/themeable.abstract';
 import { IConfig } from 'projects/core/interfaces/config.interface';
 
 @Component({
@@ -7,7 +8,7 @@ import { IConfig } from 'projects/core/interfaces/config.interface';
   templateUrl: './analyze-management.component.html',
   styleUrls: ['./analyze-management.component.scss']
 })
-export class AnalyzeManagementComponent extends Loadable {
+export class AnalyzeManagementComponent extends Themeable {
 
   constructor() {
     super()

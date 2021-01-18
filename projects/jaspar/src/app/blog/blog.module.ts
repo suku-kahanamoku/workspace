@@ -5,10 +5,9 @@ import { RouterModule } from '@angular/router';
 import data from '../../assets/data/data.json';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { ArticleListComponent } from './article-list/article-list.component';
-import { IMenu } from 'projects/core/interfaces/menu.interface';
 
-const GET_ROUTES = (menuList: IMenu[], cmpList: any[]): any => menuList.map(menu => {
-  const result: any = { path: menu.url };
+const GET_ROUTES = (menuList: any[], cmpList: any[]): any => menuList.map(menu => {
+  const result: any = { path: menu.path };
   // component routa
   if (menu.cmp) {
     result.component = cmpList.find(tmpCmp => tmpCmp.name === menu.cmp);

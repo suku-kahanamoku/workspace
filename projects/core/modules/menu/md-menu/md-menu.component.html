@@ -1,0 +1,28 @@
+<ng-container *ngIf="menu?.children?.length; then dropdown; else menuItem">
+</ng-container>
+
+<!-- templates -->
+
+<!-- dropdown -->
+<ng-template #dropdown>
+    <a *ngIf="isNavigable" mat-menu-item [matMenuTriggerFor]="matMenuElem" [ngClass]="{active:menu?.isActive}"
+        [routerLink]="menu?.url">
+        {{menu?.name}}
+    </a>
+    <button *ngIf="!isNavigable" mat-menu-item [matMenuTriggerFor]="matMenuElem" [ngClass]="{active:menu?.isActive}">
+        <a [routerLink]="menu?.url">{{menu?.name}}</a>
+        <mat-icon class="notranslate">arrow_drop_down</mat-icon>
+    </button>
+
+    <mat-menu #matMenuElem="matMenu">
+        <app-md-menu *ngFor="let childMenu of menu?.children" [menu]="childMenu"></app-md-menu>
+    </mat-menu>
+</ng-template>
+
+<!-- noDropdown -->
+<ng-template #menuItem>
+    <a mat-menu-item [ngClass]="{active:menu?.isActive}"
+        [routerLink]="isNavigable ? menu?.url : './'">
+        {{menu?.name}}
+    </a>
+</ng-template>

@@ -1,4 +1,4 @@
-import { OnInit, Input, Output, OnDestroy, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { OnInit, Input, Output, OnDestroy, EventEmitter, ViewChild, ElementRef, Injectable } from '@angular/core';
 import { FormGroup, AbstractControl } from '@angular/forms';
 
 import { AppService } from 'projects/core/services/app.service';
@@ -9,15 +9,7 @@ import { debounceTime } from 'rxjs/operators';
 import { FormService } from '../form.service';
 import { IFormField } from './form-field.interface';
 
-/**
- * Abstrakce pro form field
- *
- * @export
- * @abstract
- * @class FormFieldAbstract
- * @implements {OnInit}
- * @implements {OnDestroy}
- */
+@Injectable()
 export abstract class FormFieldAbstract implements OnInit, OnDestroy {
 
   /**
@@ -145,15 +137,6 @@ export abstract class FormFieldAbstract implements OnInit, OnDestroy {
   @Input() set placeholder(value: string) {
     if (this.field) this.field.placeholder = value;
   }
-
-  /**
-   * Ikona
-   * napr. {value: lock, position: suffix | prefix}
-   *
-   * @type {object}
-   * @memberof FormFieldAbstract
-   */
-  @Input() icon: any = {};
 
   /**
    * Html class

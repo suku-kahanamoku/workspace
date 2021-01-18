@@ -8,10 +8,9 @@ import { TaxRecordsComponent } from './tax-records/tax-records.component';
 import { TaxAdviceComponent } from './tax-advice/tax-advice.component';
 import { AnalyzeManagementComponent } from './analyze-management/analyze-management.component';
 import { WagePersonalistComponent } from './wage-personalist/wage-personalist.component';
-import { IMenu } from 'projects/core/interfaces/menu.interface';
 
-const GET_ROUTES = (menuList: IMenu[], cmpList: any[]): any => menuList.map(menu => {
-  const result: any = { path: menu.url };
+const GET_ROUTES = (menuList: any[], cmpList: any[]): any => menuList.map(menu => {
+  const result: any = { path: menu.path };
   // component routa
   if (menu.cmp) {
     result.component = cmpList.find(tmpCmp => tmpCmp.name === menu.cmp);

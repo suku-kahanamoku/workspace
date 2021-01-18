@@ -3,120 +3,155 @@
     {
       "_id": "1",
       "module": "HomeModule",
-      "url": "about-us"
+      "path": "",
+      "url": "",
+      "name": "home"
     },
     {
       "_id": "2",
       "module": "BookkeepingModule",
-      "url": "bookkeeping"
+      "path": "bookkeeping",
+      "url": "bookkeeping",
+      "name": "bookkeeping"
     },
     {
       "_id": "3",
       "module": "ArchivModule",
-      "url": "archiv"
+      "path": "archiv",
+      "url": "archiv",
+      "name": "archiv"
     },
     {
       "_id": "4",
       "module": "ForeignLanguageModule",
-      "url": "foreign-language"
+      "path": "foreign-language",
+      "url": "foreign-language",
+      "name": "foreign language"
     },
     {
       "_id": "5",
       "module": "ContactModule",
-      "url": "contact"
+      "path": "contact",
+      "url": "contact",
+      "name": "contact"
     },
     {
       "_id": "6",
       "module": "BlogModule",
-      "url": "blog"
-    },
-    {
-      "_id": "7",
-      "redirectTo": "about-us",
-      "url": ""
+      "path": "blog",
+      "url": "blog",
+      "name": "blog"
     },
     {
       "_id": "8",
       "cmp": "PageNotFoundComponent",
-      "url": "**"
+      "path": "**",
+      "url": "**",
+      "name": "404"
     },
     {
       "_id": "11",
       "cmp": "AboutComponent",
+      "path": "",
       "url": "",
-      "parentId": "1"
+      "parentId": "1",
+      "name": "about 2"
     },
     {
       "_id": "12",
       "cmp": "ReferenceComponent",
+      "path": "reference",
       "url": "reference",
-      "parentId": "1"
+      "parentId": "1",
+      "name": "reference"
     },
     {
       "_id": "21",
       "cmp": "AccountancyComponent",
+      "path": "accountancy",
       "url": "accountancy",
-      "parentId": "2"
+      "parentId": "2",
+      "name": "accountancy"
     },
     {
       "_id": "22",
       "cmp": "TaxRecordsComponent",
+      "path": "tax-records",
       "url": "tax-records",
-      "parentId": "2"
+      "parentId": "2",
+      "name": "records"
     },
     {
       "_id": "23",
       "cmp": "TaxAdviceComponent",
+      "path": "tax-advice",
       "url": "tax-advice",
-      "parentId": "2"
+      "parentId": "2",
+      "name": "advice"
     },
     {
       "_id": "24",
       "cmp": "WagePersonalistComponent",
+      "path": "wage-personalist",
       "url": "wage-personalist",
-      "parentId": "2"
+      "parentId": "2",
+      "name": "personalist"
     },
     {
       "_id": "25",
       "cmp": "AnalyzeManagementComponent",
+      "path": "analyze-management",
       "url": "analyze-management",
-      "parentId": "2"
+      "parentId": "2",
+      "name": "analyze"
     },
     {
       "_id": "26",
       "redirectTo": "accountancy",
+      "path": "",
       "url": "",
-      "parentId": "2"
+      "parentId": "2",
+      "name": "redir to account"
     },
     {
       "_id": "31",
       "cmp": "InfoComponent",
+      "path": "",
       "url": "",
-      "parentId": "3"
+      "parentId": "3",
+      "name": "archiv info"
     },
     {
       "_id": "41",
       "cmp": "InfoComponent",
+      "path": "",
       "url": "",
-      "parentId": "4"
+      "parentId": "4",
+      "name": "lang info"
     },
     {
       "_id": "51",
       "cmp": "InfoComponent",
+      "path": "",
       "url": "",
-      "parentId": "5"
+      "parentId": "5",
+      "name": "contact info"
     },
     {
       "_id": "61",
       "cmp": "ArticleListComponent",
+      "path": "",
       "url": "",
-      "parentId": "6"
+      "parentId": "6",
+      "name": "article list"
     },
     {
       "_id": "62",
       "cmp": "ArticleDetailComponent",
+      "path": "detail",
       "url": "detail",
-      "parentId": "6"
+      "parentId": "6",
+      "name": "detail"
     }
   ]
 }
