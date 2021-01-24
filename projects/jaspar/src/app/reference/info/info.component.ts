@@ -4,11 +4,11 @@ import { Themeable } from 'projects/core/abstracts/themeable.abstract';
 import { IConfig } from 'projects/core/interfaces/config.interface';
 
 @Component({
-  selector: 'app-reference',
-  templateUrl: './reference.component.html',
-  styleUrls: ['./reference.component.scss']
+  selector: 'app-info',
+  templateUrl: './info.component.html',
+  styleUrls: ['./info.component.scss']
 })
-export class ReferenceComponent extends Themeable {
+export class InfoComponent extends Themeable {
 
   constructor() {
     super()

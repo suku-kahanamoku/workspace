@@ -28,14 +28,14 @@ const GET_ROUTES = (menuList: any[], cmpList: any[]): any => menuList.map(menu =
 });
 
 const CMP_LIST = [
-  InfoComponent
+  InfoComponent,
 ];
 
 @NgModule({
   declarations: CMP_LIST,
   imports: [
     CommonModule,
-    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '1'), CMP_LIST)),
+    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '7'), CMP_LIST)),
   ]
 })
-export class HomeModule { }
+export class ReferenceModule { }

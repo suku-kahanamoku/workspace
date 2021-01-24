@@ -29,7 +29,6 @@ export class AppComponent extends Themeable {
   load(): void {
     this.itemList = CLONE(data.menu.filter(menu => !menu.redirectTo));
     this._onLoad(this.itemList);
-    console.log(this.itemList)
   }
 
 }

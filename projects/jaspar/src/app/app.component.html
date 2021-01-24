@@ -1,20 +1,10 @@
 <mat-drawer-container autosize>
-  <mat-drawer #drawer mode="side">
-    <img src="/assets/img/logo/logo.png" alt="logo" />
+  <mat-drawer #drawer>
+    <app-side-menu [menus]="itemTree" [treeControl]="treeControl" [isExpandable]="isExpandable"></app-side-menu>
   </mat-drawer>
 
-  <div>
-    <img src="/assets/img/logo/logo.png" alt="logo" />
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
+  <app-main-menu [menus]="itemTree?.data" [drawer]="drawer"></app-main-menu>
 
-    <ng-container *ngFor="let menu of itemTree?.data">
-      <app-md-menu *ngIf="menu" [menu]="menu"></app-md-menu>
-    </ng-container>
-
-    <router-outlet></router-outlet>
-
-  </div>
+  <router-outlet></router-outlet>
 
 </mat-drawer-container>

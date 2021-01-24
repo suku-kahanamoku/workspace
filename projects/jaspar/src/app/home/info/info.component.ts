@@ -4,11 +4,11 @@ import { Themeable } from 'projects/core/abstracts/themeable.abstract';
 import { IConfig } from 'projects/core/interfaces/config.interface';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  selector: 'app-info',
+  templateUrl: './info.component.html',
+  styleUrls: ['./info.component.scss']
 })
-export class AboutComponent extends Themeable {
+export class InfoComponent extends Themeable {
 
   constructor() {
     super()

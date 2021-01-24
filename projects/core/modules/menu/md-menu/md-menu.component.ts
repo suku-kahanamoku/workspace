@@ -26,24 +26,6 @@ export class MdMenuComponent implements OnInit {
     @Input()
     menu!: IMenu;
 
-    /**
-     * Kontrola zda neni link zrusen
-     *
-     * @readonly
-     * @type {boolean}
-     * @memberof MdMenuComponent
-     */
-    get isNavigable() {
-        // pokud neni nastaven => kontroluje zda je to root item a ma potomky
-        if (this.menu) {
-            if (this.menu.parentId)
-                return true;
-            else if (!this.menu.children || !this.menu.children.length)
-                return true;
-        }
-        return false;
-    }
-
     ngOnInit(): void {
 
     }

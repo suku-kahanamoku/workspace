@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { RouterModule } from '@angular/router';
 
 import data from '../assets/data/data.json';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { MenuModule } from 'projects/core/modules/menu/menu.module';
+import { ProjectMenuModule } from '../modules/menu/menu.module';
 
 const GET_ROUTES = (menuList: any[], cmpList: any[]): any => menuList.map(menu => {
   const result: any = { path: menu.path };
@@ -30,11 +30,14 @@ const GET_ROUTES = (menuList: any[], cmpList: any[]): any => menuList.map(menu =
       case 'ForeignLanguageModule':
         result.loadChildren = () => import('./foreign-language/foreign-language.module').then(m => m.ForeignLanguageModule);
         break;
-      case 'ContactModule':
-        result.loadChildren = () => import('./contact/contact.module').then(m => m.ContactModule);
-        break;
       case 'BlogModule':
         result.loadChildren = () => import('./blog/blog.module').then(m => m.BlogModule);
+        break;
+      case 'ReferenceModule':
+        result.loadChildren = () => import('./reference/reference.module').then(m => m.ReferenceModule);
+        break;
+      case 'ContactModule':
+        result.loadChildren = () => import('./contact/contact.module').then(m => m.ContactModule);
         break;
     }
   }
@@ -58,7 +61,7 @@ const CMP_LIST = [
     RouterModule.forRoot(GET_ROUTES(data.menu.filter(menu => !menu.parentId), CMP_LIST)),
     BrowserAnimationsModule,
     MatSidenavModule,
-    MenuModule
+    ProjectMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

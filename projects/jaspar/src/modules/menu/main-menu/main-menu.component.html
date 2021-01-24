@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-between align-items-center">
+  <img src="/assets/img/logo/logo.png" alt="logo" />
+
+  <div class="d-none d-md-flex flex-wrap">
+    <app-md-menu *ngFor="let menu of menus" [menu]="menu"></app-md-menu>
+  </div>
+
+  <div class="lang">
+    <div>
+      cz
+    </div>
+  </div>
+
+  <button type="button" mat-icon-button class="d-md-none" (click)="drawer.toggle()">
+    <mat-icon *ngIf="!drawer.opened" class="notranslate">menu</mat-icon>
+    <mat-icon *ngIf="drawer.opened" class="notranslate">menu_open</mat-icon>
+  </button>
+</div>

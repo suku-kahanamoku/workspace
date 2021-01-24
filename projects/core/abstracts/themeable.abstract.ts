@@ -181,7 +181,7 @@ export abstract class Themeable extends Loadable {
         // vytvori reference potomku do rodice
         const itemList: ITreeItem[] = Array.isArray(data) ? data : [];
         itemList.map((item: any) => {
-            if (item.parentId) {
+            if (item.parentId && item.visible !== false) {
                 // vytahne rodic item
                 const parentItem = <any>itemList.find(inItem => inItem._id === item.parentId);
                 if (parentItem) {
@@ -195,7 +195,7 @@ export abstract class Themeable extends Loadable {
             }
         });
         // vrati vyfiltrovane pole (itemy bez rodicu)
-        return itemList.filter(item => !item.parentId);
+        return itemList.filter(item => !item.parentId && item.visible !== false);
     }
 
     /**

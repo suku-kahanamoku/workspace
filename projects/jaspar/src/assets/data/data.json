@@ -5,7 +5,7 @@
       "module": "HomeModule",
       "path": "",
       "url": "",
-      "name": "home"
+      "name": "about us"
     },
     {
       "_id": "2",
@@ -43,27 +43,28 @@
       "name": "blog"
     },
     {
+      "_id": "7",
+      "module": "ReferenceModule",
+      "path": "reference",
+      "url": "reference",
+      "name": "reference"
+    },
+    {
       "_id": "8",
       "cmp": "PageNotFoundComponent",
       "path": "**",
       "url": "**",
-      "name": "404"
+      "name": "404",
+      "visible": false
     },
     {
       "_id": "11",
-      "cmp": "AboutComponent",
+      "cmp": "InfoComponent",
       "path": "",
       "url": "",
       "parentId": "1",
-      "name": "about 2"
-    },
-    {
-      "_id": "12",
-      "cmp": "ReferenceComponent",
-      "path": "reference",
-      "url": "reference",
-      "parentId": "1",
-      "name": "reference"
+      "name": "info",
+      "visible": false
     },
     {
       "_id": "21",
@@ -119,7 +120,8 @@
       "path": "",
       "url": "",
       "parentId": "3",
-      "name": "archiv info"
+      "name": "archiv info",
+      "visible": false
     },
     {
       "_id": "41",
@@ -127,7 +129,8 @@
       "path": "",
       "url": "",
       "parentId": "4",
-      "name": "lang info"
+      "name": "lang info",
+      "visible": false
     },
     {
       "_id": "51",
@@ -135,7 +138,8 @@
       "path": "",
       "url": "",
       "parentId": "5",
-      "name": "contact info"
+      "name": "contact info",
+      "visible": false
     },
     {
       "_id": "61",
@@ -143,7 +147,8 @@
       "path": "",
       "url": "",
       "parentId": "6",
-      "name": "article list"
+      "name": "article list",
+      "visible": false
     },
     {
       "_id": "62",
@@ -152,6 +157,15 @@
       "url": "detail",
       "parentId": "6",
       "name": "detail"
+    },
+    {
+      "_id": "71",
+      "cmp": "InfoComponent",
+      "path": "",
+      "url": "",
+      "parentId": "7",
+      "name": "info",
+      "visible": false
     }
   ]
 }
