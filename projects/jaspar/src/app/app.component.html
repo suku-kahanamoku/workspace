@@ -3,8 +3,14 @@
     <app-side-menu [menus]="itemTree" [treeControl]="treeControl" [isExpandable]="isExpandable"></app-side-menu>
   </mat-drawer>
 
-  <app-main-menu [menus]="itemTree?.data" [drawer]="drawer"></app-main-menu>
+  <div class="content">
+    <app-main-menu [menus]="itemTree?.data" [drawer]="drawer"></app-main-menu>
 
-  <router-outlet></router-outlet>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+
+    <app-footer-menu [menus]="itemTree?.data"></app-footer-menu>
+  </div>
 
 </mat-drawer-container>
