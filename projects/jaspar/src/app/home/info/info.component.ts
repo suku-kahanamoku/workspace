@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import data from '../../../assets/data/data.json';
 import { Themeable } from 'projects/core/abstracts/themeable.abstract';
 import { IConfig } from 'projects/core/interfaces/config.interface';
 
@@ -10,12 +11,14 @@ import { IConfig } from 'projects/core/interfaces/config.interface';
 })
 export class InfoComponent extends Themeable {
 
+  data = data;
+
   constructor() {
     super()
   }
 
   ngOnInit(): void {
-
+    
   }
 
   load(config: IConfig): void {

@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { SwiperModule } from 'swiper/angular';
 
 import data from '../../assets/data/data.json';
 import { InfoComponent } from './info/info.component';
@@ -49,7 +50,8 @@ const CMP_LIST = [
     }),
     RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '1'), CMP_LIST)),
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    SwiperModule
   ]
 })
 export class HomeModule { }
