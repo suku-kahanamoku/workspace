@@ -1,0 +1,46 @@
+{
+    "home": {
+        "title": "Věnujeme se vám",
+        "subtitle": "NAPLNO",
+        "text": "Ať už potřebujete pomoci s jedním krokem nebo s námi budete celou cestu.",
+        "consultation": "DOMLUVTE SI S NÁMI KONZULTACI",
+        "bookkeeping": "účetní služby",
+        "archiv": "důvěryhodný archiv",
+        "archivTitle": "Inteligentní úložiště pro každého",
+        "archivText": "Systém je velice efektivní, uživatelsky přizpůsobivý a cenově dostupný pro každého uživatele.",
+        "foreignLang": "výuka jazyků",
+        "aboutUs": "PÁR SLOV O NÁS",
+        "aboutUsTitle": "Proč si vybrat právě nás",
+        "aboutUsText1": "Jsme účetní firma z Brna a Prahy. Všem podnikatelům i středně velkým firmám nabízíme profesionální vedení účetnictví, daňovou evidenci, daňové poradeství i zpracování mezd.",
+        "aboutUsText2": "Důkazem naší odbornosti je spolehlivý, sehraný a zkušený tým lidí a trvalá spokojenost zákazníků. Již 19 let. Jsme rychlí, precizní a výsledkem naší práce je vždy jasně a bezchybně zpracovaný ekonomický obraz vaší firmy.",
+        "a2z": "Účetnictví od A do Z",
+        "investment": "Efektivní investice",
+        "report": "Poctivé reporty",
+        "result": "Seriozní výsledky",
+        "resultText": "Neplaťte za licence účetních programů, věnujte se prostě svému podnikání. Papírování a vedení účetní agendy přenechte nám.",
+        "reference": "Co se o nás povídá",
+        "referenceText": "Nedejte jen na naše slova a podívejte se, co o nás řekli naši zákaznící. Stojí za námi desítky spokojených klientů.",
+        "referenceDesc": "Rozjezd nového businessu je vždy náročný, proto je dobré mít vedle sebe partnera, který Vás podpoří a upozorní na důležitá fakta, Pro nás se takovým partnerem stala firma Jaspar s.r.o, ktrá dohlíží na všechny naše účetní a daňové povinnosti.",
+        "referenceSign": "Vladimír Vlach",
+        "referenceComp": "jednatel, Dotykačka s.r.o.",
+        "contact": "Pošlete nám kontakt a nechte to na nás!",
+        "phoneEmail": "Váš telefon nebo e-email"
+    },
+    "footer": {
+        "connect": "Jak se s námi spojit",
+        "navigation": "Mohlo by se vám hodit",
+        "news": "Aktuality",
+        "all": "vše"
+    },
+    "logo": {
+        "facebook": "Facebook",
+        "google": "Google",
+        "linkedIn": "LinkedIn",
+        "twitter": "Twitter",
+        "youtube": "Youtube",
+        "dotykacka": "Dotykačka",
+        "darka": "Darka",
+        "giri": "Giri",
+        "oemeta": "Oemeta"
+    }
+}

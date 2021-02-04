@@ -20,7 +20,7 @@ export class AppComponent extends Themeable {
 
   constructor(private _translate: TranslateService) {
     super();
-    _translate.setDefaultLang('en');
+    _translate.setDefaultLang('cs');
   }
 
   ngOnInit(): void {

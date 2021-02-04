@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import data from '../../assets/data/data.json';
@@ -46,6 +48,8 @@ const CMP_LIST = [
       }
     }),
     RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '1'), CMP_LIST)),
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class HomeModule { }
