@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 import data from '../assets/data/data.json';
 import { IConfig } from 'projects/core/interfaces/config.interface';
@@ -17,8 +18,9 @@ export class AppComponent extends Themeable {
 
   itemList: IMenu[] = [];
 
-  constructor() {
+  constructor(private _translate: TranslateService) {
     super();
+    _translate.setDefaultLang('en');
   }
 
   ngOnInit(): void {

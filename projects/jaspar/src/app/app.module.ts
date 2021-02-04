@@ -4,10 +4,14 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 import data from '../assets/data/data.json';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProjectMenuModule } from '../modules/menu/menu.module';
+import { HttpLoaderFactory } from './utils';
 
 const GET_ROUTES = (menuList: any[], cmpList: any[]): any => menuList.map(menu => {
   const result: any = { path: menu.path };
@@ -61,7 +65,15 @@ const CMP_LIST = [
     RouterModule.forRoot(GET_ROUTES(data.menu.filter(menu => !menu.parentId), CMP_LIST)),
     BrowserAnimationsModule,
     MatSidenavModule,
-    ProjectMenuModule
+    ProjectMenuModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
