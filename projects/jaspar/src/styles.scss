@@ -1,4 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap-grid.min.css';
+@import 'bootstrap/dist/css/bootstrap.min.css';
 @import '~swiper/swiper-bundle';
 
 html,
@@ -9,4 +10,12 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+button {
+    outline: none !important;
 }

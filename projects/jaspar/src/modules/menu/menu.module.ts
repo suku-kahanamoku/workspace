@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTreeModule } from '@angular/material/tree';
-import { HttpClient } from '@angular/common/http';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 import { MenuModule } from 'projects/core/modules/menu/menu.module';
 import { MainMenuComponent } from './main-menu/main-menu.component';
@@ -43,7 +46,9 @@ import { HttpLoaderFactory } from '../../app/utils';
     MenuModule,
     MatButtonModule,
     MatIconModule,
-    MatTreeModule
+    MatTreeModule,
+    MatSnackBarModule,
+    MatBottomSheetModule
   ],
 })
 export class ProjectMenuModule { }

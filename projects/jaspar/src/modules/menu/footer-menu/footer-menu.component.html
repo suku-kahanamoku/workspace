@@ -1,11 +1,45 @@
-<div class="container">
+<div class="container py-5">
   <div class="row">
-    <div class="col-sm-6 col-md-3">Jak se s nami spojit</div>
-    <div class="d-none d-md-block col-md-3">.col-6 .col-md-3</div>
-    <div class="d-none d-md-block col-md-3">.col-6 .col-md-3</div>
-    <div class="col-sm-6 col-md-3">Aktuality</div>
 
-    <div class="d-md-none col-sm-6">aaaa</div>
-    <div class="d-md-none col-sm-6">bbbb</div>
+    <div class="col-sm-6 col-md-3">
+      <h3 [innerHTML]="'footer.connect' | translate"></h3>
+      <div>
+        <a href="mailto:info@jaspar.cz" mat-button>
+          <mat-icon>home</mat-icon>
+          info@jaspar.cz
+        </a>
+        <a href="tel:+420605202525" mat-button>
+          <mat-icon>home</mat-icon>
+          +420&nbsp;605&nbsp;202&nbsp;525
+        </a>
+      </div>
+      <div>
+        <a href="https://www.facebook.com/firmajaspar" class="fab fa-facebook fa-2x" target="_blank"
+          mat-icon-button></a>
+        <a href="https://www.instagram.com/ucetnictvi.jaspar/" class="fab fa-instagram fa-2x" target="_blank"
+          mat-icon-button></a>
+        <a href="https://www.linkedin.com/company/jaspar-s-r-o-" class="fab fa-linkedin fa-2x" target="_blank"
+          mat-icon-button></a>
+        <a href="https://twitter.com/jaspar_m" class="fab fa-twitter fa-2x" target="_blank" mat-icon-button></a>
+        <a href="https://www.youtube.com/user/firmajaspar" class="fab fa-youtube fa-2x" target="_blank"
+          mat-icon-button></a>
+      </div>
+    </div>
+
+    <div class="d-none d-md-block col-md-6">
+      <h3 [innerHTML]="'footer.navigation' | translate"></h3>
+      <div class="row">
+        <div class="col-md-6">
+          <div *ngFor="let menu of children">{{menu.name}}</div>
+        </div>
+        <div class="col-md-6">
+          <div *ngFor="let menu of parents">{{menu.name}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-3">
+      <h3 [innerHTML]="'footer.news' | translate"></h3>
+    </div>
   </div>
 </div>

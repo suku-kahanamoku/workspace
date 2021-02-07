@@ -2,7 +2,7 @@
   <img src="/assets/img/logo/logo.png" alt="logo" />
 
   <div class="d-none d-md-flex flex-wrap">
-    <app-md-menu *ngFor="let menu of menus" [menu]="menu"></app-md-menu>
+    <app-md-menu *ngFor="let menu of itemTree?.data" [menu]="menu"></app-md-menu>
   </div>
 
   <div class="lang">

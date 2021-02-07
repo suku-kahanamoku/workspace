@@ -1,16 +1,14 @@
 <mat-drawer-container autosize>
   <mat-drawer #drawer>
-    <app-side-menu [menus]="itemTree" [treeControl]="treeControl" [isExpandable]="isExpandable"></app-side-menu>
+    <app-side-menu [data]="itemTree.data"></app-side-menu>
   </mat-drawer>
 
   <div class="content">
-    <app-main-menu [menus]="itemTree?.data" [drawer]="drawer"></app-main-menu>
+    <app-main-menu [data]="itemTree.data" [drawer]="drawer"></app-main-menu>
 
-    <div class="container">
-      <router-outlet></router-outlet>
-    </div>
+    <router-outlet></router-outlet>
 
-    <app-footer-menu [menus]="itemTree?.data"></app-footer-menu>
+    <app-footer-menu [data]="itemTree.data"></app-footer-menu>
   </div>
 
 </mat-drawer-container>

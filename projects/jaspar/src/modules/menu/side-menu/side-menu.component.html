@@ -1,6 +1,6 @@
 <img src="/assets/img/logo/logo.png" alt="logo" />
 
-<mat-tree [dataSource]="menus" [treeControl]="treeControl">
+<mat-tree [dataSource]="itemTree" [treeControl]="treeControl">
   <!-- This is the tree node template for leaf nodes -->
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
     <a [routerLink]="node?.item?.url">

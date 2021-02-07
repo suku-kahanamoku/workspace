@@ -1,18 +1,17 @@
 import { Component, Input } from '@angular/core';
 
-import { IMenu } from 'projects/core/interfaces/menu.interface';
+import { Themeable } from 'projects/core/abstracts/themeable.abstract';
+import { AppService } from 'projects/core/services/app.service';
 
 @Component({
   selector: 'app-side-menu',
   templateUrl: './side-menu.component.html',
   styleUrls: ['./side-menu.component.scss']
 })
-export class SideMenuComponent {
+export class SideMenuComponent extends Themeable {
 
-  @Input() menus: IMenu[] = [];
-
-  @Input() treeControl: any;
-
-  @Input() isExpandable: any;
+  constructor(public readonly appService: AppService) {
+    super();
+  }
 
 }

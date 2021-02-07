@@ -28,7 +28,7 @@ export interface ITreeItem extends IItem {
      * @type {ITreeItem[]}
      * @memberof ITreeItem
      */
-    children?: ITreeItem[];
+    children: ITreeItem[];
 
     /**
      * Priznak zda je item aktivni
@@ -36,6 +36,6 @@ export interface ITreeItem extends IItem {
      * @type {boolean}
      * @memberof ITreeItem
      */
-    isActive?: boolean;
+    active?: boolean;
 
 }

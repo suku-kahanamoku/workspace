@@ -167,47 +167,5 @@
       "name": "info",
       "visible": false
     }
-  ],
-  "reference": [
-    {
-      "name": "Dotykačka",
-      "img": "/assets/img/logo/logo.png",
-      "url": "https://www.dotykacka.cz/"
-    },
-    {
-      "name": "Altamore s.r.o.",
-      "img": "/assets/img/logo/logo.png",
-      "url": "http://www.altamore.cz/"
-    },
-    {
-      "name": "WebStudy",
-      "img": "/assets/img/logo/logo.png",
-      "url": "http://webstudy.com/"
-    },
-    {
-      "name": "Jiří Hruban",
-      "img": "/assets/img/logo/logo.png",
-      "url": "http://www.advokat-brno.com/"
-    },
-    {
-      "name": "Čuda",
-      "img": "/assets/img/logo/logo.png",
-      "url": "http://www.cuda.cz/"
-    },
-    {
-      "name": "Oemeta",
-      "img": "/assets/img/logo/logo.png",
-      "url": "https://www.oemeta.com/"
-    },
-    {
-      "name": "giri",
-      "img": "/assets/img/logo/logo.png",
-      "url": "http://www.giri.cz/"
-    },
-    {
-      "name": "Darka-shop",
-      "img": "/assets/img/logo/logo.png",
-      "url": "https://www.darka-shop.cz/"
-    }
   ]
 }

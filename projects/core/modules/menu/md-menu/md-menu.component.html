@@ -6,11 +6,11 @@
 <!-- dropdown -->
 <ng-template #dropdown>
     <a *ngIf="!menu?.children?.length" mat-menu-item [matMenuTriggerFor]="matMenuElem"
-        [ngClass]="{active:menu?.isActive}" [routerLink]="menu?.url">
+        [ngClass]="{active:menu?.active}" [routerLink]="menu?.url">
         {{menu?.name}}
     </a>
     <button *ngIf="menu?.children?.length" mat-menu-item [matMenuTriggerFor]="matMenuElem"
-        [ngClass]="{active:menu?.isActive}">
+        [ngClass]="{active:menu?.active}">
         <a [routerLink]="menu?.url">{{menu?.name}}</a>
         <mat-icon class="notranslate">arrow_drop_down</mat-icon>
     </button>
@@ -22,7 +22,7 @@
 
 <!-- noDropdown -->
 <ng-template #menuItem>
-    <a mat-menu-item [ngClass]="{active:menu?.isActive}" [routerLink]="menu?.url">
+    <a mat-menu-item [ngClass]="{active:menu?.active}" [routerLink]="menu?.url">
         {{menu?.name}}
     </a>
 </ng-template>

@@ -12,7 +12,7 @@ import { InfoComponent } from './info/info.component';
 import { HttpLoaderFactory } from '../utils';
 
 const GET_ROUTES = (menuList: any[], cmpList: any[]): any => menuList.map(menu => {
-  const result: any = { path: menu.path };
+  const result: any = { path: menu.url };
   // component routa
   if (menu.cmp) {
     result.component = cmpList.find(tmpCmp => tmpCmp.name === menu.cmp);

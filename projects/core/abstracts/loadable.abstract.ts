@@ -1,22 +1,43 @@
-import { Injectable, Input } from "@angular/core";
+import { Directive, Input } from "@angular/core";
 import { BehaviorSubject, Subscription } from "rxjs";
 
 import { Configurable } from "./configurable.abstract";
 import { IConfig } from "../interfaces/config.interface";
 import { IItem } from "../interfaces/item.interface";
 import { ITERATE } from "../utils/modify-object.functions";
+import { HttpErrorResponse } from "@angular/common/http";
 
-
-@Injectable()
+@Directive()
 export abstract class Loadable extends Configurable {
 
     /**
-     * Nactena data
+     * Seznam objektu
+     *
+     * @private
+     * @type {IItem[]}
+     * @memberof Loadable
+     */
+    private _itemList: IItem[] = [];
+
+    /**
+     * Vrati seznam objektu
      *
      * @type {IItem[]}
      * @memberof Loadable
      */
-    itemList: IItem[] = [];
+    get itemList(): IItem[] {
+        return this._itemList;
+    }
+
+    /**
+     * Nastavi seznam objektu
+     *
+     * @memberof Loadable
+     */
+    @Input('data') set itemList(itemList: IItem[]) {
+        this._itemList = [];
+        itemList?.length && itemList.map(this.addItem.bind(this));
+    }
 
     /**
      * Vybrany objekt
@@ -60,11 +81,40 @@ export abstract class Loadable extends Configurable {
     /**
      * Kazdy zdedeny modul musi mit load metodu
      *
-     * @abstract
      * @param {IConfig} config
+     * @param {*} [successClbk=this._onLoad]
+     * @param {*} [errorClbk=this._onLoadError]
      * @memberof Loadable
      */
-    abstract load(config: IConfig): void;
+    load(config: IConfig, successClbk = this._onLoad, errorClbk = this._onLoadError): void {
+        if (config?.params?.restUrl) {
+            this._subscriptions.load && this._subscriptions.load.unsubscribe();
+            this._subscriptions.load = this.appService.http.load(config.params.restUrl)
+                .subscribe(successClbk, errorClbk);
+        }
+    }
+
+    /**
+     * Udalosti po nacteni dat (callback pro load metodu - success)
+     *
+     * @protected
+     * @param {IItem[]} [data]
+     * @memberof Loadable
+     */
+    protected _onLoad(data?: IItem[]): void {
+        this.itemList = data || [];
+    }
+
+    /**
+     * Udalosti na error
+     *
+     * @protected
+     * @param {HttpErrorResponse} error
+     * @memberof Loadable
+     */
+    protected _onLoadError(error: HttpErrorResponse): void {
+        console.log(error)
+    }
 
     /**
      * Ze seznamu vybere objekt s danym id
@@ -74,7 +124,7 @@ export abstract class Loadable extends Configurable {
      * @memberof Loadable
      */
     getItem(itemId: string): IItem {
-        return <IItem>this.itemList.find(item => item._id === itemId);
+        return <IItem>this._itemList.find(item => item._id === itemId);
     }
 
     /**
@@ -96,17 +146,17 @@ export abstract class Loadable extends Configurable {
      * @memberof Loadable
      */
     addItem(item: IItem): number {
-        const index = this.itemList.findIndex(tmpItem => tmpItem._id === item._id);
+        const index = this._itemList.findIndex(tmpItem => tmpItem._id === item._id);
         // pokud neexistuje vlozi do seznamu novy item
         if (index < 0) {
-            this.itemList.push(item);
+            this._itemList.push(item);
         }
         // pokud existuje mergne (aktualizuje) data
         else {
-            const tmpItem = <any>this.itemList[index];
+            const tmpItem = <any>this._itemList[index];
             ITERATE(item, (param: any, key: any) => tmpItem[key] = param);
         }
-        return this.itemList.length;
+        return this._itemList.length;
     }
 
     /**
@@ -117,11 +167,11 @@ export abstract class Loadable extends Configurable {
      * @memberof Loadable
      */
     removeItem(itemId: string): number {
-        this.itemList = this.itemList.filter(item => item._id !== itemId);
+        this._itemList = this._itemList.filter(item => item._id !== itemId);
         // pokud v seznamu nic neni, pro jistotu odstrani i vybrazny item
-        if (!this.itemList.length) this.item = undefined;
+        if (!this._itemList.length) this.item = undefined;
         // vrati pocet itemu v listu
-        return this.itemList.length;
+        return this._itemList.length;
     }
 
 }

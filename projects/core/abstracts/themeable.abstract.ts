@@ -1,4 +1,4 @@
-import { Injectable, ViewChild } from '@angular/core';
+import { Directive, Input, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { NestedTreeControl, FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource, MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
@@ -9,28 +9,30 @@ import { Loadable } from './loadable.abstract';
 import { IItem, ITreeItem } from '../interfaces/item.interface';
 import { GET_VALUE } from '../utils/modify-object.functions';
 
-@Injectable()
+@Directive()
 export abstract class Themeable extends Loadable {
 
     /**
-     * Nactena data
+     * Vrati seznam objektu
      *
+     * @readonly
      * @type {ITreeItem[]}
      * @memberof Themeable
      */
-    itemList: ITreeItem[] = [];
-
-    /**
-     * Vrati vybrany objekt
-     *
-     * @readonly
-     * @type {ITreeItem}
-     * @memberof Themeable
-     */
-    public get item(): ITreeItem {
-        return <ITreeItem>super.item;
+    get itemList(): ITreeItem[] {
+        return <ITreeItem[]>super.itemList;
     }
 
+    /**
+     * Nastavi seznam objektu
+     *
+     * @memberof Themeable
+     */
+    @Input('data') set itemList(itemList: ITreeItem[]) {
+        super.itemList = itemList;
+        this._setThemeData(this.itemList);
+        this.config?.params?.expanded && this.treeControl.expandAll();
+    }
 
     /**
      * Objekt s jednourovnovym uzlem
@@ -95,7 +97,7 @@ export abstract class Themeable extends Loadable {
      * @memberof Themeable
      */
     ngOnInit(): void {
-        if (this.config.params.nested) {
+        if (this.config?.params?.nested) {
             this.treeControl = new NestedTreeControl<ITreeItem>(node => node.children);
             this.itemTree = new MatTreeNestedDataSource();
             this.isExpandable = (_: number, node: ITreeItem): boolean => !!node.children && node.children.length > 0;
@@ -103,18 +105,14 @@ export abstract class Themeable extends Loadable {
     }
 
     /**
-     * Udalosti po nacteni dat (callback pro load metodu - success)
+     * Ze seznamu vybere objekt s danym id
      *
-     * @protected
-     * @param {ITreeItem[]} [data]
+     * @param {string} itemId
+     * @returns {ITreeItem}
      * @memberof Themeable
      */
-    protected _onLoad(data?: ITreeItem[]): void {
-        if (this.config && data) {
-            this._setThemeData(data);
-            // rozbali vsechny urovne
-            if (this.config.params.expanded) this.treeControl.expandAll();
-        }
+    getItem(itemId: string): ITreeItem {
+        return <ITreeItem>super.getItem(itemId);
     }
 
     /**
@@ -126,21 +124,17 @@ export abstract class Themeable extends Loadable {
      */
     selectItem(itemId: string): ITreeItem {
         super.selectItem(itemId);
-        // vyresetuje isActive atribut u vsech objektu
-        this.itemList.map((item: ITreeItem) => delete item.isActive);
+        // vyresetuje active atribut u vsech objektu
+        this.itemList.map((item: ITreeItem) => delete item.active);
         // rekurzivne aktivuje itemy
-        this._activateItem(<ITreeItem>this.item);
+        this._activateItem(this.item);
         // rozbali aktivovane vetve
         const nodes = this.treeControl.dataNodes;
-        if (nodes && !this.config.params.expanded) {
-            nodes.map((node: FlatNode) => {
-                if (node.expandable && node.item.isActive)
-                    this.treeControl.expand(node);
-                else
-                    this.treeControl.collapse(node)
-            });
+        if (nodes && !this.config?.params?.expanded) {
+            nodes.map((node: FlatNode) => node.expandable && node.item.active
+                ? this.treeControl.expand(node) : this.treeControl.collapse(node));
         }
-        return <ITreeItem>this.item;
+        return this.item;
     }
 
     /**
@@ -168,7 +162,8 @@ export abstract class Themeable extends Loadable {
     protected _setThemeData(data: ITreeItem[]): void {
         this.itemTree.data = this._createTreeNode(data);
         this.itemTable.data = data;
-        if (this.itemTree instanceof MatTreeNestedDataSource) this.treeControl.dataNodes = data;
+        if (this.itemTree instanceof MatTreeNestedDataSource)
+            this.treeControl.dataNodes = data;
     }
 
     /**
@@ -208,8 +203,8 @@ export abstract class Themeable extends Loadable {
      */
     protected _activateItem(item: ITreeItem): void {
         if (item) {
-            item.isActive = true;
-            if (item.parentId) this._activateItem(<ITreeItem>this.getItem(item.parentId));
+            item.active = true;
+            item.parentId && this._activateItem(this.getItem(item.parentId));
         }
     }
 

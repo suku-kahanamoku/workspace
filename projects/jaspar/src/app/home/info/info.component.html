@@ -1,83 +1,87 @@
-<div id="banner">
-    <div>
-        <h1 [innerHTML]="'home.title' | translate"></h1>
-
+<div class="container">
+    <div id="banner" class="py-5">
         <div>
-            <strong [innerHTML]="'home.subtitle' | translate"></strong>
+            <h1 [innerHTML]="'home.title' | translate"></h1>
+
+            <div>
+                <strong [innerHTML]="'home.subtitle' | translate"></strong>
+            </div>
+
+            <div [innerHTML]="'home.text' | translate"></div>
+
+            <button mat-button>
+                {{ 'home.consultation' | translate }}
+                <mat-icon>arrow_right_alt</mat-icon>
+            </button>
         </div>
 
-        <div [innerHTML]="'home.text' | translate"></div>
+        <div class="row text-center" id="btns">
+            <div class="col-md-4">
+                <button mat-fab>
+                    {{ 'home.bookkeeping' | translate }}
+                    <mat-icon>home</mat-icon>
+                </button>
+            </div>
 
-        <button mat-button>
-            {{ 'home.consultation' | translate }}
-            <mat-icon>arrow_right_alt</mat-icon>
-        </button>
+            <div class="col-md-4">
+                <button mat-fab>
+                    {{ 'home.archiv' | translate }}
+                    <mat-icon>home</mat-icon>
+                </button>
+            </div>
+
+            <div class="col-md-4">
+                <button mat-fab>
+                    {{ 'home.foreignLang' | translate }}
+                    <mat-icon>home</mat-icon>
+                </button>
+            </div>
+        </div>
     </div>
 
-    <div class="row" id="btns">
-        <div class="col-md-4">
-            <button mat-fab>
-                {{ 'home.bookkeeping' | translate }}
-                <mat-icon>home</mat-icon>
-            </button>
+    <div id="aboutUs" class="py-5">
+        <div class="text-center">
+            <h4 [innerHTML]="'home.aboutUs' | translate"></h4>
+            <h2 [innerHTML]="'home.aboutUsTitle' | translate"></h2>
         </div>
-
-        <div class="col-md-4">
-            <button mat-fab>
-                {{ 'home.archiv' | translate }}
-                <mat-icon>home</mat-icon>
-            </button>
-        </div>
-
-        <div class="col-md-4">
-            <button mat-fab>
-                {{ 'home.foreignLang' | translate }}
-                <mat-icon>home</mat-icon>
-            </button>
+        <div class="row">
+            <div class="col-md-6">
+                <div [innerHTML]="'home.aboutUsText1' | translate"></div>
+                <div [innerHTML]="'home.aboutUsText2' | translate"></div>
+            </div>
+            <div class="col-md-6">
+                <button class="col-md-6 col-lg-3" mat-button>
+                    {{ 'home.a2z' | translate }}
+                    <mat-icon>home</mat-icon>
+                </button>
+                <button class="col-md-6 col-lg-3" mat-button>
+                    {{ 'home.investment' | translate }}
+                    <mat-icon>home</mat-icon>
+                </button>
+                <button class="col-md-6 col-lg-3" mat-button>
+                    {{ 'home.report' | translate }}
+                    <mat-icon>home</mat-icon>
+                </button>
+                <button class="col-md-6 col-lg-3" mat-button>
+                    {{ 'home.result' | translate }}
+                    <mat-icon>home</mat-icon>
+                </button>
+            </div>
         </div>
     </div>
-</div>
 
-<div id="aboutUs">
-    <h4 [innerHTML]="'home.aboutUs' | translate"></h4>
-    <h2 [innerHTML]="'home.aboutUsTitle' | translate"></h2>
-    <div class="row">
+    <div id="reference" class="py-5 row">
+        <div class="col-md-6" [innerHTML]="'home.referenceDesc' | translate"></div>
         <div class="col-md-6">
-            <div [innerHTML]="'home.aboutUsText1' | translate"></div>
-            <div [innerHTML]="'home.aboutUsText2' | translate"></div>
-        </div>
-        <div class="col-md-6">
-            <button class="col-md-6 col-lg-3" mat-button>
-                {{ 'home.a2z' | translate }}
-                <mat-icon>home</mat-icon>
-            </button>
-            <button class="col-md-6 col-lg-3" mat-button>
-                {{ 'home.investment' | translate }}
-                <mat-icon>home</mat-icon>
-            </button>
-            <button class="col-md-6 col-lg-3" mat-button>
-                {{ 'home.report' | translate }}
-                <mat-icon>home</mat-icon>
-            </button>
-            <button class="col-md-6 col-lg-3" mat-button>
-                {{ 'home.result' | translate }}
-                <mat-icon>home</mat-icon>
+            <h2 [innerHTML]="'home.reference' | translate"></h2>
+            <div [innerHTML]="'home.referenceText' | translate"></div>
+            <!-- <swiper [slidesPerView]="4" [spaceBetween]="50">
+                <ng-template *ngFor="let ref of itemList" swiperSlide>{{ref.name}}</ng-template>
+            </swiper> -->
+            <button mat-button>
+                {{ 'home.referenceMore' | translate }}
+                <mat-icon>arrow_right_alt</mat-icon>
             </button>
         </div>
-    </div>
-</div>
-
-<div class="row" id="reference">
-    <div class="col-md-6" [innerHTML]="'home.referenceDesc' | translate"></div>
-    <div class="col-md-6">
-        <h4 [innerHTML]="'home.reference' | translate"></h4>
-        <div [innerHTML]="'home.referenceText' | translate"></div>
-        <swiper [slidesPerView]="4" [spaceBetween]="50">
-            <ng-template *ngFor="let ref of data.reference" swiperSlide>{{ref.name}}</ng-template>
-        </swiper>
-        <button mat-button>
-            {{ 'home.referenceMore' | translate }}
-            <mat-icon>arrow_right_alt</mat-icon>
-        </button>
     </div>
 </div>

@@ -60,48 +60,6 @@ export abstract class Formable extends Loadable {
     }
 
     /**
-     * Na zaklade daneho configu nacte data z backendu a ulozi je do itemListu
-     *
-     * @param {IConfig} config
-     * @param {boolean} [keepData]
-     * @returns
-     * @memberof Formable
-     */
-    load(config: IConfig, successClbk = this._onLoad, errorClbk = this._onLoadError): void {
-        if (config?.params?.restUrl) {
-            if (this._subscriptions.load) this._subscriptions.load.unsubscribe();
-            this._subscriptions.load = this.formService.appService.http.load(config.params.restUrl)
-                .subscribe(successClbk, errorClbk);
-        }
-    }
-
-    /**
-     * Udalosti po nacteni dat
-     *
-     * @protected
-     * @param {IItem[]} [data]
-     * @memberof Formable
-     */
-    protected _onLoad(data?: IItem[]): void {
-        if (data) {
-            this.itemList = data;
-        }
-    }
-
-    /**
-     * Chyby po nacteni
-     *
-     * @protected
-     * @param {HttpErrorResponse} error
-     * @memberof Formable
-     */
-    protected _onLoadError(error: HttpErrorResponse): void {
-        if (error) {
-            console.log(error);
-        }
-    }
-
-    /**
      * Inicializuje fieldy, vytvori groupy a prida je do seznamu
      * Rekurzivni funkce
      *

@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import data from '../assets/data/data.json';
-import { IConfig } from 'projects/core/interfaces/config.interface';
 import { Themeable } from 'projects/core/abstracts/themeable.abstract';
-import { IMenu } from 'projects/core/interfaces/menu.interface';
 import { CLONE } from 'projects/core/utils/modify-object.functions';
+import { AppService } from 'projects/core/services/app.service';
 
 @Component({
   selector: 'app-root',
@@ -16,21 +15,20 @@ export class AppComponent extends Themeable {
 
   title = 'jaspar';
 
-  itemList: IMenu[] = [];
-
-  constructor(private _translate: TranslateService) {
+  constructor(
+    public readonly appService: AppService,
+    private _translate: TranslateService
+  ) {
     super();
-    _translate.setDefaultLang('cs');
+    this._translate.setDefaultLang('cs');
   }
 
   ngOnInit(): void {
-    this.config = <any>{ params: {} }
     this.load()
   }
 
   load(): void {
-    this.itemList = CLONE(data.menu.filter(menu => !menu.redirectTo));
-    this._onLoad(this.itemList);
+    this._onLoad(CLONE(data.menu.filter(menu => !menu.redirectTo)));
   }
 
 }

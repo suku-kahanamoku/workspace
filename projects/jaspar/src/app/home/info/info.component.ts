@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import data from '../../../assets/data/data.json';
 import { Themeable } from 'projects/core/abstracts/themeable.abstract';
-import { IConfig } from 'projects/core/interfaces/config.interface';
+import { AppService } from 'projects/core/services/app.service';
+import data from '../../../assets/data/reference.json';
 
 @Component({
   selector: 'app-info',
@@ -11,18 +11,16 @@ import { IConfig } from 'projects/core/interfaces/config.interface';
 })
 export class InfoComponent extends Themeable {
 
-  data = data;
-
-  constructor() {
+  constructor(public readonly appService: AppService) {
     super()
   }
 
   ngOnInit(): void {
-    
+    this.load();
   }
 
-  load(config: IConfig): void {
-
+  load(): void {
+    this._onLoad(<any>data.reference);
   }
 
 }
