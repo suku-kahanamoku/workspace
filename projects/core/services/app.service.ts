@@ -8,6 +8,7 @@ import { NotificationService } from './notification.service';
 import { ITERATE } from '../utils/modify-object.functions';
 import { HttpService } from './http.service';
 import { ScrollService } from './scroll.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
     providedIn: 'root'
@@ -15,6 +16,8 @@ import { ScrollService } from './scroll.service';
 export class AppService {
 
     protected _subscriptions: any = {};
+
+    protected _lang = 'cs';
 
     tab$: Observable<Event> = fromEvent(document, 'visibilitychange');
 
@@ -34,8 +37,10 @@ export class AppService {
         public readonly meta: MetaService,
         public readonly notification: NotificationService,
         public readonly http: HttpService,
-        public readonly scroll: ScrollService
+        public readonly scroll: ScrollService,
+        public readonly translate: TranslateService
     ) {
+        this.translate.setDefaultLang(this._lang);
         this._listenTab();
     }
 

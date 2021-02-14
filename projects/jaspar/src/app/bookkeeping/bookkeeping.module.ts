@@ -10,29 +10,7 @@ import { TaxRecordsComponent } from './tax-records/tax-records.component';
 import { TaxAdviceComponent } from './tax-advice/tax-advice.component';
 import { AnalyzeManagementComponent } from './analyze-management/analyze-management.component';
 import { WagePersonalistComponent } from './wage-personalist/wage-personalist.component';
-import { HttpLoaderFactory } from '../utils';
-
-const GET_ROUTES = (menuList: any[], cmpList: any[]): any => menuList.map(menu => {
-  const result: any = { path: menu.url };
-  // component routa
-  if (menu.cmp) {
-    result.component = cmpList.find(tmpCmp => tmpCmp.name === menu.cmp);
-  }
-  // loadChildren routa
-  else if (menu.module) {
-    switch (menu.module) {
-      /* case 'HomeModule':
-        result.loadChildren = () => import('./home/home.module').then(m => m.HomeModule);
-        break; */
-    }
-  }
-  else if (menu.redirectTo) {
-    result.redirectTo = menu.redirectTo;
-    result.pathMatch = 'full'
-  }
-  //
-  return result;
-});
+import { GET_ROUTES, HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
 
 const CMP_LIST = [
   AccountancyComponent,

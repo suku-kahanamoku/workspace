@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 import data from '../assets/data/data.json';
 import { Themeable } from 'projects/core/abstracts/themeable.abstract';
@@ -16,11 +15,9 @@ export class AppComponent extends Themeable {
   title = 'jaspar';
 
   constructor(
-    public readonly appService: AppService,
-    private _translate: TranslateService
+    public readonly appService: AppService
   ) {
     super();
-    this._translate.setDefaultLang('cs');
   }
 
   ngOnInit(): void {
@@ -28,7 +25,9 @@ export class AppComponent extends Themeable {
   }
 
   load(): void {
-    this._onLoad(CLONE(data.menu.filter(menu => !menu.redirectTo)));
+    this._onLoad(CLONE(data.menu
+      .filter((menu: any) => !menu.cs.visible))
+      .map((menu: any) => ({ ...menu, ...menu.cs })));
   }
 
 }

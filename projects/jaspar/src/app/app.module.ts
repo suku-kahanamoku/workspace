@@ -11,47 +11,17 @@ import data from '../assets/data/data.json';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProjectMenuModule } from '../modules/menu/menu.module';
-import { HttpLoaderFactory } from './utils';
+import { GET_ROUTES, HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
 
-const GET_ROUTES = (menuList: any[], cmpList: any[]): any => menuList.map(menu => {
-  const result: any = { path: menu.url };
-  // component routa
-  if (menu.cmp) {
-    result.component = cmpList.find(tmpCmp => tmpCmp.name === menu.cmp);
-  }
-  // loadChildren routa
-  else if (menu.module) {
-    switch (menu.module) {
-      case 'HomeModule':
-        result.loadChildren = () => import('./home/home.module').then(m => m.HomeModule);
-        break;
-      case 'BookkeepingModule':
-        result.loadChildren = () => import('./bookkeeping/bookkeeping.module').then(m => m.BookkeepingModule);
-        break;
-      case 'ArchivModule':
-        result.loadChildren = () => import('./archiv/archiv.module').then(m => m.ArchivModule);
-        break;
-      case 'ForeignLanguageModule':
-        result.loadChildren = () => import('./foreign-language/foreign-language.module').then(m => m.ForeignLanguageModule);
-        break;
-      case 'BlogModule':
-        result.loadChildren = () => import('./blog/blog.module').then(m => m.BlogModule);
-        break;
-      case 'ReferenceModule':
-        result.loadChildren = () => import('./reference/reference.module').then(m => m.ReferenceModule);
-        break;
-      case 'ContactModule':
-        result.loadChildren = () => import('./contact/contact.module').then(m => m.ContactModule);
-        break;
-    }
-  }
-  else if (menu.redirectTo) {
-    result.redirectTo = menu.redirectTo;
-    result.pathMatch = 'full'
-  }
-  //
-  return result;
-});
+const MODULES = {
+  HomeModule: () => import('./home/home.module').then(m => m.HomeModule),
+  BookkeepingModule: () => import('./bookkeeping/bookkeeping.module').then(m => m.BookkeepingModule),
+  ArchivModule: () => import('./archiv/archiv.module').then(m => m.ArchivModule),
+  ForeignLanguageModule: () => import('./foreign-language/foreign-language.module').then(m => m.ForeignLanguageModule),
+  BlogModule: () => import('./blog/blog.module').then(m => m.BlogModule),
+  ReferenceModule: () => import('./reference/reference.module').then(m => m.ReferenceModule),
+  ContactModule: () => import('./contact/contact.module').then(m => m.ContactModule),
+}
 
 const CMP_LIST = [
   AppComponent,
@@ -62,7 +32,7 @@ const CMP_LIST = [
   declarations: CMP_LIST,
   imports: [
     BrowserModule,
-    RouterModule.forRoot(GET_ROUTES(data.menu.filter(menu => !menu.parentId), CMP_LIST)),
+    RouterModule.forRoot(GET_ROUTES(data.menu.filter(menu => !menu.parentId), CMP_LIST, MODULES)),
     BrowserAnimationsModule,
     MatSidenavModule,
     ProjectMenuModule,

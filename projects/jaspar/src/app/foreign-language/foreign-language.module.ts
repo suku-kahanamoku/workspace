@@ -6,29 +6,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import data from '../../assets/data/data.json';
 import { InfoComponent } from './info/info.component';
-import { HttpLoaderFactory } from '../utils';
-
-const GET_ROUTES = (menuList: any[], cmpList: any[]): any => menuList.map(menu => {
-  const result: any = { path: menu.url };
-  // component routa
-  if (menu.cmp) {
-    result.component = cmpList.find(tmpCmp => tmpCmp.name === menu.cmp);
-  }
-  // loadChildren routa
-  else if (menu.module) {
-    switch (menu.module) {
-      /* case 'HomeModule':
-        result.loadChildren = () => import('./home/home.module').then(m => m.HomeModule);
-        break; */
-    }
-  }
-  else if (menu.redirectTo) {
-    result.redirectTo = menu.redirectTo;
-    result.pathMatch = 'full'
-  }
-  //
-  return result;
-});
+import { GET_ROUTES, HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
 
 const CMP_LIST = [
   InfoComponent,

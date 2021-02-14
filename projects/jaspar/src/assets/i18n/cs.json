@@ -1,4 +1,18 @@
 {
+    "routes": {
+        "aboutUs": "O nás",
+        "bookkeeping": "Účetnictví",
+        "foreigLang": "Výuka jazyků",
+        "archiv": "Důvěryhodný archiv",
+        "blog": "Blog",
+        "reference": "Reference",
+        "contact": "Kontakt",
+        "accountancy": "Vedení účetnictví",
+        "taxRecords": "Daňová evidence",
+        "taxAdvice": "Daňové poradenství",
+        "analyzManagement": "Finanční analýzy a řízení",
+        "wagePersonalist": "Mzdy a personalistika"
+    },
     "home": {
         "title": "Věnujeme se vám",
         "subtitle": "NAPLNO",
@@ -18,7 +32,8 @@
         "report": "Poctivé reporty",
         "result": "Seriozní výsledky",
         "resultText": "Neplaťte za licence účetních programů, věnujte se prostě svému podnikání. Papírování a vedení účetní agendy přenechte nám.",
-        "reference": "Co se o nás povídá",
+        "reference": "REFERENCE",
+        "referenceTitle": "Co se o nás povídá",
         "referenceText": "Nedejte jen na naše slova a podívejte se, co o nás řekli naši zákaznící. Stojí za námi desítky spokojených klientů.",
         "referenceDesc": "Rozjezd nového businessu je vždy náročný, proto je dobré mít vedle sebe partnera, který Vás podpoří a upozorní na důležitá fakta, Pro nás se takovým partnerem stala firma Jaspar s.r.o, ktrá dohlíží na všechny naše účetní a daňové povinnosti.",
         "referenceSign": "Vladimír Vlach",

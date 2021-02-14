@@ -3,169 +3,284 @@
     {
       "_id": "1",
       "module": "HomeModule",
-      "path": "",
-      "url": "",
-      "name": "about us"
+      "en": {
+        "url": "",
+        "name": "about us"
+      },
+      "cs": {
+        "url": "",
+        "name": "O nás"
+      }
     },
     {
       "_id": "2",
       "module": "BookkeepingModule",
-      "path": "bookkeeping",
-      "url": "bookkeeping",
-      "name": "bookkeeping"
+      "en": {
+        "url": "bookkeeping",
+        "name": "bookkeeping"
+      },
+      "cs": {
+        "url": "ucetnictvi",
+        "name": "Účetnictví"
+      }
     },
     {
       "_id": "3",
       "module": "ArchivModule",
-      "path": "archiv",
-      "url": "archiv",
-      "name": "archiv"
+      "en": {
+        "url": "archiv",
+        "name": "archiv"
+      },
+      "cs": {
+        "url": "archiv",
+        "name": "Důvěryhodný archiv"
+      }
     },
     {
       "_id": "4",
       "module": "ForeignLanguageModule",
-      "path": "foreign-language",
-      "url": "foreign-language",
-      "name": "foreign language"
+      "en": {
+        "url": "foreign-language",
+        "name": "foreign language"
+      },
+      "cs": {
+        "url": "cizi-jazyky",
+        "name": "Cizí jazyky"
+      }
     },
     {
       "_id": "5",
       "module": "ContactModule",
-      "path": "contact",
-      "url": "contact",
-      "name": "contact"
+      "en": {
+        "url": "contact",
+        "name": "contact"
+      },
+      "cs": {
+        "url": "kontakt",
+        "name": "Kontakt"
+      }
     },
     {
       "_id": "6",
       "module": "BlogModule",
-      "path": "blog",
-      "url": "blog",
-      "name": "blog"
+      "en": {
+        "url": "blog",
+        "name": "blog"
+      },
+      "cs": {
+        "url": "blog",
+        "name": "Blog"
+      }
     },
     {
       "_id": "7",
       "module": "ReferenceModule",
-      "path": "reference",
-      "url": "reference",
-      "name": "reference"
+      "en": {
+        "url": "reference",
+        "name": "reference"
+      },
+      "cs": {
+        "url": "reference",
+        "name": "Reference"
+      }
     },
     {
       "_id": "8",
       "cmp": "PageNotFoundComponent",
-      "path": "**",
-      "url": "**",
-      "name": "404",
-      "visible": false
+      "en": {
+        "url": "**",
+        "name": "404",
+        "visible": false
+      },
+      "cs": {
+        "url": "**",
+        "name": "404",
+        "visible": false
+      }
     },
     {
       "_id": "11",
       "cmp": "InfoComponent",
-      "path": "",
-      "url": "",
       "parentId": "1",
-      "name": "info",
-      "visible": false
+      "en": {
+        "url": "",
+        "name": "info",
+        "visible": false
+      },
+      "cs": {
+        "url": "",
+        "name": "O nás",
+        "visible": false
+      }
     },
     {
       "_id": "21",
       "cmp": "AccountancyComponent",
-      "path": "accountancy",
-      "url": "accountancy",
       "parentId": "2",
-      "name": "accountancy"
+      "en": {
+        "url": "accountancy",
+        "name": "Accountancy"
+      },
+      "cs": {
+        "url": "vedeni-ucetnictvi",
+        "name": "Vedení účetnictví"
+      }
     },
     {
       "_id": "22",
       "cmp": "TaxRecordsComponent",
-      "path": "tax-records",
-      "url": "tax-records",
       "parentId": "2",
-      "name": "records"
+      "en": {
+        "url": "tax-records",
+        "name": "records"
+      },
+      "cs": {
+        "url": "danova-evidence",
+        "name": "Daňová evidence"
+      }
     },
     {
       "_id": "23",
       "cmp": "TaxAdviceComponent",
-      "path": "tax-advice",
-      "url": "tax-advice",
       "parentId": "2",
-      "name": "advice"
+      "en": {
+        "url": "tax-advice",
+        "name": "advice"
+      },
+      "cs": {
+        "url": "danove-poradenstvi",
+        "name": "Daňové poradenství"
+      }
     },
     {
       "_id": "24",
       "cmp": "WagePersonalistComponent",
-      "path": "wage-personalist",
-      "url": "wage-personalist",
       "parentId": "2",
-      "name": "personalist"
+      "en": {
+        "url": "wage-personalist",
+        "name": "personalist"
+      },
+      "cs": {
+        "url": "mzdy-personalistika",
+        "name": "Mzdy a personalistika"
+      }
     },
     {
       "_id": "25",
       "cmp": "AnalyzeManagementComponent",
-      "path": "analyze-management",
-      "url": "analyze-management",
       "parentId": "2",
-      "name": "analyze"
+      "en": {
+        "url": "analyze-management",
+        "name": "analyze"
+      },
+      "cs": {
+        "url": "financni-analyzy",
+        "name": "Finanční analýzy a řízení"
+      }
     },
     {
       "_id": "26",
-      "redirectTo": "accountancy",
-      "path": "",
-      "url": "",
       "parentId": "2",
-      "name": "redir to account"
+      "en": {
+        "url": "",
+        "name": "",
+        "redirectTo": "accountancy",
+        "visible": false
+      },
+      "cs": {
+        "url": "",
+        "name": "",
+        "redirectTo": "vedeni-ucetnictvi",
+        "visible": false
+      }
     },
     {
       "_id": "31",
       "cmp": "InfoComponent",
-      "path": "",
-      "url": "",
       "parentId": "3",
-      "name": "archiv info",
-      "visible": false
+      "en": {
+        "url": "",
+        "name": "Archiv",
+        "visible": false
+      },
+      "cs": {
+        "url": "",
+        "name": "Důvěryhodný archiv",
+        "visible": false
+      }
     },
     {
       "_id": "41",
       "cmp": "InfoComponent",
-      "path": "",
-      "url": "",
       "parentId": "4",
-      "name": "lang info",
-      "visible": false
+      "en": {
+        "url": "",
+        "name": "Foreign language",
+        "visible": false
+      },
+      "cs": {
+        "url": "",
+        "name": "Cizí jazyky",
+        "visible": false
+      }
     },
     {
       "_id": "51",
       "cmp": "InfoComponent",
-      "path": "",
-      "url": "",
       "parentId": "5",
-      "name": "contact info",
-      "visible": false
+      "en": {
+        "url": "",
+        "name": "Contact",
+        "visible": false
+      },
+      "cs": {
+        "url": "",
+        "name": "Kontakt",
+        "visible": false
+      }
     },
     {
       "_id": "61",
       "cmp": "ArticleListComponent",
-      "path": "",
-      "url": "",
       "parentId": "6",
-      "name": "article list",
-      "visible": false
+      "en": {
+        "url": "",
+        "name": "Articles",
+        "visible": false
+      },
+      "cs": {
+        "url": "",
+        "name": "Články",
+        "visible": false
+      }
     },
     {
       "_id": "62",
       "cmp": "ArticleDetailComponent",
-      "path": "detail",
-      "url": "detail",
       "parentId": "6",
-      "name": "detail"
+      "en": {
+        "url": "detail",
+        "name": "Article detail"
+      },
+      "cs": {
+        "url": "detail",
+        "name": "Článek"
+      }
     },
     {
       "_id": "71",
       "cmp": "InfoComponent",
-      "path": "",
-      "url": "",
       "parentId": "7",
-      "name": "info",
-      "visible": false
+      "en": {
+        "url": "",
+        "name": "Reference",
+        "visible": false
+      },
+      "cs": {
+        "url": "",
+        "name": "Reference",
+        "visible": false
+      }
     }
   ]
 }

@@ -16,7 +16,7 @@
       <div>
         <a href="https://www.facebook.com/firmajaspar" class="fab fa-facebook fa-2x" target="_blank"
           mat-icon-button></a>
-        <a href="https://www.instagram.com/ucetnictvi.jaspar/" class="fab fa-instagram fa-2x" target="_blank"
+        <a href="https://www.instagram.com/ucetnictvi.jaspar/" class="fab fa-instagram-square fa-2x" target="_blank"
           mat-icon-button></a>
         <a href="https://www.linkedin.com/company/jaspar-s-r-o-" class="fab fa-linkedin fa-2x" target="_blank"
           mat-icon-button></a>
@@ -30,10 +30,14 @@
       <h3 [innerHTML]="'footer.navigation' | translate"></h3>
       <div class="row">
         <div class="col-md-6">
-          <div *ngFor="let menu of children">{{menu.name}}</div>
+          <div *ngFor="let menu of children">
+            <a [routerLink]="menu.url">{{menu.name}}</a>
+          </div>
         </div>
         <div class="col-md-6">
-          <div *ngFor="let menu of parents">{{menu.name}}</div>
+          <div *ngFor="let menu of parents">
+            <a [routerLink]="menu.url">{{menu.name}}</a>
+          </div>
         </div>
       </div>
     </div>

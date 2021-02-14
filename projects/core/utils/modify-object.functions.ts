@@ -1,17 +1,27 @@
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 import { IS_DEFINED, IS_OBJECT } from './check-basic.functions';
 import { TRIM } from './modify-string.functions';
 
-export function GET_ROUTES(menus: any[], cmpList: any[], lang: string = 'en') {
-    return menus.map(menu => {
-        const langMenu = menu[lang] || {};
-        const result = <any>{ path: langMenu.path || menu.path };
-        const cmpName = langMenu.cmp || menu.cmp;
-        if (cmpName) {
-            result.component = cmpList.find(tmpCmp => tmpCmp.name === cmpName);
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
+
+export function GET_ROUTES(menuList: any[], cmpList: any[], modules?: any, lang: string = 'cs'): any {
+    return menuList.map(menu => {
+        const result: any = { path: menu[lang].url };
+        // component routa
+        if (menu.cmp) {
+            result.component = cmpList.find(tmpCmp => tmpCmp.name === menu.cmp);
         }
-        //
-        else if (menu.load && menu.module) {
-            result.loadChildren = () => import(menu.load + '.module').then(m => m[menu.module]);
+        // loadChildren routa
+        else if (menu.module && modules) {
+            result.loadChildren = modules[menu.module];
+        }
+        else if (menu[lang].redirectTo) {
+            result.redirectTo = menu[lang].redirectTo;
+            result.pathMatch = 'full'
         }
         //
         return result;

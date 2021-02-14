@@ -14,7 +14,7 @@ import { MenuModule } from 'projects/core/modules/menu/menu.module';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { FooterMenuComponent } from './footer-menu/footer-menu.component';
-import { HttpLoaderFactory } from '../../app/utils';
+import { HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
 
 
 @NgModule({
