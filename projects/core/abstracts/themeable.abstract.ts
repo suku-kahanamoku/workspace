@@ -8,9 +8,17 @@ import { Observable, of } from 'rxjs';
 import { Loadable } from './loadable.abstract';
 import { IItem, ITreeItem } from '../interfaces/item.interface';
 import { GET_VALUE } from '../utils/modify-object.functions';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '../animations/route.animations';
 
 @Directive()
 export abstract class Themeable extends Loadable {
+
+    /**
+     * Nazev tridy pro animaci
+     *
+     * @memberof Themeable
+     */
+    routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
     /**
      * Vrati seznam objektu
@@ -124,14 +132,10 @@ export abstract class Themeable extends Loadable {
      */
     selectItem(itemId: string): ITreeItem {
         super.selectItem(itemId);
-        // vyresetuje active atribut u vsech objektu
-        this.itemList.map((item: ITreeItem) => delete item.active);
-        // rekurzivne aktivuje itemy
-        this._activateItem(this.item);
         // rozbali aktivovane vetve
         const nodes = this.treeControl.dataNodes;
         if (nodes && !this.config?.params?.expanded) {
-            nodes.map((node: FlatNode) => node.expandable && node.item.active
+            nodes.map((node: FlatNode) => node.expandable
                 ? this.treeControl.expand(node) : this.treeControl.collapse(node));
         }
         return this.item;
@@ -203,7 +207,6 @@ export abstract class Themeable extends Loadable {
      */
     protected _activateItem(item: ITreeItem): void {
         if (item) {
-            item.active = true;
             item.parentId && this._activateItem(this.getItem(item.parentId));
         }
     }

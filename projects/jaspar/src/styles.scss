@@ -3,8 +3,7 @@
 @include mat-core();
 
 // DEFINICE PALET
-$primary: (
-    50 : #e3f3f7,
+$primary: (50 : #e3f3f7,
     100 : #b9e2ea,
     200 : #8bcfdd,
     300 : #5cbccf,
@@ -18,8 +17,7 @@ $primary: (
     A200 : #8de0ff,
     A400 : #5ad3ff,
     A700 : #41ccff,
-    contrast: (
-        50 : #000000,
+    contrast: (50 : #000000,
         100 : #000000,
         200 : #000000,
         300 : #000000,
@@ -33,11 +31,9 @@ $primary: (
         A200 : #000000,
         A400 : #000000,
         A700 : #000000,
-    )
-);
+    ));
 
-$accent: (
-    50 : #e0ecf0,
+$accent: (50 : #e0ecf0,
     100 : #b3d0d9,
     200 : #80b1bf,
     300 : #4d92a5,
@@ -51,8 +47,7 @@ $accent: (
     A200 : #4fb9ff,
     A400 : #1ca5ff,
     A700 : #039bff,
-    contrast: (
-        50 : #000000,
+    contrast: (50 : #000000,
         100 : #000000,
         200 : #000000,
         300 : #ffffff,
@@ -66,11 +61,9 @@ $accent: (
         A200 : #000000,
         A400 : #000000,
         A700 : #ffffff,
-    )
-);
+    ));
 
-$warn: (
-    50 : #fde4e5,
+$warn: (50 : #fde4e5,
     100 : #fabbbd,
     200 : #f68e92,
     300 : #f26066,
@@ -84,8 +77,7 @@ $warn: (
     A200 : #ffd7d7,
     A400 : #ffa4a5,
     A700 : #ff8b8c,
-    contrast: (
-        50 : #000000,
+    contrast: (50 : #000000,
         100 : #000000,
         200 : #000000,
         300 : #000000,
@@ -99,12 +91,11 @@ $warn: (
         A200 : #000000,
         A400 : #000000,
         A700 : #000000,
-    )
-);
+    ));
 
 $primary: mat-palette($primary, 500, 100, 900);
 $accent: mat-palette($accent, 500, 100, 900);
-$warn:  mat-palette($warn, 500, 100, 900);
+$warn: mat-palette($warn, 500, 100, 900);
 
 @include angular-material-theme(mat-light-theme($primary, $accent));
 
@@ -120,6 +111,10 @@ body {
 
 a {
     text-decoration: none !important;
+}
+
+.active {
+    color: red !important;
 }
 
 button {

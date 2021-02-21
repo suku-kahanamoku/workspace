@@ -5,13 +5,12 @@
 
 <!-- dropdown -->
 <ng-template #dropdown>
-    <a *ngIf="!menu?.children?.length" mat-menu-item [matMenuTriggerFor]="matMenuElem"
-        [ngClass]="{active:menu?.active}" [routerLink]="menu?.url">
-        {{menu?.name}}
+    <a *ngIf="!menu?.children?.length" mat-menu-item [matMenuTriggerFor]="matMenuElem" [routerLink]="menu?.url"
+        routerLinkActive="active">
+        {{ menu?.name || '' | translate }}
     </a>
-    <button *ngIf="menu?.children?.length" mat-menu-item [matMenuTriggerFor]="matMenuElem"
-        [ngClass]="{active:menu?.active}">
-        <a [routerLink]="menu?.url">{{menu?.name}}</a>
+    <button *ngIf="menu?.children?.length" mat-menu-item [matMenuTriggerFor]="matMenuElem">
+        <a [routerLink]="menu?.url" routerLinkActive="active">{{ menu?.name || '' | translate }}</a>
         <mat-icon class="notranslate">arrow_drop_down</mat-icon>
     </button>
 
@@ -22,7 +21,7 @@
 
 <!-- noDropdown -->
 <ng-template #menuItem>
-    <a mat-menu-item [ngClass]="{active:menu?.active}" [routerLink]="menu?.url">
-        {{menu?.name}}
+    <a mat-menu-item [routerLink]="menu?.url" routerLinkActive="active">
+        {{ menu?.name || '' | translate }}
     </a>
 </ng-template>

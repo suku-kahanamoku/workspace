@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatNativeDateModule, NativeDateAdapter } from '@angular/material/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { FormFieldCheckboxComponent } from './form-field/checkbox/checkbox.component';
 import { FormFieldDateComponent } from './form-field/date/date.component';
@@ -14,6 +16,7 @@ import { FormFieldSelectComponent } from './form-field/select/select.component';
 import { FormFieldTextComponent } from './form-field/text/text.component';
 import { FormFieldTextareaComponent } from './form-field/textarea/textarea.component';
 import { FormFieldEmailComponent } from './form-field/email/email.component';
+import { HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
 
 export class CustomDateAdapter extends NativeDateAdapter {
     getFirstDayOfWeek = (): number => 1
@@ -73,6 +76,13 @@ export const METADATA: NgModule = {
         ReactiveFormsModule,
         MatStepperModule,
         MatNativeDateModule,
+        TranslateModule.forChild({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
     ]
 }
 
