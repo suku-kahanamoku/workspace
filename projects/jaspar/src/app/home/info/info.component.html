@@ -10,31 +10,27 @@
 
             <div [innerHTML]="'home.text' | translate"></div>
 
-            <button mat-button>
+            <button>
                 {{ 'home.consultation' | translate }}
-                <mat-icon>arrow_right_alt</mat-icon>
             </button>
         </div>
 
         <div class="row text-center pt-5" id="btns">
             <div class="col-md-4">
-                <button mat-fab color="primary">
+                <button color="primary">
                     {{ 'home.bookkeeping' | translate }}
-                    <mat-icon>home</mat-icon>
                 </button>
             </div>
 
             <div class="col-md-4">
-                <button mat-fab color="accent">
+                <button color="accent">
                     {{ 'home.archiv' | translate }}
-                    <mat-icon>home</mat-icon>
                 </button>
             </div>
 
             <div class="col-md-4">
-                <button mat-fab color="warn">
+                <button color="warn">
                     {{ 'home.foreignLang' | translate }}
-                    <mat-icon>home</mat-icon>
                 </button>
             </div>
         </div>
@@ -52,19 +48,15 @@
             </div>
             <div class="col-md-6 row">
                 <div class="col-md-6 col-lg-3 align-middle">
-                    <mat-icon>home</mat-icon>
                     {{ 'home.a2z' | translate }}
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <mat-icon>home</mat-icon>
                     {{ 'home.investment' | translate }}
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <mat-icon>home</mat-icon>
                     {{ 'home.report' | translate }}
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <mat-icon>home</mat-icon>
                     {{ 'home.result' | translate }}
                 </div>
             </div>
@@ -84,9 +76,8 @@
             <swiper [slidesPerView]="4" [spaceBetween]="50">
                 <ng-template *ngFor="let ref of itemList" swiperSlide>{{ref.name}}</ng-template>
             </swiper>
-            <button mat-button>
+            <button>
                 {{ 'home.referenceMore' | translate }}
-                <mat-icon>arrow_right_alt</mat-icon>
             </button>
         </div>
     </div>

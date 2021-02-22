@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 
 import { MetaService } from './meta.service';
@@ -8,7 +9,6 @@ import { NotificationService } from './notification.service';
 import { ITERATE } from '../utils/modify-object.functions';
 import { HttpService } from './http.service';
 import { ScrollService } from './scroll.service';
-import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
     providedIn: 'root'

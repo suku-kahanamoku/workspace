@@ -10,8 +10,6 @@ import { AppService } from 'projects/core/services/app.service';
 })
 export class MainMenuComponent extends Themeable {
 
-  @Input() drawer: any;
-
   constructor(public readonly appService: AppService) {
     super();
   }

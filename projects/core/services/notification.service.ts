@@ -1,8 +1,6 @@
 import { Injectable, TemplateRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { filter, map } from 'rxjs/operators';
-import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
-import { MatBottomSheet, MatBottomSheetConfig } from '@angular/material/bottom-sheet';
+import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
 import { ITERATE } from '../utils/modify-object.functions';
@@ -37,18 +35,19 @@ export class NotificationService {
      * @memberof NotificationService
      */
     protected _queue: INotification[] = [];
+    readonly snackbar: any;
+    readonly alert: any;
 
     /**
      * Creates an instance of NotificationService.
+     * 
      * @param {HttpClient} _http
-     * @param {MatSnackBar} snackbar
-     * @param {MatBottomSheet} alert
+     * @param {*} snackbar
+     * @param {*} alert
      * @memberof NotificationService
      */
     constructor(
-        protected _http: HttpClient,
-        readonly snackbar: MatSnackBar,
-        readonly alert: MatBottomSheet
+        protected _http: HttpClient
     ) {
         this._startNextRequest()
     }
@@ -111,14 +110,14 @@ export class NotificationService {
      * Vlozi do fronty a spusti frontu
      *
      * @param {(Configurable | TemplateRef<any> | string)} data
-     * @param {(MatSnackBarConfig | MatBottomSheetConfig)} [options={}]
+     * @param {*} [options={}]
      * @param {('snackbar' | 'alert')} [type]
      * @param {('success' | 'info' | 'warning' | 'danger')} [state]
      * @memberof NotificationService
      */
     add(
         data: Configurable | TemplateRef<any> | string,
-        options: MatSnackBarConfig | MatBottomSheetConfig = {},
+        options: any = {},
         type?: 'snackbar' | 'alert',
         state?: 'success' | 'info' | 'warning' | 'danger'
     ): void {
@@ -134,13 +133,13 @@ export class NotificationService {
      * Spusti snackbar
      *
      * @param {(Configurable | TemplateRef<any> | string)} data
-     * @param {(MatSnackBarConfig | MatBottomSheetConfig)} [options={}]
-     * @param {('success' | 'info' | 'warning' | 'danger')} [type='info']
+     * @param {*} [options={}]
+     * @param {('success' | 'info' | 'warning' | 'danger')} [state='info']
      * @memberof NotificationService
      */
     openSnackbar(
         data: Configurable | TemplateRef<any> | string,
-        options: MatSnackBarConfig | MatBottomSheetConfig = {},
+        options: any = {},
         state: 'success' | 'info' | 'warning' | 'danger' = 'info'
     ): void {
         options = { ...{ duration: 4000 }, ...options };
@@ -161,9 +160,8 @@ export class NotificationService {
         }
         // po kazdem zavreni se znovu spusti fronta
         if (this._subscriptions.afterCloseSnack) this._subscriptions.afterCloseSnack.unsubscribe();
-        this._subscriptions.afterCloseSnack = this.snackbar._openedSnackBarRef && this.snackbar._openedSnackBarRef.afterDismissed().subscribe(
-            data => this._startNextRequest()
-        )
+        this._subscriptions.afterCloseSnack = this.snackbar._openedSnackBarRef && this.snackbar._openedSnackBarRef.afterDismissed()
+            .subscribe(this._startNextRequest.bind(this));
     }
 
     /**
@@ -187,7 +185,7 @@ export class NotificationService {
      */
     openAlert(
         data: any,
-        options: MatBottomSheetConfig = {},
+        options: any = {},
         state: 'success' | 'info' | 'warning' | 'danger' = 'danger'
     ): void {
         if (typeof data === 'string') {
@@ -200,9 +198,8 @@ export class NotificationService {
         }
         // po kazdem zavreni se znovu spusti fronta
         if (this._subscriptions.aflterCloseAlert) this._subscriptions.aflterCloseAlert.unsubscribe();
-        this._subscriptions.aflterCloseAlert = this.alert._openedBottomSheetRef && this.alert._openedBottomSheetRef.afterDismissed().subscribe(
-            data => this._startNextRequest()
-        )
+        this._subscriptions.aflterCloseAlert = this.alert._openedBottomSheetRef && this.alert._openedBottomSheetRef.afterDismissed()
+            .subscribe(this._startNextRequest.bind(this));
     }
 
     /**
@@ -261,7 +258,7 @@ export class NotificationService {
  */
 interface INotification {
     data: Configurable | TemplateRef<any> | string;
-    options?: MatSnackBarConfig;
+    options?: any;
     type: 'snackbar' | 'alert';
     state: 'success' | 'info' | 'warning' | 'danger';
 }

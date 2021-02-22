@@ -5,8 +5,6 @@ import { Subscription } from "rxjs";
 import { IFormField } from "./form-field/form-field.interface";
 import { FormService } from "./form.service";
 import { Loadable } from "projects/core/abstracts/loadable.abstract";
-import { IConfig } from "projects/core/interfaces/config.interface";
-import { AppService } from "projects/core/services/app.service";
 import { IS_DEFINED } from "projects/core/utils/check-basic.functions";
 import { ITERATE, GET_VALUE } from "projects/core/utils/modify-object.functions";
 import { IItem } from "projects/core/interfaces/item.interface";
