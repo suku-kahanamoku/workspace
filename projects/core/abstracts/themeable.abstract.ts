@@ -7,7 +7,11 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '../animations/route.animations';
 @Directive()
 export abstract class Themeable extends Loadable {
 
-    itemTree: any
+    protected _itemTree: ITreeItem[] = [];
+
+    public get itemTree(): any {
+        return this._itemTree;
+    }
 
     /**
      * Nazev tridy pro animaci
@@ -18,12 +22,10 @@ export abstract class Themeable extends Loadable {
 
     @Input('data') set itemList(itemList: ITreeItem[]) {
         super.itemList = itemList;
-        this.itemTree = this._createTreeNode(this.itemList);
+        this._itemTree = this._createTreeNode(<ITreeItem[]>super.itemList);
     }
 
-    ngOnInit(): void {
-
-    }
+    ngOnInit(): void { }
 
     /**
      * Vlozi potomky do rodicu => vytvori stromovou strukturu

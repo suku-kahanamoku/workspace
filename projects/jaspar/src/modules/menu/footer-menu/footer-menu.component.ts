@@ -20,8 +20,8 @@ export class FooterMenuComponent extends Themeable {
   }
 
   ngOnInit(): void {
-    this.parents = <IMenu[]>this.itemList.filter(item => !item.parentId && ['1', '2'].indexOf(item._id) < 0);
-    this.children = <IMenu[]>this.itemList[1].children;
+    /* this.parents = <IMenu[]>this.itemList.filter(item => !item.parentId && ['1', '2'].indexOf(item._id) < 0);
+    this.children = <IMenu[]>this.itemList[1].children; */
 
   }
 

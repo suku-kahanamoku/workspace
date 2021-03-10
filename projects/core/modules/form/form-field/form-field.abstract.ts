@@ -308,7 +308,6 @@ export abstract class FormFieldAbstract implements OnInit, OnDestroy {
    * @memberof FormFieldAbstract
    */
   getErrorMessage = (error: any): string => {
-    console.log(error)
     return '';
   }
 

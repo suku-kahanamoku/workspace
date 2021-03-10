@@ -1,6 +1,7 @@
-<div class="container">
-    <!-- banner -->
-    <div id="banner" class="py-5">
+<div class="banner py-5 px-4" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/forest2.jpg')">
+    <div class="container">
+
+        <!-- Content -->
         <div class="col-md-6 pb-5">
             <h1 [innerHTML]="'home.title' | translate"></h1>
 
@@ -15,7 +16,7 @@
             </button>
         </div>
 
-        <div class="row text-center pt-5" id="btns">
+        <div class="row text-center pt-5 btns">
             <div class="col-md-4">
                 <button color="primary">
                     {{ 'home.bookkeeping' | translate }}
@@ -34,7 +35,11 @@
                 </button>
             </div>
         </div>
+
     </div>
+</div>
+
+<div class="container">
 
     <div id="aboutUs" class="py-5">
         <div class="text-center">

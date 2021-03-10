@@ -1,1 +1,4 @@
-{{ menu?.name || '' | translate }}
+<a [routerLink]="menu.url" routerLinkActive="active" class="list-group-item list-group-item-action waves-light"
+    mdbWavesEffect>
+    {{ menu.name }}
+</a>

@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 
 import { Themeable } from 'projects/core/abstracts/themeable.abstract';
-import { IMenu } from 'projects/core/interfaces/menu.interface';
 import { AppService } from 'projects/core/services/app.service';
 
 @Component({
   selector: 'app-main-menu',
-  templateUrl: './main-menu.component.html'
+  templateUrl: './main-menu.component.html',
+  styleUrls: ['./main-menu.component.scss']
 })
 export class MainMenuComponent extends Themeable {
 

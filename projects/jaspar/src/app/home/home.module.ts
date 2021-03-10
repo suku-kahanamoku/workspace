@@ -8,6 +8,7 @@ import { SwiperModule } from 'swiper/angular';
 import data from '../../assets/data/data.json';
 import { InfoComponent } from './info/info.component';
 import { GET_ROUTES, HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 const CMP_LIST = [
   InfoComponent
@@ -25,7 +26,8 @@ const CMP_LIST = [
       }
     }),
     RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '1'), CMP_LIST)),
-    SwiperModule
+    SwiperModule,
+    MDBBootstrapModule.forRoot()
   ]
 })
 export class HomeModule { }

@@ -30,7 +30,9 @@
             "styles": [
               "projects/jaspar/src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss",
+              "./node_modules/angular-bootstrap-md/assets/scss/mdb.scss",
+              "./node_modules/animate.css/animate.css",
               "./node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": []
@@ -97,6 +99,7 @@
               "projects/jaspar/src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/animate.css/animate.css",
               "./node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": []
@@ -157,6 +160,7 @@
               "projects/charter-agency/src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/animate.css/animate.css",
               "./node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": []
@@ -223,6 +227,7 @@
               "projects/charter-agency/src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/animate.css/animate.css",
               "./node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": []
@@ -283,6 +288,7 @@
               "projects/prasentace/src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/animate.css/animate.css",
               "./node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": []
@@ -349,6 +355,7 @@
               "projects/prasentace/src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/animate.css/animate.css",
               "./node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": []
@@ -409,6 +416,7 @@
               "projects/starter/src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/animate.css/animate.css",
               "./node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": []
@@ -475,6 +483,7 @@
               "projects/starter/src/styles.scss",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/animate.css/animate.css",
               "./node_modules/swiper/swiper-bundle.min.css"
             ],
             "scripts": []
@@ -506,7 +515,8 @@
           }
         }
       }
-    }},
+    }
+  },
   "cli": {
     "analytics": false
   },
