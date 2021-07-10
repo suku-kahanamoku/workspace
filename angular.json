@@ -538,6 +538,140 @@
           }
         }
       }
+    },
+    "conference": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/conference",
+      "sourceRoot": "projects/conference/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/conference",
+            "index": "projects/conference/src/index.html",
+            "main": "projects/conference/src/main.ts",
+            "polyfills": "projects/conference/src/polyfills.ts",
+            "tsConfig": "projects/conference/tsconfig.app.json",
+            "assets": [
+              "projects/conference/src/favicon.ico",
+              "projects/conference/src/assets"
+            ],
+            "styles": [
+              "projects/conference/src/styles.scss",
+              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/animate.css/animate.css",
+              "./node_modules/swiper/swiper-bundle.min.css"
+            ],
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/conference/src/environments/environment.ts",
+                  "with": "projects/conference/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "conference:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "conference:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "conference:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/conference/src/test.ts",
+            "polyfills": "projects/conference/src/polyfills.ts",
+            "tsConfig": "projects/conference/tsconfig.spec.json",
+            "karmaConfig": "projects/conference/karma.conf.js",
+            "assets": [
+              "projects/conference/src/favicon.ico",
+              "projects/conference/src/assets"
+            ],
+            "styles": [
+              "projects/conference/src/styles.scss",
+              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/animate.css/animate.css",
+              "./node_modules/swiper/swiper-bundle.min.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/conference/tsconfig.app.json",
+              "projects/conference/tsconfig.spec.json",
+              "projects/conference/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/conference/e2e/protractor.conf.js",
+            "devServerTarget": "conference:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "conference:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "cli": {
