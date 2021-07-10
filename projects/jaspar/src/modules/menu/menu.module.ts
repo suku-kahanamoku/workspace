@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { MenuModule } from 'projects/core/modules/menu/menu.module';
 import { MainMenuComponent } from './main-menu/main-menu.component';
@@ -34,8 +33,7 @@ import { HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
       }
     }),
     RouterModule,
-    MenuModule,
-    MDBBootstrapModule.forRoot()
+    MenuModule
   ],
 })
 export class ProjectMenuModule { }
