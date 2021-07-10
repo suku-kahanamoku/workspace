@@ -13,11 +13,6 @@ import { GET_ROUTES, HttpLoaderFactory } from 'projects/core/utils/modify-object
 
 const MODULES = {
   HomeModule: () => import('./home/home.module').then(m => m.HomeModule),
-  BookkeepingModule: () => import('./bookkeeping/bookkeeping.module').then(m => m.BookkeepingModule),
-  ArchivModule: () => import('./archiv/archiv.module').then(m => m.ArchivModule),
-  ForeignLanguageModule: () => import('./foreign-language/foreign-language.module').then(m => m.ForeignLanguageModule),
-  BlogModule: () => import('./blog/blog.module').then(m => m.BlogModule),
-  ReferenceModule: () => import('./reference/reference.module').then(m => m.ReferenceModule),
   ContactModule: () => import('./contact/contact.module').then(m => m.ContactModule),
 }
 

@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { SwiperModule } from 'swiper/angular';
 
 import data from '../../assets/data/data.json';
-import { InfoComponent } from './info/info.component';
+import { ContactComponent } from './contact.component';
 import { GET_ROUTES, HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
 
 const CMP_LIST = [
-  InfoComponent,
+  ContactComponent
 ];
 
 @NgModule({
@@ -23,7 +24,8 @@ const CMP_LIST = [
         deps: [HttpClient]
       }
     }),
-    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '5'), CMP_LIST)),
+    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '2'), CMP_LIST)),
+    SwiperModule
   ]
 })
 export class ContactModule { }

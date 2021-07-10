@@ -7,8 +7,22 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '../animations/route.animations';
 @Directive()
 export abstract class Themeable extends Loadable {
 
+    /**
+     *
+     *
+     * @protected
+     * @type {ITreeItem[]}
+     * @memberof Themeable
+     */
     protected _itemTree: ITreeItem[] = [];
 
+    /**
+     *
+     *
+     * @readonly
+     * @type {*}
+     * @memberof Themeable
+     */
     public get itemTree(): any {
         return this._itemTree;
     }
@@ -20,6 +34,11 @@ export abstract class Themeable extends Loadable {
      */
     routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
+    /**
+     *
+     *
+     * @memberof Themeable
+     */
     @Input('data') set itemList(itemList: ITreeItem[]) {
         super.itemList = itemList;
         this._itemTree = this._createTreeNode(<ITreeItem[]>super.itemList);

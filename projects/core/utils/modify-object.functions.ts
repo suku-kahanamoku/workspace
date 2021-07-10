@@ -13,7 +13,7 @@ export function GET_ROUTES(menuList: any[], cmpList: any[], modules?: any, lang:
         const result: any = { path: menu[lang].url };
         // component routa
         if (menu.cmp) {
-            result.component = cmpList.find(tmpCmp => tmpCmp.name === menu.cmp);
+            result.component = cmpList.find(cmp => cmp.name === menu.cmp);
         }
         // loadChildren routa
         else if (menu.module && modules) {

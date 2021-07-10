@@ -6,11 +6,11 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { SwiperModule } from 'swiper/angular';
 
 import data from '../../assets/data/data.json';
-import { InfoComponent } from './info/info.component';
+import { HomeComponent } from './home.component';
 import { GET_ROUTES, HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
 
 const CMP_LIST = [
-  InfoComponent
+  HomeComponent
 ];
 
 @NgModule({
