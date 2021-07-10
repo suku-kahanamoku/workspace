@@ -22,7 +22,6 @@
             "main": "projects/jaspar/src/main.ts",
             "polyfills": "projects/jaspar/src/polyfills.ts",
             "tsConfig": "projects/jaspar/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/jaspar/src/favicon.ico",
               "projects/jaspar/src/assets"
@@ -34,7 +33,13 @@
               "./node_modules/animate.css/animate.css",
               "./node_modules/swiper/swiper-bundle.min.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -64,7 +69,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -150,7 +156,6 @@
             "main": "projects/charter-agency/src/main.ts",
             "polyfills": "projects/charter-agency/src/polyfills.ts",
             "tsConfig": "projects/charter-agency/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/charter-agency/src/favicon.ico",
               "projects/charter-agency/src/assets"
@@ -162,7 +167,13 @@
               "./node_modules/animate.css/animate.css",
               "./node_modules/swiper/swiper-bundle.min.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -192,7 +203,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -278,7 +290,6 @@
             "main": "projects/prasentace/src/main.ts",
             "polyfills": "projects/prasentace/src/polyfills.ts",
             "tsConfig": "projects/prasentace/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/prasentace/src/favicon.ico",
               "projects/prasentace/src/assets"
@@ -290,7 +301,13 @@
               "./node_modules/animate.css/animate.css",
               "./node_modules/swiper/swiper-bundle.min.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -320,7 +337,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -406,7 +424,6 @@
             "main": "projects/starter/src/main.ts",
             "polyfills": "projects/starter/src/polyfills.ts",
             "tsConfig": "projects/starter/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/starter/src/favicon.ico",
               "projects/starter/src/assets"
@@ -418,7 +435,13 @@
               "./node_modules/animate.css/animate.css",
               "./node_modules/swiper/swiper-bundle.min.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -448,7 +471,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
