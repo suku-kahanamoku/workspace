@@ -70,7 +70,7 @@ export abstract class Themeable extends Loadable {
             }
         });
         // vrati vyfiltrovane pole (itemy bez rodicu)
-        return itemList.filter(item => !item.parentId && item.visible !== false);
+        return itemList.filter(item => (!item.parentId && item.visible !== false) || item.visible !== false);
     }
 
 }

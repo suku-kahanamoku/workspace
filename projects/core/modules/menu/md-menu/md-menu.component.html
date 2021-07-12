@@ -2,14 +2,14 @@
   <ng-container *ngFor="let child of items">
 
     <ng-container *ngIf="child?.children?.length">
-      <a *ngIf="menu.childMenu" mat-menu-item [matMenuTriggerFor]="menu.childMenu" [href]="child">
+      <a *ngIf="menu.childMenu" mat-menu-item [matMenuTriggerFor]="menu.childMenu" [href]="child.url">
         <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name,isRoot:isRoot}">
         </ng-container>
       </a>
       <md-menu #menu [items]="child.children"></md-menu>
     </ng-container>
 
-    <a *ngIf="!child?.children?.length" mat-menu-item [href]="child">
+    <a *ngIf="!child?.children?.length" mat-menu-item [href]="child.url">
       <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name}"></ng-container>
     </a>
 
@@ -20,13 +20,13 @@
   <ng-container *ngFor="let child of items">
 
     <ng-container *ngIf="child?.children?.length">
-      <a *ngIf="menu.childMenu" mat-menu-item [matMenuTriggerFor]="menu.childMenu" [href]="child">
+      <a *ngIf="menu.childMenu" mat-menu-item [matMenuTriggerFor]="menu.childMenu" [href]="child.url">
         <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name}"></ng-container>
       </a>
       <md-menu #menu [items]="child.children"></md-menu>
     </ng-container>
 
-    <a *ngIf="!child?.children?.length" mat-menu-item [href]="child">
+    <a *ngIf="!child?.children?.length" mat-menu-item [href]="child.url">
       <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name}"></ng-container>
     </a>
 
