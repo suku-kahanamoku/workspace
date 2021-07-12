@@ -1,4 +1,48 @@
-<a [routerLink]="menu.url" routerLinkActive="active" class="list-group-item list-group-item-action waves-light"
-    mdbWavesEffect>
-    {{ menu.name }}
-</a>
+<ng-container *ngIf="isRoot">
+  <ng-container *ngFor="let child of items">
+
+    <ng-container *ngIf="child?.children?.length">
+      <a *ngIf="menu.childMenu" mat-menu-item [matMenuTriggerFor]="menu.childMenu" [href]="child">
+        <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name,isRoot:isRoot}">
+        </ng-container>
+      </a>
+      <md-menu #menu [items]="child.children"></md-menu>
+    </ng-container>
+
+    <a *ngIf="!child?.children?.length" mat-menu-item [href]="child">
+      <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name}"></ng-container>
+    </a>
+
+  </ng-container>
+</ng-container>
+
+<mat-menu *ngIf="!isRoot" #childMenu="matMenu" [overlapTrigger]="false">
+  <ng-container *ngFor="let child of items">
+
+    <ng-container *ngIf="child?.children?.length">
+      <a *ngIf="menu.childMenu" mat-menu-item [matMenuTriggerFor]="menu.childMenu" [href]="child">
+        <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name}"></ng-container>
+      </a>
+      <md-menu #menu [items]="child.children"></md-menu>
+    </ng-container>
+
+    <a *ngIf="!child?.children?.length" mat-menu-item [href]="child">
+      <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name}"></ng-container>
+    </a>
+
+  </ng-container>
+</mat-menu>
+
+<ng-template #labelTemp let-matIcon="matIcon" let-label="label" let-isRoot="isRoot">
+  <mat-icon *ngIf="matIcon?.before?.icon" class="notranslate" [matBadge]="matIcon?.before?.badge"
+    [matBadgeColor]="matIcon?.before?.badgeColor">
+    {{ matIcon?.before?.icon }}
+  </mat-icon>
+
+  <span *ngIf="label !== false">{{ label || menu?.name }}</span>
+
+  <mat-icon *ngIf="matIcon?.after?.icon || isRoot" class="notranslate" [matBadge]="matIcon?.after?.badge"
+    [matBadgeColor]="matIcon?.after?.badgeColor">
+    {{ matIcon?.after?.icon || (isRoot && 'expand_more') }}
+  </mat-icon>
+</ng-template>

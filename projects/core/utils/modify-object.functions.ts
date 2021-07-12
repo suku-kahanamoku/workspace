@@ -1,11 +1,16 @@
 import { HttpClient } from '@angular/common/http';
+import { TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { IS_DEFINED, IS_OBJECT } from './check-basic.functions';
 import { TRIM } from './modify-string.functions';
 
-export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http);
+export const TRANSLATE_MODULE_CONFIG = {
+    loader: {
+        provide: TranslateLoader,
+        useFactory: ((http: HttpClient) => new TranslateHttpLoader(http)),
+        deps: [HttpClient]
+    }
 }
 
 export function GET_ROUTES(menuList: any[], cmpList: any[], modules?: any, lang: string = 'cs'): any {

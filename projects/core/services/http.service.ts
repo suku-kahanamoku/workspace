@@ -213,7 +213,7 @@ export class HttpService {
                 if (['maxLevel'].indexOf(key) >= 0) {
                     query.push(`"${key}":${item}`);
                 }
-                // {condition:$in,value:neco}
+                // {condition:$in,value:hodnota}
                 else if (item.hasOwnProperty('condition') && item.hasOwnProperty('value')) {
                     let value;
                     switch (item.condition) {

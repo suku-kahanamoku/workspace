@@ -1,15 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import data from '../assets/data/data.json';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProjectMenuModule } from '../modules/menu/menu.module';
-import { GET_ROUTES, HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
+import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
 
 const MODULES = {
   HomeModule: () => import('./home/home.module').then(m => m.HomeModule),
@@ -29,13 +30,8 @@ const CMP_LIST = [
     BrowserAnimationsModule,
     ProjectMenuModule,
     HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
+    TranslateModule.forRoot(TRANSLATE_MODULE_CONFIG),
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,9 +3,12 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
 
 import { MdMenuComponent } from './md-menu/md-menu.component';
-import { HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
+import { TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
 
 
 /**
@@ -18,22 +21,19 @@ import { HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
     declarations: [
         MdMenuComponent
     ],
-    entryComponents: [
-        MdMenuComponent
-    ],
     exports: [
-        MdMenuComponent
+        MdMenuComponent,
+        MatMenuModule,
+        MatIconModule,
+        MatBadgeModule,
     ],
     imports: [
         CommonModule,
-        TranslateModule.forChild({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
-            }
-        }),
+        TranslateModule.forChild(TRANSLATE_MODULE_CONFIG),
         RouterModule,
+        MatMenuModule,
+        MatIconModule,
+        MatBadgeModule,
     ]
 })
 export class MenuModule { }

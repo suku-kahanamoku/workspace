@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, HostBinding } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
-import { IMenu } from 'projects/core/interfaces/menu.interface';
+import { AppService } from 'projects/core/services/app.service';
 
 /**
  * Komponenta zobrazujici material design menu
@@ -10,24 +10,23 @@ import { IMenu } from 'projects/core/interfaces/menu.interface';
  * @implements {OnInit}
  */
 @Component({
-    selector: 'app-md-menu',
-    templateUrl: './md-menu.component.html',
-    styleUrls: ['./md-menu.component.scss']
+  selector: 'md-menu',
+  templateUrl: './md-menu.component.html'
 })
 export class MdMenuComponent implements OnInit {
 
-    /**
-     * Menu data
-     *
-     * @protected
-     * @type {Menu}
-     * @memberof MdMenuComponent
-     */
-    @Input()
-    menu!: IMenu;
+  @ViewChild('childMenu') public childMenu!: any;
 
-    ngOnInit(): void {
+  @ViewChild('menu') public menu!: any;
 
-    }
+  @Input() items!: any[];
+
+  @Input() isRoot: boolean = false;
+
+  @Input() isRootNavigable: boolean = true;
+
+  constructor(public readonly appService: AppService) { }
+
+  ngOnInit() { }
 
 }

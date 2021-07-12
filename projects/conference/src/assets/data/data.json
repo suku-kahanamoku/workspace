@@ -29,7 +29,7 @@
                 "url": "contact"
             },
             "cs": {
-                "url": "contact"
+                "url": "kontakt"
             }
         },
         {
@@ -38,12 +38,10 @@
             "parentId": "2",
             "name": "route.contact",
             "en": {
-                "url": "",
-                "visible": false
+                "url": ""
             },
             "cs": {
-                "url": "",
-                "visible": false
+                "url": ""
             }
         },
         {

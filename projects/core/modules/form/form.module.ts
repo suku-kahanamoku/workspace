@@ -14,7 +14,7 @@ import { FormFieldSelectComponent } from './form-field/select/select.component';
 import { FormFieldTextComponent } from './form-field/text/text.component';
 import { FormFieldTextareaComponent } from './form-field/textarea/textarea.component';
 import { FormFieldEmailComponent } from './form-field/email/email.component';
-import { HttpLoaderFactory } from 'projects/core/utils/modify-object.functions';
+import { TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
 
 /**
  * Objekt s metadaty, vetsinou slouzi pro pretezovani modulu
@@ -68,13 +68,7 @@ export const METADATA: NgModule = {
     imports: [
         FormsModule,
         ReactiveFormsModule,
-        TranslateModule.forChild({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
-            }
-        })
+        TranslateModule.forChild(TRANSLATE_MODULE_CONFIG)
     ]
 }
 
