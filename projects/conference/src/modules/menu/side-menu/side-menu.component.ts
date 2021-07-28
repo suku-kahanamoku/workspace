@@ -4,13 +4,11 @@ import { Themeable } from 'projects/core/abstracts/themeable.abstract';
 import { AppService } from 'projects/core/services/app.service';
 
 @Component({
-  selector: 'app-main-menu',
-  templateUrl: './main-menu.component.html',
-  styleUrls: ['./main-menu.component.scss']
+  selector: 'app-side-menu',
+  templateUrl: './side-menu.component.html',
+  styleUrls: ['./side-menu.component.scss']
 })
-export class MainMenuComponent extends Themeable {
-
-  @Input() drawer: any;
+export class SideMenuComponent extends Themeable {
 
   constructor(public readonly appService: AppService) {
     super();

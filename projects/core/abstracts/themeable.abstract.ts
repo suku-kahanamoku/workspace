@@ -1,4 +1,6 @@
 import { Directive, Input } from '@angular/core';
+import { NestedTreeControl } from '@angular/cdk/tree';
+import { MatTreeNestedDataSource } from '@angular/material/tree';
 
 import { Loadable } from './loadable.abstract';
 import { ITreeItem } from '../interfaces/item.interface';
@@ -8,13 +10,13 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '../animations/route.animations';
 export abstract class Themeable extends Loadable {
 
     /**
+     * Nazev tridy pro animaci
      *
-     *
-     * @protected
-     * @type {ITreeItem[]}
      * @memberof Themeable
      */
-    protected _itemTree: ITreeItem[] = [];
+    routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
+
+    protected _itemTree = new MatTreeNestedDataSource<ITreeItem>();
 
     /**
      *
@@ -27,12 +29,9 @@ export abstract class Themeable extends Loadable {
         return this._itemTree;
     }
 
-    /**
-     * Nazev tridy pro animaci
-     *
-     * @memberof Themeable
-     */
-    routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
+    treeControl = new NestedTreeControl<ITreeItem>((node: ITreeItem) => node.children);
+
+    hasChild = (_: number, node: ITreeItem) => !!node.children && node.children.length > 0;
 
     /**
      *
@@ -41,7 +40,7 @@ export abstract class Themeable extends Loadable {
      */
     @Input('data') set itemList(itemList: ITreeItem[]) {
         super.itemList = itemList;
-        this._itemTree = this._createTreeNode(<ITreeItem[]>super.itemList);
+        this._itemTree.data = this._createTreeNode(<ITreeItem[]>super.itemList);
     }
 
     ngOnInit(): void { }

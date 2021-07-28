@@ -2,14 +2,16 @@
   <ng-container *ngFor="let child of items">
 
     <ng-container *ngIf="child?.children?.length">
-      <a *ngIf="menu.childMenu" mat-menu-item [matMenuTriggerFor]="menu.childMenu" [href]="child.url">
+      <a *ngIf="menu.childMenu" mat-menu-item [matMenuTriggerFor]="menu.childMenu" [routerLink]="child.url"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name,isRoot:isRoot}">
         </ng-container>
       </a>
       <md-menu #menu [items]="child.children"></md-menu>
     </ng-container>
 
-    <a *ngIf="!child?.children?.length" mat-menu-item [href]="child.url">
+    <a *ngIf="!child?.children?.length" mat-menu-item [routerLink]="child.url" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">
       <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name}"></ng-container>
     </a>
 
@@ -20,13 +22,15 @@
   <ng-container *ngFor="let child of items">
 
     <ng-container *ngIf="child?.children?.length">
-      <a *ngIf="menu.childMenu" mat-menu-item [matMenuTriggerFor]="menu.childMenu" [href]="child.url">
+      <a *ngIf="menu.childMenu" mat-menu-item [matMenuTriggerFor]="menu.childMenu" [routerLink]="child.url"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name}"></ng-container>
       </a>
       <md-menu #menu [items]="child.children"></md-menu>
     </ng-container>
 
-    <a *ngIf="!child?.children?.length" mat-menu-item [href]="child.url">
+    <a *ngIf="!child?.children?.length" mat-menu-item [routerLink]="child.url" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">
       <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name}"></ng-container>
     </a>
 
@@ -39,7 +43,7 @@
     {{ matIcon?.before?.icon }}
   </mat-icon>
 
-  <span *ngIf="label !== false">{{ label || menu?.name }}</span>
+  <span *ngIf="label !== false">{{ (label || menu?.name) | translate }}</span>
 
   <mat-icon *ngIf="matIcon?.after?.icon || isRoot" class="notranslate" [matBadge]="matIcon?.after?.badge"
     [matBadgeColor]="matIcon?.after?.badgeColor">

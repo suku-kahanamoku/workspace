@@ -47,6 +47,18 @@
             }
         },
         {
+            "_id": "22",
+            "cmp": "ContactComponent",
+            "parentId": "21",
+            "name": "route.fdsa",
+            "en": {
+                "url": ""
+            },
+            "cs": {
+                "url": ""
+            }
+        },
+        {
             "_id": "99",
             "cmp": "PageNotFoundComponent",
             "en": {

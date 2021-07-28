@@ -11,7 +11,8 @@ import { AppService } from 'projects/core/services/app.service';
  */
 @Component({
   selector: 'md-menu',
-  templateUrl: './md-menu.component.html'
+  templateUrl: './md-menu.component.html',
+  styleUrls: ['./md-menu.component.scss']
 })
 export class MdMenuComponent implements OnInit {
 

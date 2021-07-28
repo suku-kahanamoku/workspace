@@ -1,3 +1,14 @@
 <mat-toolbar color="primary">
-    <md-menu [items]="itemTree" [isRoot]="true" [isRootNavigable]="false"></md-menu>
+    <!-- logo -->
+    <a routerLink="/">
+        <img src="/assets/img/logo/logo.png" width="140">
+    </a>
+
+    <!-- menicka -->
+    <md-menu class="d-none d-sm-flex" [items]="itemTree.data" [isRoot]="true" [isRootNavigable]="false"></md-menu>
+
+    <!-- hamburger button -->
+    <button mat-icon-button class="d-sm-none" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
 </mat-toolbar>

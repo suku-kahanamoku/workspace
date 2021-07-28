@@ -6,6 +6,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatTreeModule } from '@angular/material/tree';
 
 import { MdMenuComponent } from './md-menu/md-menu.component';
 import { TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
@@ -26,6 +27,7 @@ import { TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.funct
         MatMenuModule,
         MatIconModule,
         MatBadgeModule,
+        MatTreeModule,
     ],
     imports: [
         CommonModule,
@@ -34,6 +36,7 @@ import { TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.funct
         MatMenuModule,
         MatIconModule,
         MatBadgeModule,
+        MatTreeModule,
     ]
 })
 export class MenuModule { }

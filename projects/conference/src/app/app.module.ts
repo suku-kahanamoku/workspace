@@ -31,7 +31,7 @@ const CMP_LIST = [
     ProjectMenuModule,
     HttpClientModule,
     TranslateModule.forRoot(TRANSLATE_MODULE_CONFIG),
-    MatSidenavModule
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

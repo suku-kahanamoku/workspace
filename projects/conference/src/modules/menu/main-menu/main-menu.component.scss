@@ -1,3 +1,13 @@
-.dropdown:hover>.dropdown-menu {
-    display: block;
+mat-toolbar {
+    justify-content: space-between;
+
+    md-menu {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+.mat-menu-item {
+    margin-left: 20px !important;
 }
