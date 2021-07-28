@@ -1,6 +1,6 @@
 import { Directive, Input } from '@angular/core';
-import { NestedTreeControl } from '@angular/cdk/tree';
-import { MatTreeNestedDataSource } from '@angular/material/tree';
+import { FlatTreeControl } from '@angular/cdk/tree';
+import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 
 import { Loadable } from './loadable.abstract';
 import { ITreeItem } from '../interfaces/item.interface';
@@ -16,7 +16,19 @@ export abstract class Themeable extends Loadable {
      */
     routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
-    protected _itemTree = new MatTreeNestedDataSource<ITreeItem>();
+    private _transformer = (node: any, level: number) => {
+        return {
+            expandable: !!node.children && node.children.length > 0,
+            name: node.name,
+            level: level,
+        };
+    }
+
+    treeControl = new FlatTreeControl<any>((node: any) => node.level, (node: any) => node.expandable)
+
+    treeFlattener = new MatTreeFlattener(this._transformer, (node: any) => node.level, (node: any) => node.expandable, node => node.children);
+
+    protected _itemTree = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
     /**
      *
@@ -29,9 +41,7 @@ export abstract class Themeable extends Loadable {
         return this._itemTree;
     }
 
-    treeControl = new NestedTreeControl<ITreeItem>((node: ITreeItem) => node.children);
-
-    hasChild = (_: number, node: ITreeItem) => !!node.children && node.children.length > 0;
+    hasChild = (_: number, node: any) => node.expandable;
 
     /**
      *
@@ -69,7 +79,7 @@ export abstract class Themeable extends Loadable {
             }
         });
         // vrati vyfiltrovane pole (itemy bez rodicu)
-        return itemList.filter(item => (!item.parentId && item.visible !== false) || item.visible !== false);
+        return itemList.filter(item => !item.parentId);
     }
 
 }

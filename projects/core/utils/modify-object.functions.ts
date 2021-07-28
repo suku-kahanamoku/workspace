@@ -16,13 +16,13 @@ export const TRANSLATE_MODULE_CONFIG = {
 export function GET_ROUTES(menuList: any[], cmpList: any[], modules?: any, lang: string = 'cs'): any {
     return menuList.map(menu => {
         const result: any = { path: menu[lang].url };
-        // component routa
-        if (menu.cmp) {
-            result.component = cmpList.find(cmp => cmp.name === menu.cmp);
-        }
         // loadChildren routa
-        else if (menu.module && modules) {
+        if (menu.module && modules && modules[menu.module]) {
             result.loadChildren = modules[menu.module];
+        }
+        // component routa
+        else if (menu.cmp) {
+            result.component = cmpList.find(cmp => cmp.name === menu.cmp);
         }
         else if (menu[lang].redirectTo) {
             result.redirectTo = menu[lang].redirectTo;

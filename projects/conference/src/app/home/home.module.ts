@@ -16,7 +16,7 @@ const CMP_LIST = [
   declarations: CMP_LIST,
   imports: [
     CommonModule,
-    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '1'), CMP_LIST)),
+    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '1' || (menu._id === '1' && menu.cmp)), CMP_LIST)),
     TranslateModule.forChild(TRANSLATE_MODULE_CONFIG),
     SwiperModule
   ]

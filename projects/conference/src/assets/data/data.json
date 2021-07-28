@@ -3,19 +3,9 @@
         {
             "_id": "1",
             "module": "HomeModule",
-            "visible": false,
-            "en": {
-                "url": ""
-            },
-            "cs": {
-                "url": ""
-            }
-        },
-        {
-            "_id": "11",
             "cmp": "HomeComponent",
-            "parentId": "1",
             "name": "route.aboutUs",
+            "parentId": "",
             "en": {
                 "url": ""
             },
@@ -26,7 +16,9 @@
         {
             "_id": "2",
             "module": "ContactModule",
-            "visible": false,
+            "cmp": "ContactComponent",
+            "name": "route.contact",
+            "parentId": "",
             "en": {
                 "url": "contact"
             },
@@ -37,37 +29,25 @@
         {
             "_id": "21",
             "cmp": "ContactComponent",
-            "parentId": "2",
-            "name": "route.contact",
-            "en": {
-                "url": ""
-            },
-            "cs": {
-                "url": ""
-            }
-        },
-        {
-            "_id": "22",
-            "cmp": "ContactComponent",
-            "parentId": "21",
             "name": "route.fdsa",
+            "parentId": "2",
             "en": {
-                "url": ""
+                "url": "fdsa"
             },
             "cs": {
-                "url": ""
+                "url": "fdsa"
             }
         },
         {
             "_id": "99",
             "cmp": "PageNotFoundComponent",
+            "parentId": "",
+            "visible": false,
             "en": {
-                "url": "**",
-                "visible": false
+                "url": "**"
             },
             "cs": {
-                "url": "**",
-                "visible": false
+                "url": "**"
             }
         }
     ]
