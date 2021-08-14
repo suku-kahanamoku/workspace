@@ -28,7 +28,7 @@ export class AppComponent extends Themeable {
 
   load(): void {
     this._onLoad(CLONE(data.menu
-      .filter((menu: any) => !menu.cs.visible))
+      .filter((menu: any) => menu.cs.visible !== false))
       .map((menu: any) => ({ ...menu, ...menu.cs })));
   }
 

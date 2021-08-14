@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { SwiperModule } from 'swiper/angular';
 
 import data from '../../assets/data/data.json';
 import { ContactComponent } from './contact';
@@ -17,8 +16,7 @@ const CMP_LIST = [
   imports: [
     CommonModule,
     TranslateModule.forChild(TRANSLATE_MODULE_CONFIG),
-    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '3' || (menu._id === '3' && menu.cmp)), CMP_LIST)),
-    SwiperModule
+    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '4' || (menu._id === '4' && menu.cmp)), CMP_LIST))
   ]
 })
 export class ContactModule { }

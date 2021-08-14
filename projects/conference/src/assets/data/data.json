@@ -6,6 +6,7 @@
             "cmp": "HomeComponent",
             "name": "route.home",
             "parentId": "",
+            "visible": false,
             "en": {
                 "url": ""
             },
@@ -28,6 +29,19 @@
         },
         {
             "_id": "3",
+            "module": "ArticleModule",
+            "cmp": "ArticleComponent",
+            "name": "route.article",
+            "parentId": "",
+            "en": {
+                "url": "conference"
+            },
+            "cs": {
+                "url": "konference"
+            }
+        },
+        {
+            "_id": "4",
             "module": "ContactModule",
             "cmp": "ContactComponent",
             "name": "route.contact",

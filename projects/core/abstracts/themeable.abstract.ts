@@ -17,7 +17,7 @@ export abstract class Themeable extends Loadable {
     routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
     /**
-     *
+     * Vytvori item pro tree knihovnu
      *
      * @protected
      * @param {*} node
@@ -26,9 +26,12 @@ export abstract class Themeable extends Loadable {
      */
     protected _transformer = (node: any, level: number) => {
         return {
-            expandable: !!node.children && node.children.length > 0,
-            name: node.name,
-            level: level,
+            ...{
+                expandable: !!node.children && node.children.length > 0,
+                name: node.name,
+                level: level,
+            },
+            ...node
         };
     }
 
