@@ -34,7 +34,8 @@ export abstract class Loadable extends Configurable {
      *
      * @memberof Loadable
      */
-    @Input('data') set itemList(itemList: IItem[]) {
+    @Input()
+    set itemList(itemList: IItem[]) {
         this._itemList = [];
         itemList?.length && itemList.map(this.addItem.bind(this));
     }
@@ -63,7 +64,8 @@ export abstract class Loadable extends Configurable {
      *
      * @memberof Loadable
      */
-    @Input() set item(item: IItem | any) {
+    @Input()
+    set item(item: IItem | any) {
         this.item$.next(item);
     }
 
@@ -88,8 +90,9 @@ export abstract class Loadable extends Configurable {
      */
     load(config: IConfig, successClbk = this._onLoad, errorClbk = this._onLoadError): void {
         if (config?.params?.restUrl) {
-            this._subscriptions.load && this._subscriptions.load.unsubscribe();
-            this._subscriptions.load = this.appService.http.load(config.params.restUrl)
+            this._subscriptions.load?.unsubscribe();
+            this._subscriptions.load = this.appService.http
+                .load(config.params.restUrl)
                 .subscribe(successClbk, errorClbk);
         }
     }
@@ -113,7 +116,7 @@ export abstract class Loadable extends Configurable {
      * @memberof Loadable
      */
     protected _onLoadError(error: HttpErrorResponse): void {
-        
+
     }
 
     /**
@@ -123,8 +126,8 @@ export abstract class Loadable extends Configurable {
      * @returns {IItem}
      * @memberof Loadable
      */
-    getItem(itemId: string): IItem {
-        return <IItem>this._itemList.find(item => item._id === itemId);
+    getItem(itemId: string): IItem | any {
+        return this._itemList.find(item => item._id === itemId);
     }
 
     /**

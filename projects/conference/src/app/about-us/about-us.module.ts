@@ -5,11 +5,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SwiperModule } from 'swiper/angular';
 
 import data from '../../assets/data/data.json';
-import { ContactComponent } from './contact';
+import { AboutUsComponent } from './about-us';
 import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
 
 const CMP_LIST = [
-  ContactComponent
+  AboutUsComponent
 ];
 
 @NgModule({
@@ -17,8 +17,8 @@ const CMP_LIST = [
   imports: [
     CommonModule,
     TranslateModule.forChild(TRANSLATE_MODULE_CONFIG),
-    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '3' || (menu._id === '3' && menu.cmp)), CMP_LIST)),
+    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '2' || (menu._id === '2' && menu.cmp)), CMP_LIST)),
     SwiperModule
   ]
 })
-export class ContactModule { }
+export class AboutUsModule { }

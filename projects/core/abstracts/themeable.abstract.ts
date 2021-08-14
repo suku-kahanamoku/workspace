@@ -16,7 +16,15 @@ export abstract class Themeable extends Loadable {
      */
     routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
-    private _transformer = (node: any, level: number) => {
+    /**
+     *
+     *
+     * @protected
+     * @param {*} node
+     * @param {number} level
+     * @memberof Themeable
+     */
+    protected _transformer = (node: any, level: number) => {
         return {
             expandable: !!node.children && node.children.length > 0,
             name: node.name,
@@ -24,10 +32,26 @@ export abstract class Themeable extends Loadable {
         };
     }
 
+    /**
+     *
+     *
+     * @memberof Themeable
+     */
     treeControl = new FlatTreeControl<any>((node: any) => node.level, (node: any) => node.expandable)
 
+    /**
+     *
+     *
+     * @memberof Themeable
+     */
     treeFlattener = new MatTreeFlattener(this._transformer, (node: any) => node.level, (node: any) => node.expandable, node => node.children);
 
+    /**
+     *
+     *
+     * @protected
+     * @memberof Themeable
+     */
     protected _itemTree = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
     /**
@@ -37,10 +61,17 @@ export abstract class Themeable extends Loadable {
      * @type {*}
      * @memberof Themeable
      */
-    public get itemTree(): any {
+    get itemTree(): any {
         return this._itemTree;
     }
 
+    /**
+     *
+     *
+     * @param {number} _
+     * @param {*} node
+     * @memberof Themeable
+     */
     hasChild = (_: number, node: any) => node.expandable;
 
     /**
@@ -48,12 +79,11 @@ export abstract class Themeable extends Loadable {
      *
      * @memberof Themeable
      */
-    @Input('data') set itemList(itemList: ITreeItem[]) {
+    @Input()
+    set itemList(itemList: ITreeItem[]) {
         super.itemList = itemList;
         this._itemTree.data = this._createTreeNode(<ITreeItem[]>super.itemList);
     }
-
-    ngOnInit(): void { }
 
     /**
      * Vlozi potomky do rodicu => vytvori stromovou strukturu

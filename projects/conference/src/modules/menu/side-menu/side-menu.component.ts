@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Themeable } from 'projects/core/abstracts/themeable.abstract';
 import { AppService } from 'projects/core/services/app.service';
@@ -13,5 +13,7 @@ export class SideMenuComponent extends Themeable {
   constructor(public readonly appService: AppService) {
     super();
   }
+
+  ngOnInit(): void { }
 
 }

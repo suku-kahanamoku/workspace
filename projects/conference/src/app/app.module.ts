@@ -15,6 +15,7 @@ import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-
 const MODULES = {
   HomeModule: () => import('./home/home.module').then(m => m.HomeModule),
   ContactModule: () => import('./contact/contact.module').then(m => m.ContactModule),
+  AboutUsModule: () => import('./about-us/about-us.module').then(m => m.AboutUsModule),
 }
 
 const CMP_LIST = [

@@ -4,7 +4,7 @@
             "_id": "1",
             "module": "HomeModule",
             "cmp": "HomeComponent",
-            "name": "route.aboutUs",
+            "name": "route.home",
             "parentId": "",
             "en": {
                 "url": ""
@@ -15,6 +15,19 @@
         },
         {
             "_id": "2",
+            "module": "AboutUsModule",
+            "cmp": "AboutUsComponent",
+            "name": "route.aboutUs",
+            "parentId": "",
+            "en": {
+                "url": "about-us"
+            },
+            "cs": {
+                "url": "o-nas"
+            }
+        },
+        {
+            "_id": "3",
             "module": "ContactModule",
             "cmp": "ContactComponent",
             "name": "route.contact",
@@ -24,18 +37,6 @@
             },
             "cs": {
                 "url": "kontakt"
-            }
-        },
-        {
-            "_id": "21",
-            "cmp": "ContactComponent",
-            "name": "route.fdsa",
-            "parentId": "2",
-            "en": {
-                "url": "fdsa"
-            },
-            "cs": {
-                "url": "fdsa"
             }
         },
         {

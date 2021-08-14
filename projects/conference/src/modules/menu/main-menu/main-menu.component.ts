@@ -16,4 +16,6 @@ export class MainMenuComponent extends Themeable {
     super();
   }
 
+  ngOnInit(): void { }
+
 }

@@ -58,8 +58,6 @@ export class InnerHtmlDirective {
      * @param {DomSanitizer} _domSanitizer
      * @memberof InnerHtmlDirective
      */
-    constructor(
-        protected _domSanitizer: DomSanitizer
-    ) { }
+    constructor(protected _domSanitizer: DomSanitizer) { }
 
 }

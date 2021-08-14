@@ -22,8 +22,10 @@ export function GET_ROUTES(menuList: any[], cmpList: any[], modules?: any, lang:
         }
         // component routa
         else if (menu.cmp) {
+            result.path = menu.module ? '' : result.path;
             result.component = cmpList.find(cmp => cmp.name === menu.cmp);
         }
+        //
         else if (menu[lang].redirectTo) {
             result.redirectTo = menu[lang].redirectTo;
             result.pathMatch = 'full'

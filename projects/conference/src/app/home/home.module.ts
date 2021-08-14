@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SwiperModule } from 'swiper/angular';
 
 import data from '../../assets/data/data.json';
-import { HomeComponent } from './home.component';
+import { HomeComponent } from './home';
 import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
 
 const CMP_LIST = [

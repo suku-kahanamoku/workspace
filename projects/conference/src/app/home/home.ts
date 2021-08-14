@@ -5,18 +5,18 @@ import { IMenu } from 'projects/core/interfaces/menu.interface';
 import { AppService } from 'projects/core/services/app.service';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.html',
+  styleUrls: ['./home.scss']
 })
-export class ContactComponent extends Themeable {
+export class HomeComponent extends Themeable {
 
   /**
    * Vrati seznam objektu
    *
    * @readonly
    * @type {IMenu[]}
-   * @memberof ContactComponent
+   * @memberof HomeComponent
    */
   get itemList(): IMenu[] {
     return <IMenu[]>super.itemList;
@@ -25,9 +25,10 @@ export class ContactComponent extends Themeable {
   /**
    * Nastavi seznam objektu
    *
-   * @memberof ContactComponent
+   * @memberof HomeComponent
    */
-  @Input('data') set itemList(itemList: IMenu[]) {
+  @Input()
+  set itemList(itemList: IMenu[]) {
     super.itemList = itemList;
   }
 
@@ -37,7 +38,6 @@ export class ContactComponent extends Themeable {
 
   ngOnInit(): void {
     this.load();
-    console.log('fdsas')
   }
 
   load(): void {
