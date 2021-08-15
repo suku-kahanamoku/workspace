@@ -2,11 +2,14 @@
     "route": {
         "aboutUs": "O nás",
         "conference": "Konference",
+        "blog": "Blog",
         "contact": "Kontakt"
     },
     "home": {
-        "title": "Věnujeme se vám",
-        "aboutUs": "PÁR SLOV O NÁS"
+        "title": "Vyhledávání konferenci",
+        "popular": "Popularni",
+        "actual": "Nejblizsi konference",
+        "action": "Nejnavstevovanejsi (akcni)"
     },
     "footer": {
         "connect": "Jak se s námi spojit",

@@ -17,6 +17,7 @@ const MODULES = {
   ContactModule: () => import('./contact/contact.module').then(m => m.ContactModule),
   AboutUsModule: () => import('./about-us/about-us.module').then(m => m.AboutUsModule),
   ConferenceModule: () => import('./conference/conference.module').then(m => m.ConferenceModule),
+  BlogModule: () => import('./blog/blog.module').then(m => m.BlogModule),
 }
 
 const CMP_LIST = [

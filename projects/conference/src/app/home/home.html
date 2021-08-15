@@ -2,88 +2,57 @@
     <div class="container">
 
         <!-- Content -->
-        <div class="col-md-6 pb-5">
-            <h1 [innerHTML]="'home.title' | translate"></h1>
-
-            <div>
-                <strong [innerHTML]="'home.subtitle' | translate"></strong>
-            </div>
-
-            <div [innerHTML]="'home.text' | translate"></div>
-
-            <button>
-                {{ 'home.consultation' | translate }}
-            </button>
-        </div>
+        <h1 [innerHTML]="'home.title' | translate"></h1>
 
         <div class="row text-center pt-5 btns">
             <div class="col-md-4">
-                <button color="primary">
-                    {{ 'home.bookkeeping' | translate }}
-                </button>
+                input odvetvi
             </div>
 
             <div class="col-md-4">
-                <button color="accent">
-                    {{ 'home.archiv' | translate }}
-                </button>
+                input kalendar
             </div>
 
             <div class="col-md-4">
-                <button color="warn">
-                    {{ 'home.foreignLang' | translate }}
-                </button>
+                input staty
             </div>
         </div>
 
     </div>
 </div>
 
+<!-- nejblizsi -->
 <div class="container">
-
-    <div id="aboutUs" class="py-5">
+    <div class="py-4">
         <div class="text-center">
-            <h4 [innerHTML]="'home.aboutUs' | translate"></h4>
-            <h2 [innerHTML]="'home.aboutUsTitle' | translate"></h2>
+            <h2 [innerHTML]="'home.popular' | translate"></h2>
         </div>
         <div class="row">
-            <div class="col-md-6">
-                <div [innerHTML]="'home.aboutUsText1' | translate"></div>
-                <div [innerHTML]="'home.aboutUsText2' | translate"></div>
-            </div>
-            <div class="col-md-6 row">
-                <div class="col-md-6 col-lg-3 align-middle">
-                    {{ 'home.a2z' | translate }}
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    {{ 'home.investment' | translate }}
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    {{ 'home.report' | translate }}
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    {{ 'home.result' | translate }}
-                </div>
-            </div>
+            article mat card
         </div>
     </div>
+</div>
 
-    <div id="reference" class="py-5 row">
-        <div class="col-md-6">
-            <div [innerHTML]="'home.referenceDesc' | translate"></div>
-            <div [innerHTML]="'home.referenceSign' | translate"></div>
-            <div [innerHTML]="'home.referenceComp' | translate"></div>
+<!-- nejblizsi -->
+<div class="container">
+    <div class="py-4">
+        <div class="text-center">
+            <h2 [innerHTML]="'home.actual' | translate"></h2>
         </div>
-        <div class="col-md-6">
-            <h4 [innerHTML]="'home.reference' | translate"></h4>
-            <h2 [innerHTML]="'home.referenceTitle' | translate"></h2>
-            <div [innerHTML]="'home.referenceText' | translate"></div>
-            <swiper [slidesPerView]="4" [spaceBetween]="50">
-                <ng-template *ngFor="let ref of itemList" swiperSlide>{{ref.name}}</ng-template>
-            </swiper>
-            <button>
-                {{ 'home.referenceMore' | translate }}
-            </button>
+        <div class="row">
+            article mat card
+        </div>
+    </div>
+</div>
+
+<!-- nejnavstevovanejsi -->
+<div class="container">
+    <div class="py-4">
+        <div class="text-center">
+            <h2 [innerHTML]="'home.action' | translate"></h2>
+        </div>
+        <div class="row">
+            article mat card
         </div>
     </div>
 </div>

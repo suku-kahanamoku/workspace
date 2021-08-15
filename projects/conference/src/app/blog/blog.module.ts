@@ -4,11 +4,11 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 import data from '../../assets/data/data.json';
-import { ContactComponent } from './contact';
+import { BlogComponent } from './blog';
 import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
 
 const CMP_LIST = [
-  ContactComponent
+  BlogComponent
 ];
 
 @NgModule({
@@ -16,7 +16,7 @@ const CMP_LIST = [
   imports: [
     CommonModule,
     TranslateModule.forChild(TRANSLATE_MODULE_CONFIG),
-    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '5' || (menu._id === '5' && menu.cmp)), CMP_LIST))
+    RouterModule.forChild(GET_ROUTES(data.menu.filter(menu => menu.parentId === '4' || (menu._id === '4' && menu.cmp)), CMP_LIST))
   ]
 })
-export class ContactModule { }
+export class BlogModule { }

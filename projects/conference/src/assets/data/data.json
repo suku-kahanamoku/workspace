@@ -42,6 +42,19 @@
         },
         {
             "_id": "4",
+            "module": "BlogModule",
+            "cmp": "BlogComponent",
+            "name": "route.blog",
+            "parentId": "",
+            "en": {
+                "url": "blog"
+            },
+            "cs": {
+                "url": "blog"
+            }
+        },
+        {
+            "_id": "5",
             "module": "ContactModule",
             "cmp": "ContactComponent",
             "name": "route.contact",
