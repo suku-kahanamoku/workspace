@@ -1,14 +1,16 @@
 <mat-toolbar color="primary">
-    <!-- logo -->
-    <a routerLink="/">
-        <img src="/assets/img/logo/logo.png" width="140">
-    </a>
+    <div class="container">
+        <!-- logo -->
+        <a routerLink="/">
+            <img src="/assets/img/logo/logo.png" width="140">
+        </a>
 
-    <!-- menicka -->
-    <md-menu class="d-none d-sm-flex" [items]="itemTree.data" [isRoot]="true" [isRootNavigable]="false"></md-menu>
+        <!-- menicka -->
+        <md-menu class="d-none d-sm-flex" [items]="itemTree.data" [isRoot]="true" [isRootNavigable]="false"></md-menu>
 
-    <!-- hamburger button -->
-    <button mat-icon-button class="d-sm-none" (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
-    </button>
+        <!-- hamburger button -->
+        <button mat-icon-button class="d-sm-none" (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
 </mat-toolbar>
