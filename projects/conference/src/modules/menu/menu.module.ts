@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { MenuModule } from 'projects/core/modules/menu/menu.module';
 import { MainMenuComponent } from './main-menu/main-menu.component';
@@ -22,8 +23,6 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     MainMenuComponent,
     FooterMenuComponent,
     SideMenuComponent,
-    MatToolbarModule,
-    MatButtonModule,
   ],
   imports: [
     CommonModule,
@@ -32,6 +31,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     MenuModule,
     MatToolbarModule,
     MatButtonModule,
+    MatIconModule,
   ],
 })
 export class ProjectMenuModule { }

@@ -104,3 +104,11 @@ body {
 .active {
     color: red;
 }
+
+mat-drawer {
+    min-width: 70%;
+
+    mat-tree {
+        padding: 25px;
+    }
+}
