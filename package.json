@@ -26,6 +26,7 @@
     "@ngx-translate/http-loader": "^6.0.0",
     "animate.css": "^4.1.1",
     "bootstrap": "4.5.3",
+    "ngx-swiper-wrapper": "^10.0.0",
     "rxjs": "^6.6.7",
     "swiper": "^6.7.5",
     "tslib": "^2.3.0",

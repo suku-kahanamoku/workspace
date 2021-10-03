@@ -1,15 +1,15 @@
-<swiper [config]="{
-    slidesPerView: 1,
-    autoplay: {
-        delay: 3000
-    }
-  }">
-    <ng-template *ngFor="let i of [1,2,3,4,5]" swiperSlide>
-        <div class="neco">
+<div>
+    <swiper [config]="{
+        slidesPerView: 1,
+        autoplay: {
+            delay: 5000
+        }
+      }">
+        <div *ngFor="let i of [1,2,3,4,5]">
             Slide {{i}}
         </div>
-    </ng-template>
-</swiper>
+    </swiper>
+</div>
 
 <!-- nejblizsi -->
 <div class="container">

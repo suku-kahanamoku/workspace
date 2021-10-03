@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { SwiperModule } from 'swiper/angular';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 
 import data from '../../assets/data/data.json';
 import { HomeComponent } from './home';
