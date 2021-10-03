@@ -1,8 +1,5 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-// always include only once per project
-@include mat-core();
-
 // DEFINICE PALET
 $primary: (50 : #e0f4ea,
     100 : #b3e4cb,
@@ -93,12 +90,6 @@ $warn: (50 : #fde4e5,
         A400 : #000000,
         A700 : #000000,
     ));
-
-$my-theme: mat-light-theme($my-theme-primary,
-    $my-theme-accent,
-    $my-theme-warn);
-
-@include angular-material-theme($my-theme);
 
 html,
 body {
