@@ -2,7 +2,7 @@
   <ng-container *ngFor="let child of items">
 
     <ng-container *ngIf="child?.children?.length">
-      <a *ngIf="menu.childMenu" mat-menu-item [matMenuTriggerFor]="menu.childMenu" [routerLink]="child.url"
+      <a *ngIf="menu.childMenu" mat-button [matMenuTriggerFor]="menu.childMenu" [routerLink]="child.url"
         routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name,isRoot:isRoot}">
         </ng-container>
@@ -10,7 +10,7 @@
       <md-menu #menu [items]="child.children"></md-menu>
     </ng-container>
 
-    <a *ngIf="!child?.children?.length" mat-menu-item [routerLink]="child.url" routerLinkActive="active"
+    <a *ngIf="!child?.children?.length" mat-button [routerLink]="child.url" routerLinkActive="active"
       [routerLinkActiveOptions]="{exact: true}">
       <ng-container *ngTemplateOutlet="labelTemp;context:{matIcon:child.matIcon,label:child.name}"></ng-container>
     </a>

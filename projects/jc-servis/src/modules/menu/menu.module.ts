@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { MenuModule } from 'projects/core/modules/menu/menu.module';
 import { MainMenuComponent } from './main-menu/main-menu.component';
@@ -30,8 +30,8 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     RouterModule,
     MenuModule,
     MatToolbarModule,
-    MatButtonModule,
     MatIconModule,
+    MatDividerModule,
   ],
 })
 export class ProjectMenuModule { }

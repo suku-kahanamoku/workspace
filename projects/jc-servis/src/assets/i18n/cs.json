@@ -11,9 +11,9 @@
         "action": "Nejnavstevovanejsi (akcni)"
     },
     "footer": {
-        "connect": "Jak se s námi spojit",
-        "navigation": "Mohlo by se vám hodit",
-        "news": "Aktuality",
+        "contact": "Kontakt",
+        "services": "Náš servis",
+        "next": "Další",
         "all": "vše"
     },
     "logo": {

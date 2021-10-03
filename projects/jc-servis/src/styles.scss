@@ -1,4 +1,7 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+
+// always include only once per project
+@include mat-core();
 
 // DEFINICE PALET
 $primary: (50 : #e0f4ea,
@@ -91,18 +94,26 @@ $warn: (50 : #fde4e5,
         A700 : #000000,
     ));
 
-html,
-body {
-    height: 100%;
-}
+$primary: mat-palette($primary, 500, 100, 800);
+$accent: mat-palette($accent, 500, 100, 800);
+$warn: mat-palette($warn);
+
+@include angular-material-theme(mat-light-theme($primary, $accent, $warn));
 
 body {
+    height: 100%;
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .active {
-    color: red;
+    color: #000 !important;
+}
+
+a,
+.fab,
+.fas {
+    text-decoration: none;
 }
 
 mat-drawer {
@@ -111,4 +122,8 @@ mat-drawer {
     mat-tree {
         padding: 25px;
     }
+}
+
+mat-icon {
+    margin-right: 5px;
 }

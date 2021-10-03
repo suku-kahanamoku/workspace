@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTreeModule } from '@angular/material/tree';
@@ -25,6 +25,7 @@ import { TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.funct
     exports: [
         MdMenuComponent,
         MatMenuModule,
+        MatButtonModule,
         MatIconModule,
         MatBadgeModule,
         MatTreeModule,
@@ -34,6 +35,7 @@ import { TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.funct
         TranslateModule.forChild(TRANSLATE_MODULE_CONFIG),
         RouterModule,
         MatMenuModule,
+        MatButtonModule,
         MatIconModule,
         MatBadgeModule,
         MatTreeModule,

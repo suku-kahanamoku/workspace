@@ -2,46 +2,85 @@
   <div class="row">
 
     <div class="col-sm-6 col-md-3">
-      <h3 [innerHTML]="'footer.connect' | translate"></h3>
-      <div>
+      <h2 class="subheading" [innerHTML]="'footer.contact' | translate"></h2>
+      <mat-divider></mat-divider>
+      <div class="content">
         <div>
-          <a href="mailto:info@jc-servis.cz" class="fas fa-envelope-open-text">
-            info@jc-servis.cz
+          <a mat-button href="mailto:info@jc-servis.cz">
+            <mat-icon color="primary">mail</mat-icon>info@jc-servis.cz
           </a>
         </div>
         <div>
-          <a href="tel:+420605202525" class="fas fa-phone-alt">
-            +420&nbsp;605&nbsp;202&nbsp;525
+          <a mat-button href="tel:+420111222333">
+            <mat-icon color="primary">phone</mat-icon>+420&nbsp;111&nbsp;222&nbsp;333
           </a>
         </div>
       </div>
-      <div>
-        <a href="https://www.facebook.com/firmajc-servis" class="fab fa-facebook-f z-depth-2" target="_blank"></a>
-        <a href="https://www.instagram.com/ucetnictvi.jc-servis/" class="fab fa-instagram z-depth-2" target="_blank"></a>
-        <a href="https://www.linkedin.com/company/jc-servis-s-r-o-" class="fab fa-linkedin z-depth-2" target="_blank"></a>
-        <a href="https://twitter.com/jc-servis_m" class="fab fa-twitter z-depth-2" target="_blank"></a>
-        <a href="https://www.youtube.com/user/firmajc-servis" class="fab fa-youtube z-depth-2" target="_blank"></a>
+      <div class="social-media">
+        <a href="https://www.facebook.com/firmajc-servis" class="fab fa-facebook-f" target="_blank"></a>
+        <a href="https://www.linkedin.com/company/jc-servis-s-r-o-" class="fab fa-linkedin" target="_blank"></a>
+        <a href="https://twitter.com/jc-servis_m" class="fab fa-twitter" target="_blank"></a>
+        <a href="https://www.youtube.com/user/firmajc-servis" class="fab fa-youtube" target="_blank"></a>
       </div>
-    </div>
-
-    <div class="d-none d-md-block col-md-6">
-      <h3 [innerHTML]="'footer.navigation' | translate"></h3>
-      <!-- <div class="row">
-        <div class="col-md-6">
-          <div *ngFor="let menu of children">
-            <a [routerLink]="menu.url">{{menu.name}}</a>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div *ngFor="let menu of parents">
-            <a [routerLink]="menu.url">{{menu.name}}</a>
-          </div>
-        </div>
-      </div> -->
     </div>
 
     <div class="col-sm-6 col-md-3">
-      <h3 [innerHTML]="'footer.news' | translate"></h3>
+      <h2 [innerHTML]="'footer.services' | translate"></h2>
+      <mat-divider></mat-divider>
+      <!-- todo zde musi byt vycet service menu -->
+      <div class="content">
+        <div>
+          <a mat-button href="/">
+            <mat-icon color="primary">medical_services</mat-icon>Oprava pracek
+          </a>
+        </div>
+        <div>
+          <a mat-button href="/">
+            <mat-icon color="primary">directions_bike</mat-icon>Oprava jizdnich kol
+          </a>
+        </div>
+        <div>
+          <a mat-button href="/">
+            <mat-icon color="primary">electrical_services</mat-icon>Elektro instalace
+          </a>
+        </div>
+      </div>
+      <!-- todo zde musi byt vycet service menu -->
+    </div>
+
+    <div class="col-sm-12 col-md-6 next">
+      <h2 [innerHTML]="'footer.next' | translate"></h2>
+      <mat-divider></mat-divider>
+      <!-- todo zde musi byt vycet ostatni menu -->
+      <div class="content">
+        <a mat-icon-button href="/">
+          <mat-icon color="primary">home</mat-icon>
+        </a>
+        <a mat-button href="/">
+          Prvni
+        </a>
+        <a mat-button href="/">
+          Druhy
+        </a>
+        <a mat-button href="/">
+          Treti
+        </a>
+        <a mat-button href="/">
+          Ctvrty
+        </a>
+        <a mat-button href="/">
+          Paty
+        </a>
+      </div>
+      <!-- todo zde musi byt vycet ostatni menu -->
+      <div>
+        <a mat-button href="/">
+          <mat-icon color="primary">pin_drop</mat-icon>Mapa servisu
+        </a>
+        <a mat-button href="/">
+          <mat-icon color="primary">edit_calendar</mat-icon>Rezervacni kalendar
+        </a>
+      </div>
     </div>
   </div>
 </div>
