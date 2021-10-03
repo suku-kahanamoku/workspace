@@ -1,0 +1,10 @@
+.content {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+app-footer-menu {
+    background-color: #DDDDDD;
+    flex-grow: 1;
+}

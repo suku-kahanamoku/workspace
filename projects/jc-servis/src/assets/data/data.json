@@ -1,0 +1,69 @@
+{
+    "menu": [
+        {
+            "_id": "1",
+            "module": "HomeModule",
+            "cmp": "HomeComponent",
+            "name": "route.home",
+            "parentId": "",
+            "visible": false,
+            "en": {
+                "url": ""
+            },
+            "cs": {
+                "url": ""
+            }
+        },
+        {
+            "_id": "2",
+            "module": "AboutUsModule",
+            "cmp": "AboutUsComponent",
+            "name": "route.aboutUs",
+            "parentId": "",
+            "en": {
+                "url": "about-us"
+            },
+            "cs": {
+                "url": "o-nas"
+            }
+        },
+        {
+            "_id": "4",
+            "module": "BlogModule",
+            "cmp": "BlogComponent",
+            "name": "route.blog",
+            "parentId": "",
+            "en": {
+                "url": "blog"
+            },
+            "cs": {
+                "url": "blog"
+            }
+        },
+        {
+            "_id": "5",
+            "module": "ContactModule",
+            "cmp": "ContactComponent",
+            "name": "route.contact",
+            "parentId": "",
+            "en": {
+                "url": "contact"
+            },
+            "cs": {
+                "url": "kontakt"
+            }
+        },
+        {
+            "_id": "99",
+            "cmp": "PageNotFoundComponent",
+            "parentId": "",
+            "visible": false,
+            "en": {
+                "url": "**"
+            },
+            "cs": {
+                "url": "**"
+            }
+        }
+    ]
+}

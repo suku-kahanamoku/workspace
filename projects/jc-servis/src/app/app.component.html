@@ -1,0 +1,14 @@
+<mat-drawer-container autosize>
+  <mat-drawer #drawer mode="over">
+    <app-side-menu [itemList]="itemTree.data"></app-side-menu>
+  </mat-drawer>
+
+  <div class="content">
+    <app-main-menu [itemList]="itemTree.data" [drawer]="drawer"></app-main-menu>
+
+    <router-outlet></router-outlet>
+
+    <app-footer-menu [itemList]="itemTree.data"></app-footer-menu>
+  </div>
+
+</mat-drawer-container>

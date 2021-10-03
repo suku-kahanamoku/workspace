@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+    <div class="container">
+        <!-- logo -->
+        <a routerLink="/">
+            sci-conf
+        </a>
+
+        <!-- menicka -->
+        <md-menu class="d-none d-sm-flex" [items]="itemTree.data" [isRoot]="true" [isRootNavigable]="false"></md-menu>
+
+        <!-- hamburger button -->
+        <button mat-icon-button class="d-sm-none" (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
