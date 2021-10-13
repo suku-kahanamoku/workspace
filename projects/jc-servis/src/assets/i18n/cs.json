@@ -2,7 +2,9 @@
     "route": {
         "aboutUs": "O nás",
         "blog": "Blog",
-        "contact": "Kontakt"
+        "contact": "Kontakt",
+        "service": "Servis",
+        "appliances": "Spotřebiče"
     },
     "home": {
         "title": "Vyhledávání konferenci",

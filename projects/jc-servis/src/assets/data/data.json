@@ -28,6 +28,31 @@
             }
         },
         {
+            "_id": "3",
+            "module": "ServiceModule",
+            "cmp": "ServiceComponent",
+            "name": "route.service",
+            "parentId": "",
+            "en": {
+                "url": "service"
+            },
+            "cs": {
+                "url": "servis"
+            }
+        },
+        {
+            "_id": "31",
+            "cmp": "AppliancesComponent",
+            "name": "route.appliances",
+            "parentId": "3",
+            "en": {
+                "url": "appliances"
+            },
+            "cs": {
+                "url": "spotrebice"
+            }
+        },
+        {
             "_id": "4",
             "module": "BlogModule",
             "cmp": "BlogComponent",
