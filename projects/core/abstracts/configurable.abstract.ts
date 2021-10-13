@@ -48,6 +48,6 @@ export abstract class Configurable implements OnInit, OnDestroy {
      * @memberof Configurable
      */
     ngOnDestroy(): void {
-        ITERATE(this._subscriptions, (subscriber: Subscription) => subscriber && subscriber.unsubscribe());
+        ITERATE(this._subscriptions, (subscriber: Subscription) => subscriber?.unsubscribe());
     }
 }

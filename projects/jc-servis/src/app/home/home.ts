@@ -37,11 +37,19 @@ export class HomeComponent extends Themeable {
   }
 
   ngOnInit(): void {
-    this.load();
+    this.config = {
+      _id: 'home',
+      params: {
+        slideConfig: {
+          slidesPerView: 1,
+          autoplay: {
+            delay: 5000
+          }
+        }
+      }
+    }
   }
 
-  load(): void {
-
-  }
+  load(): void { }
 
 }

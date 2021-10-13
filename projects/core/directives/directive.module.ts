@@ -1,30 +1,22 @@
 import { NgModule } from '@angular/core';
+import { BgImgSrcDirective } from './bg-img-src.directive';
 
 import { EmbedSrcDirective } from './embed-src.directive';
+import { ImgSrcDirective } from './img-src.directive';
 import { InnerHtmlDirective } from './inner-html.directive';
 
-/**
- * Objekt s metadaty, vetsinou slouzi pro pretezovani modulu
- * 
- * @export
- * @constant Component
- */
-export const METADATA = {
+@NgModule({
     declarations: [
         InnerHtmlDirective,
         EmbedSrcDirective,
+        ImgSrcDirective,
+        BgImgSrcDirective,
     ],
     exports: [
         InnerHtmlDirective,
         EmbedSrcDirective,
+        ImgSrcDirective,
+        BgImgSrcDirective,
     ]
-};
-
-/**
- * Modul pro sharovane direktivy
- *
- * @export
- * @class ShareDirectiveModule
- */
-@NgModule(METADATA)
+})
 export class DirectiveModule { }

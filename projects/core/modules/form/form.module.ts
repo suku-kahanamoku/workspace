@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { FormFieldCheckboxComponent } from './form-field/checkbox/checkbox.component';
 import { FormFieldDateComponent } from './form-field/date/date.component';
@@ -15,6 +14,7 @@ import { FormFieldTextComponent } from './form-field/text/text.component';
 import { FormFieldTextareaComponent } from './form-field/textarea/textarea.component';
 import { FormFieldEmailComponent } from './form-field/email/email.component';
 import { TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
+import { SharedModule } from '../shared.module';
 
 /**
  * Objekt s metadaty, vetsinou slouzi pro pretezovani modulu
@@ -64,11 +64,13 @@ export const METADATA: NgModule = {
         FormFieldDatetimeComponent,
         /* FormFieldFileComponent, */
         FormFieldPasswordComponent,
+        SharedModule,
     ],
     imports: [
         FormsModule,
         ReactiveFormsModule,
-        TranslateModule.forChild(TRANSLATE_MODULE_CONFIG)
+        TranslateModule.forChild(TRANSLATE_MODULE_CONFIG),
+        SharedModule,
     ]
 }
 

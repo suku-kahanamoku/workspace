@@ -7,7 +7,7 @@
     "home": {
         "title": "Vyhledávání konferenci",
         "popular": "Popularni",
-        "actual": "Nejblizsi konference",
+        "actual": "Nejblizsi",
         "action": "Nejnavstevovanejsi (akcni)"
     },
     "footer": {
@@ -21,10 +21,6 @@
         "google": "Google",
         "linkedIn": "LinkedIn",
         "twitter": "Twitter",
-        "youtube": "Youtube",
-        "dotykacka": "Dotykačka",
-        "darka": "Darka",
-        "giri": "Giri",
-        "oemeta": "Oemeta"
+        "youtube": "Youtube"
     }
 }

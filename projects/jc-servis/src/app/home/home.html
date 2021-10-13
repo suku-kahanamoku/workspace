@@ -1,48 +1,41 @@
-<div>
-    <swiper [config]="{
-        slidesPerView: 1,
-        autoplay: {
-            delay: 5000
-        }
-      }">
-        <div *ngFor="let i of [1,2,3,4,5]">
-            Slide {{i}}
-        </div>
+<div class="content">
+    <swiper [config]="config?.params?.slideConfig">
+        <div *ngFor="let i of [1,2,3]" [bg-img]="'/assets/img/bg/slide_'+i+'.jpg'"></div>
     </swiper>
-</div>
 
-<!-- nejblizsi -->
-<div class="container">
-    <div class="py-4">
-        <div class="text-center">
-            <h2 [innerHTML]="'home.popular' | translate"></h2>
-        </div>
-        <div class="row">
-            article mat card
+    <!-- nejblizsi -->
+    <div class="container">
+        <div class="py-4">
+            <div class="text-center">
+                <h2 [innerHTML]="'home.popular' | translate"></h2>
+            </div>
+            <div class="row">
+                article mat card
+            </div>
         </div>
     </div>
-</div>
 
-<!-- nejblizsi -->
-<div class="container">
-    <div class="py-4">
-        <div class="text-center">
-            <h2 [innerHTML]="'home.actual' | translate"></h2>
-        </div>
-        <div class="row">
-            article mat card
+    <!-- nejblizsi -->
+    <div class="container">
+        <div class="py-4">
+            <div class="text-center">
+                <h2 [innerHTML]="'home.actual' | translate"></h2>
+            </div>
+            <div class="row">
+                article mat card
+            </div>
         </div>
     </div>
-</div>
 
-<!-- nejnavstevovanejsi -->
-<div class="container">
-    <div class="py-4">
-        <div class="text-center">
-            <h2 [innerHTML]="'home.action' | translate"></h2>
-        </div>
-        <div class="row">
-            article mat card
+    <!-- nejnavstevovanejsi -->
+    <div class="container">
+        <div class="py-4">
+            <div class="text-center">
+                <h2 [innerHTML]="'home.action' | translate"></h2>
+            </div>
+            <div class="row">
+                article mat card
+            </div>
         </div>
     </div>
 </div>

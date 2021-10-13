@@ -28,14 +28,13 @@ const CMP_LIST = [
   declarations: CMP_LIST,
   imports: [
     BrowserModule,
-    RouterModule.forRoot(GET_ROUTES(data.menu.filter(menu => !menu.parentId), CMP_LIST, MODULES)),
     BrowserAnimationsModule,
-    ProjectMenuModule,
     HttpClientModule,
+    RouterModule.forRoot(GET_ROUTES(data.menu.filter(menu => !menu.parentId), CMP_LIST, MODULES)),
     TranslateModule.forRoot(TRANSLATE_MODULE_CONFIG),
     MatSidenavModule,
+    ProjectMenuModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
