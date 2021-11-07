@@ -15,68 +15,6 @@
             }
         },
         {
-            "_id": "2",
-            "module": "AboutUsModule",
-            "cmp": "AboutUsComponent",
-            "name": "route.aboutUs",
-            "parentId": "",
-            "en": {
-                "url": "about-us"
-            },
-            "cs": {
-                "url": "o-nas"
-            }
-        },
-        {
-            "_id": "3",
-            "module": "ServiceModule",
-            "cmp": "ServiceComponent",
-            "name": "route.service",
-            "parentId": "",
-            "en": {
-                "url": "service"
-            },
-            "cs": {
-                "url": "servis"
-            }
-        },
-        {
-            "_id": "31",
-            "cmp": "AppliancesComponent",
-            "name": "route.appliances",
-            "parentId": "3",
-            "en": {
-                "url": "appliances"
-            },
-            "cs": {
-                "url": "spotrebice"
-            }
-        },
-        {
-            "_id": "32",
-            "cmp": "BikeComponent",
-            "name": "route.bike",
-            "parentId": "3",
-            "en": {
-                "url": "bike"
-            },
-            "cs": {
-                "url": "opravy-kol"
-            }
-        },
-        {
-            "_id": "33",
-            "cmp": "ElectroComponent",
-            "name": "route.electro",
-            "parentId": "3",
-            "en": {
-                "url": "electro"
-            },
-            "cs": {
-                "url": "elektro-instalace"
-            }
-        },
-        {
             "_id": "4",
             "module": "ReferenceModule",
             "cmp": "ReferenceComponent",

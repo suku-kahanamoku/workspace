@@ -1,70 +1,172 @@
 <div class="content">
-    <div class="pb-4">
+    <div class="mb-5">
         <swiper [config]="config?.params?.slideConfig">
             <div *ngFor="let i of [1,2,3]" [bg-img]="'/assets/img/bg/slide_'+i+'.jpg'"></div>
         </swiper>
     </div>
 
     <!-- nabidka sluzeb -->
-    <div class="container">
-        <div class="py-5">
-            <h2 class="text-center" [innerHTML]="'home.service' | translate"></h2>
-            <div class="row">
+    <div class="container mb-5">
+        <h2 class="pt-5 text-center" [innerHTML]="'home.service' | translate"></h2>
+        <div class="row">
 
-                <div *ngFor="let i of [1,2,3]" class="col-sm-12 col-md-6 col-lg-4 py-5">
-                    <mat-card>
-                        <mat-card-header>
-                            <mat-card-title>{{ 'route.appliances' | translate }}</mat-card-title>
-                        </mat-card-header>
-                        <img mat-card-image [src]="'/assets/img/bg/slide_'+i+'.jpg'" alt="Photo of a Shiba Inu">
-                        <mat-card-content>
-                            <p>
-                                Fusce suscipit libero eget elit. Nulla turpis magna, cursus sit amet, suscipit a,
-                                interdum id, felis. Etiam neque. Maecenas sollicitudin. Integer tempor. Nemo enim ipsam
-                                voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-                            </p>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <a routerLink="/" mat-button>{{ 'other.more' | translate }}</a>
-                        </mat-card-actions>
-                    </mat-card>
-                </div>
-
+            <div class="col-sm-12 col-md-6 col-lg-4 mt-4">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>{{ 'home.electric' | translate }}</mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image [src]="'/assets/img/bg/slide_1.jpg'" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <mat-list role="list">
+                            <mat-list-item role="listitem">
+                                {{ 'home.electricList1' | translate }}
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                {{ 'home.electricList2' | translate }}
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                {{ 'home.electricList3' | translate }}
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <a mat-button href="/">
+                            <mat-icon color="primary">phone_in_talk</mat-icon>{{ 'home.call' | translate }}
+                        </a>
+                        <a mat-button href="/">
+                            <mat-icon color="primary">email</mat-icon>{{ 'home.email' | translate }}
+                        </a>
+                    </mat-card-actions>
+                </mat-card>
             </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 mt-4">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>{{ 'home.plumber' | translate }}</mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image [src]="'/assets/img/bg/slide_1.jpg'" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <mat-list role="list">
+                            <mat-list-item role="listitem">
+                                {{ 'home.plumberList1' | translate }}
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                {{ 'home.plumberList2' | translate }}
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                {{ 'home.plumberList3' | translate }}
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <a mat-button href="/">
+                            <mat-icon color="primary">phone_in_talk</mat-icon>{{ 'home.call' | translate }}
+                        </a>
+                        <a mat-button href="/">
+                            <mat-icon color="primary">email</mat-icon>{{ 'home.email' | translate }}
+                        </a>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+
+            <div class="col-sm-12 col-lg-4 mt-4">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>{{ 'home.repair' | translate }}</mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image [src]="'/assets/img/bg/slide_1.jpg'" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <mat-list role="list">
+                            <mat-list-item role="listitem">
+                                Porouchala se Vám televize?
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                Zabouchnul jste si klíče?
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                Chcete vymalovat či uklidit?
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <a mat-button href="/">
+                            <mat-icon color="primary">phone_in_talk</mat-icon>{{ 'home.call' | translate }}
+                        </a>
+                        <a mat-button href="/">
+                            <mat-icon color="primary">email</mat-icon>{{ 'home.email' | translate }}
+                        </a>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+
         </div>
     </div>
 
-    <!-- nejblizsi -->
-    <div class="container">
-        <div class="py-5">
-            <h2 class="text-center" [innerHTML]="'route.aboutUs' | translate"></h2>
-            <div class="row">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut enim ad minima veniam, quis nostrum
-                exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Mauris
-                tincidunt sem sed arcu. Nam sed tellus id magna elementum tincidunt. Phasellus et lorem id felis
-                nonummy
-                placerat. Fusce consectetuer risus a nunc. Aliquam erat volutpat. Nullam lectus justo, vulputate
-                eget
-                mollis sed, tempor sed magna. Duis pulvinar. Nullam lectus justo, vulputate eget mollis sed, tempor
-                sed
-                magna. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Mauris elementum mauris vitae
-                tortor.
-                Etiam neque. Pellentesque pretium lectus id turpis. Duis risus. Aliquam ante.
+    <!-- o nas -->
+    <div class="container mb-5">
+        <h1 display-5 class="pt-5 text-center" [innerHTML]="'home.title' | translate"></h1>
+        <div class="row">
+            <div class="col-md-12 col-lg-8 mt-4">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>
+                            {{ 'home.aboutUs' | translate }}
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <mat-list role="list">
+                            <mat-list-item role="listitem">
+                                Nabízímé všem vlastníkům nemovitostí veškeré služby spojené s běžným provozem a
+                                údržbou nemovitosti.
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                Diagnostika závad, návrhy optimálního řešení, realizace doporučených opatření.
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                Preventivní prohlídky s následným doporučením návrhu oprav (prevence vyšších nákladů
+                                v důsledku neřešených závad).
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                Práci elektro dle vyhlášky č.50/1978 Sb.
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                Co neumíme zajistíme.
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+                </mat-card>
             </div>
+
+            <div class="col-md-12 col-lg-4 mt-4">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>
+                            Ceník služeb
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <mat-list role="list">
+                            <mat-list-item role="listitem">
+                                Diagnostika, konzultace <strong>ZDARMA</strong>
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                Po - Pá 300 Kč/h
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                So - Ne 350 Kč/h
+                            </mat-list-item>
+                            <mat-list-item role="listitem">
+                                Svátky 350 Kč/h
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
         </div>
     </div>
 
-    <!-- nejblizsi -->
-    <div class="container">
-        <div class="py-5">
-            <h2 class="text-center" [innerHTML]="'home.price' | translate"></h2>
-            <div class="row">
-                <mat-list role="list">
-                    <mat-list-item role="listitem">Item 1</mat-list-item>
-                    <mat-list-item role="listitem">Item 2</mat-list-item>
-                    <mat-list-item role="listitem">Item 3</mat-list-item>
-                </mat-list>
-            </div>
-        </div>
-    </div>
 </div>

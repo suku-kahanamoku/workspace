@@ -1,15 +1,26 @@
 {
     "route": {
-        "aboutUs": "O nás",
         "reference": "Reference",
-        "contact": "Kontakt",
-        "service": "Servis",
-        "appliances": "Spotřebiče",
-        "bike": "Opravy kol",
-        "electro": "Elektro instalace"
+        "contact": "Kontakt"
     },
     "home": {
-        "service": "Nabídka služeb",
+        "title": "Profesionální řemeslné a opravářské práce",
+        "service": "Potřebujete?",
+        "electric": "Elektrikář",
+        "electricList1": "Máte nefunční či spálený jistič nebo pojistky?",
+        "electricList2": "Nesvítí Vám světlo, nefunguje Vám zásuvka či vypánač?",
+        "electricList3": "Nefunguje bojler, elektrický kotel či elektrické topení?",
+        "plumber": "Instalatér",
+        "plumberList1": "Teče Vám vodovodní potrubí?",
+        "plumberList2": "Chcete vyměnit staré baterie či kohoutky?",
+        "plumberList3": "Chcete připojit či vyměnit pračku, myčku nebo kotle?",
+        "repair": "Opravář a jiné práce",
+        "repairList1": "Porouchala se Vám televize?",
+        "repairList2": "Zabouchnul jste si klíče?",
+        "repairList3": "Chcete vymalovat či uklidit?",
+        "call": "Volejte",
+        "email": "Napište",
+        "aboutUs": "Co děláme",
         "price": "Ceník"
     },
     "contact": {
@@ -22,7 +33,7 @@
     },
     "footer": {
         "contact": "Kontakt",
-        "services": "Náš servis",
+        "services": "Sociální sítě",
         "next": "Další",
         "all": "vše"
     },
