@@ -20,24 +20,6 @@ import { VALIDATE_EMAIL, VALIDATE_NAME, VALIDATE_PHONE_NUMBER, VALIDATE_PASSWORD
 })
 export class FormService {
 
-    /**
-     * Seznam se vsemi chybovymi hlasky
-     *
-     * @protected
-     * @type {Object}
-     * @memberof FormService
-     */
-    protected _errors: Object = {};
-
-    /**
-     * Nastaveni chybvych hlasek
-     *
-     * @memberof FormService
-     */
-    public set errors(errors: any) {
-        this._errors = { ...this._errors, ...errors };
-    }
-
 
     /**
      * Creates an instance of FormService.

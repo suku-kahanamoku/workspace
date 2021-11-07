@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
 import { Themeable } from 'projects/core/abstracts/themeable.abstract';
 import { IMenu } from 'projects/core/interfaces/menu.interface';
@@ -32,16 +32,55 @@ export class ContactComponent extends Themeable {
     super.itemList = itemList;
   }
 
-  constructor(public readonly appService: AppService) {
+  readonly iframe: any = {};
+
+  constructor(public readonly appService: AppService, public _el: ElementRef) {
     super()
   }
 
   ngOnInit(): void {
+    this.iframe.height = this._el.nativeElement.querySelector('.content').clientHeight;
+    this.iframe.width = window.innerWidth;
     this.load();
   }
 
   load(): void {
-
+    this.config.params.fields = {
+      name: {
+        label: 'Jméno',
+        required: true,
+        icon: {
+          value: 'font_download'
+        }
+      },
+      lastname: {
+        label: 'Příjmeni',
+        required: true,
+        icon: {
+          value: 'font_download'
+        }
+      },
+      phone: {
+        label: 'Telefon',
+        icon: {
+          value: 'phone'
+        }
+      },
+      email: {
+        label: 'E-mail',
+        required: true,
+        icon: {
+          value: 'email'
+        }
+      },
+      message: {
+        label: 'Zpráva',
+        type: 'textarea',
+        icon: {
+          value: 'help'
+        }
+      }
+    }
   }
 
 }

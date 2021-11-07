@@ -4,10 +4,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 
 import { MenuModule } from 'projects/core/modules/menu/menu.module';
-import { MainMenuComponent } from './main-menu/main-menu.component';
-import { FooterMenuComponent } from './footer-menu/footer-menu.component';
+import { MainMenuComponent } from './main-menu/main-menu';
+import { FooterMenuComponent } from './footer-menu/footer-menu';
 import { TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
-import { SideMenuComponent } from './side-menu/side-menu.component';
+import { SideMenuComponent } from './side-menu/side-menu';
 
 
 @NgModule({

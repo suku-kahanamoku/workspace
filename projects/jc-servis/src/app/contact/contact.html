@@ -1,3 +1,49 @@
 <div class="content">
-    contact works!
+    <div class="container">
+
+        <div class="card-content">
+            <mat-card>
+                <mat-card-header>
+                    <div mat-card-avatar [bg-img]="'/assets/img/face.jpg'">
+                    </div>
+                    <mat-card-title>
+                        {{ 'route.contact' | translate }}
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        {{ 'contact.name' | translate }}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-list role="list">
+                        <mat-list-item role="listitem">
+                            <a mat-button href="/">
+                                <mat-icon color="primary">phone_in_talk</mat-icon>{{ 'contact.phone' | translate }}
+                            </a>
+                        </mat-list-item>
+                        <mat-list-item role="listitem">
+                            <a mat-button href="/">
+                                <mat-icon color="primary">email</mat-icon>{{ 'contact.email' | translate }}
+                            </a>
+                        </mat-list-item>
+                        <mat-list-item role="listitem">
+                            <a mat-button href="/">
+                                <mat-icon color="primary">business</mat-icon>{{ 'contact.address' | translate }}
+                            </a>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <!-- <div class="row">
+            <h3 class="col-sm-12 my-5 text-center">
+                {{ 'contact.contactUs' | translate }}
+            </h3>
+            <app-contact-form [config]="config"></app-contact-form>
+        </div> -->
+    </div>
+
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5213.793749838879!2d16.581887041019602!3d49.20251584023852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xba85e4a593d4953!2sHosp%C5%AFdka%20Na%20Drakenu!5e0!3m2!1scs!2scz!4v1636223691132!5m2!1scs!2scz"
+        [width]="iframe.width" [height]="iframe.height" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>

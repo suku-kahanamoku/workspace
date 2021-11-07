@@ -1,16 +1,24 @@
 {
     "route": {
         "aboutUs": "O nás",
-        "blog": "Blog",
+        "reference": "Reference",
         "contact": "Kontakt",
         "service": "Servis",
-        "appliances": "Spotřebiče"
+        "appliances": "Spotřebiče",
+        "bike": "Opravy kol",
+        "electro": "Elektro instalace"
     },
     "home": {
-        "title": "Vyhledávání konferenci",
-        "popular": "Popularni",
-        "actual": "Nejblizsi",
-        "action": "Nejnavstevovanejsi (akcni)"
+        "service": "Nabídka služeb",
+        "price": "Ceník"
+    },
+    "contact": {
+        "name": "Jaroslav Císař",
+        "phone": "739936909",
+        "email": "info@jc-servis.cz",
+        "addressTitle": "Provozovna",
+        "address": "Kraví hora 12, 602 00 Brno-střed",
+        "contactUs": "Kontaktujte nás"
     },
     "footer": {
         "contact": "Kontakt",
@@ -24,5 +32,8 @@
         "linkedIn": "LinkedIn",
         "twitter": "Twitter",
         "youtube": "Youtube"
+    },
+    "other": {
+        "more": "Více"
     }
 }

@@ -53,16 +53,40 @@
             }
         },
         {
-            "_id": "4",
-            "module": "BlogModule",
-            "cmp": "BlogComponent",
-            "name": "route.blog",
-            "parentId": "",
+            "_id": "32",
+            "cmp": "BikeComponent",
+            "name": "route.bike",
+            "parentId": "3",
             "en": {
-                "url": "blog"
+                "url": "bike"
             },
             "cs": {
-                "url": "blog"
+                "url": "opravy-kol"
+            }
+        },
+        {
+            "_id": "33",
+            "cmp": "ElectroComponent",
+            "name": "route.electro",
+            "parentId": "3",
+            "en": {
+                "url": "electro"
+            },
+            "cs": {
+                "url": "elektro-instalace"
+            }
+        },
+        {
+            "_id": "4",
+            "module": "ReferenceModule",
+            "cmp": "ReferenceComponent",
+            "name": "route.reference",
+            "parentId": "",
+            "en": {
+                "url": "reference"
+            },
+            "cs": {
+                "url": "reference"
             }
         },
         {

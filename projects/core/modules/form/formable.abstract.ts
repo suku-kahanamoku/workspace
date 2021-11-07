@@ -1,3 +1,4 @@
+import { Directive } from "@angular/core";
 import { HttpErrorResponse } from "@angular/common/http";
 import { FormGroup, AbstractControl } from "@angular/forms";
 import { Subscription } from "rxjs";
@@ -8,10 +9,10 @@ import { Loadable } from "projects/core/abstracts/loadable.abstract";
 import { IS_DEFINED } from "projects/core/utils/check-basic.functions";
 import { ITERATE, GET_VALUE } from "projects/core/utils/modify-object.functions";
 import { IItem } from "projects/core/interfaces/item.interface";
-import { Injectable } from "@angular/core";
+import { AppService } from "projects/core/services/app.service";
 
 
-@Injectable()
+@Directive()
 export abstract class Formable extends Loadable {
 
     /**
@@ -34,11 +35,20 @@ export abstract class Formable extends Loadable {
     readonly group: FormGroup = this.formService.formBuilder.group({});
 
     /**
+     *
+     *
+     * @type {IFormField[]}
+     * @memberof Formable
+     */
+    fields: IFormField[] = [];
+
+    /**
      * Creates an instance of Formable.
      * @param {FormService} formService
      * @memberof Formable
      */
     constructor(
+        public readonly appService: AppService,
         public readonly formService: FormService
     ) {
         super();
@@ -51,9 +61,9 @@ export abstract class Formable extends Loadable {
      */
     ngOnInit(): void {
         if (this.config) {
-            this.formService.errors = this.config.params.errors;
+            this.fields = Object.values(this.config.params.fields);
             this._initReactiveForm(this.config.params.fields, this.group);
-            this.load(this.config.params.restUrl);
+            this.load(this.config);
         }
     }
 
@@ -104,19 +114,19 @@ export abstract class Formable extends Loadable {
             const fields = this.group.value;
             switch (this.config.params.method) {
                 case 'post':
-                    subscriber = this.formService.appService.http.post(this.config.params.submitUrl, fields);
+                    subscriber = this.appService.http.post(this.config.params.submitUrl, fields);
                     break;
 
                 case 'put':
-                    subscriber = this.formService.appService.http.put(this.config.params.submitUrl, fields);
+                    subscriber = this.appService.http.put(this.config.params.submitUrl, fields);
                     break;
 
                 case 'patch':
-                    /* subscriber = this.formService.appService.http.patch(this.config.params.submitUrl, fields, this.item._etag); */
+                    /* subscriber = this.appService.http.patch(this.config.params.submitUrl, fields, this.item._etag); */
                     break;
 
                 case 'delete':
-                    subscriber = this.formService.appService.http.delete(this.config.params.submitUrl);
+                    subscriber = this.appService.http.delete(this.config.params.submitUrl);
                     break;
 
                 case 'get':
@@ -128,7 +138,7 @@ export abstract class Formable extends Loadable {
                 this._subscriptions.submit = subscriber.subscribe(successClbk, errorClbk);
             }
         } else {
-            this.formService.appService.notification.load('form-invalid');
+            this.appService.notification.load('form-invalid');
         }
     }
 

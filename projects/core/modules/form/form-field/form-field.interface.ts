@@ -196,6 +196,7 @@ export interface IFormField {
 
     minDate: string;
     maxDate: string;
+    tabindex: number;
 }
 
 /**

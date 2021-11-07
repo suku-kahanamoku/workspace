@@ -2,6 +2,17 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatStepperModule } from '@angular/material/stepper';
+
 import { FormFieldCheckboxComponent } from './form-field/checkbox/checkbox.component';
 import { FormFieldDateComponent } from './form-field/date/date.component';
 import { FormFieldDatetimeComponent } from './form-field/datetime/datetime.component';
@@ -17,12 +28,12 @@ import { TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.funct
 import { SharedModule } from '../shared.module';
 
 /**
- * Objekt s metadaty, vetsinou slouzi pro pretezovani modulu
- * 
+ * Form module
+ *
  * @export
- * @constant NgModule
+ * @class FormModule
  */
-export const METADATA: NgModule = {
+@NgModule({
     declarations: [
         FormFieldTextComponent,
         FormFieldNumberComponent,
@@ -35,20 +46,6 @@ export const METADATA: NgModule = {
         FormFieldDateComponent,
         FormFieldDatetimeComponent,
         /* FormFieldFileComponent, */
-        FormFieldPasswordComponent,
-    ],
-    entryComponents: [
-        FormFieldTextComponent,
-        FormFieldNumberComponent,
-        FormFieldEmailComponent,
-        FormFieldSelectComponent,
-        FormFieldSearchComponent,
-        FormFieldRadioComponent,
-        FormFieldCheckboxComponent,
-        FormFieldTextareaComponent,
-        FormFieldDateComponent,
-        FormFieldDatetimeComponent,
-        /*  FormFieldFileComponent, */
         FormFieldPasswordComponent,
     ],
     exports: [
@@ -67,18 +64,20 @@ export const METADATA: NgModule = {
         SharedModule,
     ],
     imports: [
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatRadioModule,
+        MatCheckboxModule,
+        MatDatepickerModule,
+        MatAutocompleteModule,
+        MatSliderModule,
+        MatSlideToggleModule,
+        MatStepperModule,
         FormsModule,
         ReactiveFormsModule,
         TranslateModule.forChild(TRANSLATE_MODULE_CONFIG),
         SharedModule,
     ]
-}
-
-/**
- * Form module
- *
- * @export
- * @class FormModule
- */
-@NgModule(METADATA)
+})
 export class FormModule { }

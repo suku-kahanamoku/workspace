@@ -7,10 +7,14 @@ import { ServiceComponent } from './service';
 import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
 import { AppliancesComponent } from './appliances/appliances';
 import { SharedModule } from 'projects/core/modules/shared.module';
+import { BikeComponent } from './bike/bike';
+import { ElectroComponent } from './electro/electro';
 
 const CMP_LIST = [
   ServiceComponent,
-  AppliancesComponent
+  AppliancesComponent,
+  BikeComponent,
+  ElectroComponent,
 ];
 
 @NgModule({

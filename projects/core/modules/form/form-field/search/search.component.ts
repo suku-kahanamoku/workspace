@@ -109,14 +109,4 @@ export class FormFieldSearchComponent extends FormFieldSelectComponent {
         ? (this.field.options.find(opt => opt.value === value) || { label: '' }).label
         : '';
 
-    /**
-     * Udalosti na blur
-     *
-     * @memberof FormFieldSearchComponent
-     */
-    onBlur(): void {
-        this.fakeControl.patchValue(this.formControl.value);
-        super.onBlur();
-    }
-
 }

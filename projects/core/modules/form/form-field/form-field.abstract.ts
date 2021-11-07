@@ -1,4 +1,4 @@
-import { OnInit, Input, Output, OnDestroy, EventEmitter, ViewChild, ElementRef, Injectable } from '@angular/core';
+import { OnInit, Input, Output, OnDestroy, EventEmitter, ViewChild, ElementRef, Directive } from '@angular/core';
 import { FormGroup, AbstractControl } from '@angular/forms';
 
 import { AppService } from 'projects/core/services/app.service';
@@ -9,7 +9,7 @@ import { debounceTime } from 'rxjs/operators';
 import { FormService } from '../form.service';
 import { IFormField } from './form-field.interface';
 
-@Injectable()
+@Directive()
 export abstract class FormFieldAbstract implements OnInit, OnDestroy {
 
   /**
@@ -38,15 +38,8 @@ export abstract class FormFieldAbstract implements OnInit, OnDestroy {
    * @type {ElementRef}
    * @memberof FormFieldAbstract
    */
-  /**
-   * Form tag, napr. input, textarea, ...
-   *
-   * @type {ElementRef}
-   * @memberof FormFieldAbstract
-   */
 
-  @ViewChild('formElement')
-  formElement!: ElementRef;
+  @ViewChild('formElement') formElement!: ElementRef;
 
   /**
    * FormGroup
@@ -63,8 +56,7 @@ export abstract class FormFieldAbstract implements OnInit, OnDestroy {
    * @memberof FormFieldAbstract
    */
 
-  @Input()
-  field!: IFormField;
+  @Input() field!: IFormField;
 
   /**
    * Dynamicka hodnota
@@ -155,14 +147,6 @@ export abstract class FormFieldAbstract implements OnInit, OnDestroy {
   @Input() id: string = '';
 
   /**
-   * Hint
-   *
-   * @type {string}
-   * @memberof FormFieldAbstract
-   */
-  @Input() hint: string = '';
-
-  /**
    * EventEmitter pro zmenu hodnot
    *
    * @memberof FormFieldAbstract
@@ -176,24 +160,6 @@ export abstract class FormFieldAbstract implements OnInit, OnDestroy {
    * @memberof FormFieldAbstract
    */
   @Output() onAutofill: EventEmitter<AbstractControl> = new EventEmitter();
-
-  /**
-   * EventEmitter na blur (deaktivace fieldu)
-   *
-   * @type {EventEmitter<AbstractControl>}
-   * @memberof FormFieldAbstract
-   */
-  @Output() blur: EventEmitter<AbstractControl> = new EventEmitter();
-
-  /**
-   * Zabezpeceni nekonecne smycky
-   *
-   * @protected
-   * @type {boolean}
-   * @memberof FormFieldAbstract
-   */
-
-  protected _blurred!: boolean;
 
   /**
    * Reactive field
@@ -276,7 +242,6 @@ export abstract class FormFieldAbstract implements OnInit, OnDestroy {
   protected _onValueChange(value: any): void {
     if (!IS_EQUAL(this.field.value, value)) {
       if (typeof value !== 'undefined') {
-        this._blurred = false;
         this.field.value = value;
         // pokud ma field autofilled, emituje se onAutofill
         if (this.formElement && this.formElement.nativeElement.className.indexOf('autofilled') >= 0)
@@ -284,18 +249,6 @@ export abstract class FormFieldAbstract implements OnInit, OnDestroy {
       }
       // signal ven, ze se zmenila hodnota
       this.valueChanges.emit(this.formControl);
-    }
-  }
-
-  /**
-   * Udalosti na blur
-   *
-   * @memberof FormFieldAbstract
-   */
-  onBlur(): void {
-    if (!this._blurred) {
-      this.blur.emit(this.formControl);
-      this._blurred = true;
     }
   }
 

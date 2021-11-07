@@ -1,5 +1,34 @@
 @import 'variables';
 
+cdk-overlay-container {
+
+    .active,
+    .active:hover {
+        background-color: #444;
+        color: #fff !important;
+    }
+}
+
+mat-drawer {
+    min-width: 70%;
+
+    mat-tree {
+        padding: 25px;
+    }
+}
+
+mat-drawer-content {
+    display: initial !important;
+}
+
+mat-icon {
+    margin-right: 5px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
 body {
     height: 100%;
     margin: 0;
@@ -13,19 +42,15 @@ body {
 a,
 .fab,
 .fas {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
-mat-drawer {
-    min-width: 70%;
-
-    mat-tree {
-        padding: 25px;
-    }
+a:hover {
+    color: inherit !important;
 }
 
-mat-icon {
-    margin-right: 5px;
+.container {
+    position: relative;
 }
 
 .content {

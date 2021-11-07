@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Themeable } from 'projects/core/abstracts/themeable.abstract';
 import { AppService } from 'projects/core/services/app.service';
 
 @Component({
-  selector: 'app-side-menu',
-  templateUrl: './side-menu.component.html',
-  styleUrls: ['./side-menu.component.scss']
+  selector: 'app-main-menu',
+  templateUrl: './main-menu.html',
+  styleUrls: ['./main-menu.scss']
 })
-export class SideMenuComponent extends Themeable {
+export class MainMenuComponent extends Themeable {
+
+  @Input() drawer: any;
 
   constructor(public readonly appService: AppService) {
     super();

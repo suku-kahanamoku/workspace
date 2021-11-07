@@ -14,7 +14,7 @@ export abstract class Configurable implements OnInit, OnDestroy {
      * @type {IConfig}
      * @memberof Configurable
      */
-    @Input() config!: IConfig;
+    @Input() config: IConfig = <any>{ params: {} };
 
     /**
      * Subscription - pripojena komunikace s backendem, appkou, ...

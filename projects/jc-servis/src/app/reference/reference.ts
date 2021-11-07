@@ -5,18 +5,18 @@ import { IMenu } from 'projects/core/interfaces/menu.interface';
 import { AppService } from 'projects/core/services/app.service';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.html',
-  styleUrls: ['./blog.scss']
+  selector: 'app-reference',
+  templateUrl: './reference.html',
+  styleUrls: ['./reference.scss']
 })
-export class BlogComponent extends Themeable {
+export class ReferenceComponent extends Themeable {
 
   /**
    * Vrati seznam objektu
    *
    * @readonly
    * @type {IMenu[]}
-   * @memberof BlogComponent
+   * @memberof ReferenceComponent
    */
   get itemList(): IMenu[] {
     return <IMenu[]>super.itemList;
@@ -25,7 +25,7 @@ export class BlogComponent extends Themeable {
   /**
    * Nastavi seznam objektu
    *
-   * @memberof BlogComponent
+   * @memberof ReferenceComponent
    */
   @Input()
   set itemList(itemList: IMenu[]) {

@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatCardModule } from '@angular/material/card';
 
 
 /**
@@ -19,6 +20,7 @@ import { MatBadgeModule } from '@angular/material/badge';
         MatButtonModule,
         MatIconModule,
         MatBadgeModule,
+        MatCardModule,
     ],
     imports: [
         CommonModule,
@@ -26,6 +28,7 @@ import { MatBadgeModule } from '@angular/material/badge';
         MatButtonModule,
         MatIconModule,
         MatBadgeModule,
+        MatCardModule,
     ]
 })
 export class SharedModule { }
