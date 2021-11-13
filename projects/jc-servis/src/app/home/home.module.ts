@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { SwiperModule } from 'ngx-swiper-wrapper';
-import { MatListModule } from '@angular/material/list';
 
 import data from '../../assets/data/data.json';
 import { HomeComponent } from './home';
 import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
 import { DirectiveModule } from 'projects/core/directives/directive.module';
 import { SharedModule } from 'projects/core/modules/shared.module';
+import { ProjectFormModule } from '../../modules/form/form.module';
 
 const CMP_LIST = [
   HomeComponent
@@ -24,7 +24,7 @@ const CMP_LIST = [
     SwiperModule,
     DirectiveModule,
     SharedModule,
-    MatListModule
+    ProjectFormModule
   ]
 })
 export class HomeModule { }

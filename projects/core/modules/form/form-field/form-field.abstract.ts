@@ -196,9 +196,7 @@ export abstract class FormFieldAbstract implements OnInit, OnDestroy {
    * @memberof FormFieldAbstract
    */
   ngOnDestroy(): void {
-    ITERATE(this._subscriptions, (subscriber: Subscription) => {
-      if (subscriber) subscriber.unsubscribe();
-    });
+    ITERATE(this._subscriptions, (subscriber: Subscription) => subscriber?.unsubscribe());
     if (this.formControl) {
       this.formControl.clearValidators();
       this.formControl.clearAsyncValidators();
@@ -227,7 +225,7 @@ export abstract class FormFieldAbstract implements OnInit, OnDestroy {
         .pipe(debounceTime(400))
         .subscribe(value => this._onValueChange(value));
       // odposlouchava zmeny dynamickych hodnot
-      if (this._subscriptions._value) this._subscriptions._value.unsubscribe();
+      this._subscriptions._value?.unsubscribe();
       this._subscriptions._value = this._value$.subscribe(value => this.formControl.patchValue(value));
     }
   }

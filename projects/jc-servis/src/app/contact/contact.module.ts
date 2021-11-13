@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatListModule } from '@angular/material/list';
 
 import data from '../../assets/data/data.json';
 import { ContactComponent } from './contact';
@@ -23,7 +22,6 @@ const CMP_LIST = [
     TranslateModule.forChild(TRANSLATE_MODULE_CONFIG),
     DirectiveModule,
     SharedModule,
-    MatListModule,
     ProjectFormModule
   ]
 })

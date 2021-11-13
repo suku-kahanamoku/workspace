@@ -1,57 +1,76 @@
-<div class="row">
-  <div *ngFor="let field of fields" class="col-sm-6">
+<form [formGroup]="group" (ngSubmit)="submit()" autofocus class="row">
+  <div *ngFor="let field of fields; let last = last" class="col-sm-{{ last ? 12 : 6 }}">
     <ng-container *ngTemplateOutlet="fieldTemp;context:{value:field, class:'D(ib) W(100%)'}">
     </ng-container>
   </div>
-</div>
+  <ng-container *ngIf="buttonsTemp; then buttonsTemp"></ng-container>
+</form>
 
 <!-- sablona pro ruzne fieldy -->
 <ng-template #fieldTemp let-field="value" let-default="default" let-class="class">
   <ng-container [ngSwitch]="field?.type">
 
-    <app-form-field-text *ngSwitchDefault [field]="field" [ngGroup]="ngForm" #fieldCmp [ctx]="ctx" [class]="class">
+    <app-form-field-text *ngSwitchDefault [field]="field" [group]="group" #fieldCmp [ctx]="ctx" [class]="class">
     </app-form-field-text>
 
-    <app-form-field-number *ngSwitchCase="'number'" [field]="field" [ngGroup]="ngForm" #fieldCmp [ctx]="ctx"
+    <app-form-field-number *ngSwitchCase="'number'" [field]="field" [group]="group" #fieldCmp [ctx]="ctx"
       [class]="class">
     </app-form-field-number>
 
-    <app-form-field-email *ngSwitchCase="'email'" [field]="field" [ngGroup]="ngForm" #fieldCmp [ctx]="ctx"
-      [class]="class">
+    <app-form-field-email *ngSwitchCase="'email'" [field]="field" [group]="group" #fieldCmp [ctx]="ctx" [class]="class">
     </app-form-field-email>
 
-    <app-form-field-select *ngSwitchCase="'select'" [field]="field" [ngGroup]="ngForm" #fieldCmp [ctx]="ctx"
+    <app-form-field-select *ngSwitchCase="'select'" [field]="field" [group]="group" #fieldCmp [ctx]="ctx"
       [class]="class">
     </app-form-field-select>
 
-    <app-form-field-search *ngSwitchCase="'search'" [field]="field" [ngGroup]="ngForm" #fieldCmp [ctx]="ctx"
+    <app-form-field-search *ngSwitchCase="'search'" [field]="field" [group]="group" #fieldCmp [ctx]="ctx"
       [class]="class">
     </app-form-field-search>
 
-    <app-form-field-radio *ngSwitchCase="'radio'" [field]="field" [ngGroup]="ngForm" #fieldCmp [ctx]="ctx"
-      [class]="class">
+    <app-form-field-radio *ngSwitchCase="'radio'" [field]="field" [group]="group" #fieldCmp [ctx]="ctx" [class]="class">
     </app-form-field-radio>
 
-    <app-form-field-checkbox *ngSwitchCase="'checkbox'" [field]="field" [ngGroup]="ngForm" #fieldCmp [ctx]="ctx"
+    <app-form-field-checkbox *ngSwitchCase="'checkbox'" [field]="field" [group]="group" #fieldCmp [ctx]="ctx"
       [class]="class">
     </app-form-field-checkbox>
 
-    <app-form-field-textarea *ngSwitchCase="'textarea'" [field]="field" [ngGroup]="ngForm" #fieldCmp [ctx]="ctx"
+    <app-form-field-textarea *ngSwitchCase="'textarea'" [field]="field" [group]="group" #fieldCmp [ctx]="ctx"
       [class]="class">
     </app-form-field-textarea>
 
-    <app-form-field-file *ngSwitchCase="'file'" [field]="field" [ngGroup]="ngForm" #fieldCmp [ctx]="ctx"
-      [class]="class">
+    <app-form-field-file *ngSwitchCase="'file'" [field]="field" [group]="group" #fieldCmp [ctx]="ctx" [class]="class">
     </app-form-field-file>
 
     <ng-container *ngSwitchCase="'datetime'">
-      <app-form-field-date [field]="field" [ngGroup]="ngForm" #fieldCmp [ctx]="ctx" [class]="class">
+      <app-form-field-date [field]="field" [group]="group" #fieldCmp [ctx]="ctx" [class]="class">
       </app-form-field-date>
     </ng-container>
 
-    <app-form-field-password *ngSwitchCase="'password'" [field]="field" [ngGroup]="ngForm" #fieldCmp [ctx]="ctx"
+    <app-form-field-password *ngSwitchCase="'password'" [field]="field" [group]="group" #fieldCmp [ctx]="ctx"
       [class]="class">
     </app-form-field-password>
 
   </ng-container>
+</ng-template>
+
+<!-- sablona pro tlacitka -->
+<ng-template #buttonsTemp>
+  <div class="container">
+    <div class="row">
+      <!-- search buttton -->
+      <div class="col-6">
+        <button mat-raised-button color="primary" [disabled]="group?.invalid">
+          {{ 'form.send' | translate }}
+        </button>
+      </div>
+
+      <!-- reset buttton -->
+      <div class="col-6 text-right">
+        <button type="reset" mat-raised-button color="warn" mat-dialog-close>
+          {{ 'form.close' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
 </ng-template>

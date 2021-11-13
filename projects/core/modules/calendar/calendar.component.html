@@ -1,0 +1,53 @@
+<div [ngClass]="{'flex-container': params?.templateConfig?.containered}">
+  <div class="Pos(r) D(f) Fxd(r) Fxf(w) Fxf(nw)--md Jc(sb) Ai(c)">
+
+    <!-- HEADLINE -->
+    <div class="Pos(r) W(100%) W(50%)--md Mb(20px) Mb(0)--md">
+      <span class="Fz(2rem) Fw(500)">{{ date | calendarDate:(view + 'ViewTitle'):'cs' }}</span>
+    </div>
+
+    <!-- BUTTONS DAY CHANGE-->
+    <div class="Pos(r) W(50%) W(25%)--md D(f) Jc(fs) Jc(fe)--md">
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle mwlCalendarPreviousView [view]="view" [(viewDate)]="date">
+          <i class="fa fa-chevron-left"></i>
+        </mat-button-toggle>
+        <mat-button-toggle mwlCalendarToday [(viewDate)]="date">
+          {{ params?.buttonsConfig?.today || 'Dnes' }}
+        </mat-button-toggle>
+        <mat-button-toggle mwlCalendarNextView [view]="view" [(viewDate)]="date">
+          <i class="fa fa-chevron-right"></i>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <!-- BUTTONS VIEW CHANGE-->
+    <div class="Pos(r) W(50%) W(25%)--md D(f) Jc(fe)">
+      <mat-button-toggle-group name="calendarView" aria-label="Calendar view">
+        <mat-button-toggle (click)="view = CalendarView.Month" [checked]="view === CalendarView.Month">
+          {{ params?.buttonsConfig?.monthView || 'Měsíc' }}
+        </mat-button-toggle>
+        <mat-button-toggle (click)="view = CalendarView.Week" [checked]="view === CalendarView.Week">
+          {{ params?.buttonsConfig?.weekView || 'Týden' }}
+        </mat-button-toggle>
+        <mat-button-toggle (click)="view = CalendarView.Day" [checked]="view === CalendarView.Day">
+          {{ params?.buttonsConfig?.dayView || 'Den' }}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+
+  <!-- CALENDAR VIEW -->
+  <div class="Pos(r) Mt(25px)" [ngSwitch]="view">
+    <mat-progress-bar *ngIf="!loading.closed" mode="indeterminate"></mat-progress-bar>
+    <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="date" [events]="itemList"
+      [refresh]="refresh" [weekStartsOn]="params?.calendarConfig?.weekStartsOn || 1">
+    </mwl-calendar-month-view>
+    <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="date" [events]="itemList" [refresh]="refresh"
+      [weekStartsOn]="params?.calendarConfig?.weekStartsOn || 1">
+    </mwl-calendar-week-view>
+    <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="date" [events]="itemList" [refresh]="refresh">
+    </mwl-calendar-day-view>
+
+  </div>
+</div>

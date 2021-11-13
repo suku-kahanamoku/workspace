@@ -82,7 +82,8 @@ export class FormService {
      * @returns {AbstractControl}
      * @memberof FormService
      */
-    getFormControl(field: IFormField): AbstractControl {
+    getFormControl(field: IFormField, name?: string): AbstractControl {
+        field.name = name || '';
         // pro multiple a file jsou hodnoty pole
         if (field.multiple || field.type === 'file') {
             field.value = Array.isArray(field.value)

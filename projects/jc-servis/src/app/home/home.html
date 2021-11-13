@@ -30,12 +30,12 @@
                         </mat-list>
                     </mat-card-content>
                     <mat-card-actions>
-                        <a mat-button href="/">
+                        <a mat-button href="tel:{{ 'contact.phone' | translate }}">
                             <mat-icon color="primary">phone_in_talk</mat-icon>{{ 'home.call' | translate }}
                         </a>
-                        <a mat-button href="/">
+                        <button mat-button (click)="appService.notification.dialog.open(contactForm)">
                             <mat-icon color="primary">email</mat-icon>{{ 'home.email' | translate }}
-                        </a>
+                        </button>
                     </mat-card-actions>
                 </mat-card>
             </div>
@@ -60,12 +60,12 @@
                         </mat-list>
                     </mat-card-content>
                     <mat-card-actions>
-                        <a mat-button href="/">
+                        <a mat-button href="tel:{{ 'contact.phone' | translate }}">
                             <mat-icon color="primary">phone_in_talk</mat-icon>{{ 'home.call' | translate }}
                         </a>
-                        <a mat-button href="/">
+                        <button mat-button (click)="appService.notification.dialog.open(contactForm)">
                             <mat-icon color="primary">email</mat-icon>{{ 'home.email' | translate }}
-                        </a>
+                        </button>
                     </mat-card-actions>
                 </mat-card>
             </div>
@@ -79,23 +79,23 @@
                     <mat-card-content>
                         <mat-list role="list">
                             <mat-list-item role="listitem">
-                                Porouchala se Vám televize?
+                                {{ 'home.repairList1' | translate }}
                             </mat-list-item>
                             <mat-list-item role="listitem">
-                                Zabouchnul jste si klíče?
+                                {{ 'home.repairList2' | translate }}
                             </mat-list-item>
                             <mat-list-item role="listitem">
-                                Chcete vymalovat či uklidit?
+                                {{ 'home.repairList3' | translate }}
                             </mat-list-item>
                         </mat-list>
                     </mat-card-content>
                     <mat-card-actions>
-                        <a mat-button href="/">
+                        <a mat-button href="tel:{{ 'contact.phone' | translate }}">
                             <mat-icon color="primary">phone_in_talk</mat-icon>{{ 'home.call' | translate }}
                         </a>
-                        <a mat-button href="/">
+                        <button mat-button (click)="appService.notification.dialog.open(contactForm)">
                             <mat-icon color="primary">email</mat-icon>{{ 'home.email' | translate }}
-                        </a>
+                        </button>
                     </mat-card-actions>
                 </mat-card>
             </div>
@@ -118,48 +118,49 @@
                     <mat-card-content>
                         <mat-list role="list">
                             <mat-list-item role="listitem">
-                                Nabízímé všem vlastníkům nemovitostí veškeré služby spojené s běžným provozem a
-                                údržbou nemovitosti.
+                                {{ 'home.aboutUsList1' | translate }}
                             </mat-list-item>
                             <mat-list-item role="listitem">
-                                Diagnostika závad, návrhy optimálního řešení, realizace doporučených opatření.
+                                {{ 'home.aboutUsList2' | translate }}
                             </mat-list-item>
                             <mat-list-item role="listitem">
-                                Preventivní prohlídky s následným doporučením návrhu oprav (prevence vyšších nákladů
-                                v důsledku neřešených závad).
+                                {{ 'home.aboutUsList3' | translate }}
                             </mat-list-item>
                             <mat-list-item role="listitem">
-                                Práci elektro dle vyhlášky č.50/1978 Sb.
+                                {{ 'home.aboutUsList4' | translate }}
                             </mat-list-item>
                             <mat-list-item role="listitem">
-                                Co neumíme zajistíme.
+                                {{ 'home.aboutUsList5' | translate }}
                             </mat-list-item>
                         </mat-list>
                     </mat-card-content>
                 </mat-card>
             </div>
 
+            <!-- cenik -->
             <div class="col-md-12 col-lg-4 mt-4">
                 <mat-card>
                     <mat-card-header>
                         <mat-card-title>
-                            Ceník služeb
+                            {{ 'home.price' | translate }}
                         </mat-card-title>
                     </mat-card-header>
 
                     <mat-card-content>
                         <mat-list role="list">
                             <mat-list-item role="listitem">
-                                Diagnostika, konzultace <strong>ZDARMA</strong>
+                                {{ 'home.priceList1' | translate }}&nbsp;<strong>{{
+                                    'home.priceList5' | translate
+                                    }}</strong>
                             </mat-list-item>
                             <mat-list-item role="listitem">
-                                Po - Pá 300 Kč/h
+                                {{ 'home.priceList2' | translate }}
                             </mat-list-item>
                             <mat-list-item role="listitem">
-                                So - Ne 350 Kč/h
+                                {{ 'home.priceList3' | translate }}
                             </mat-list-item>
                             <mat-list-item role="listitem">
-                                Svátky 350 Kč/h
+                                {{ 'home.priceList4' | translate }}
                             </mat-list-item>
                         </mat-list>
                     </mat-card-content>
@@ -170,3 +171,7 @@
     </div>
 
 </div>
+
+<ng-template #contactForm>
+    <app-contact-form></app-contact-form>
+</ng-template>

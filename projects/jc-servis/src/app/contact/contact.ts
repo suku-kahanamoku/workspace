@@ -41,46 +41,6 @@ export class ContactComponent extends Themeable {
   ngOnInit(): void {
     this.iframe.height = this._el.nativeElement.querySelector('.content').clientHeight;
     this.iframe.width = window.innerWidth;
-    this.load();
-  }
-
-  load(): void {
-    this.config.params.fields = {
-      name: {
-        label: 'Jméno',
-        required: true,
-        icon: {
-          value: 'font_download'
-        }
-      },
-      lastname: {
-        label: 'Příjmeni',
-        required: true,
-        icon: {
-          value: 'font_download'
-        }
-      },
-      phone: {
-        label: 'Telefon',
-        icon: {
-          value: 'phone'
-        }
-      },
-      email: {
-        label: 'E-mail',
-        required: true,
-        icon: {
-          value: 'email'
-        }
-      },
-      message: {
-        label: 'Zpráva',
-        type: 'textarea',
-        icon: {
-          value: 'help'
-        }
-      }
-    }
   }
 
 }

@@ -7,7 +7,7 @@
         "title": "Profesionální řemeslné a opravářské práce",
         "service": "Potřebujete?",
         "electric": "Elektrikář",
-        "electricList1": "Máte nefunční či spálený jistič nebo pojistky?",
+        "electricList1": "Máte nefunční nebo spálený jistič či pojistky?",
         "electricList2": "Nesvítí Vám světlo, nefunguje Vám zásuvka či vypánač?",
         "electricList3": "Nefunguje bojler, elektrický kotel či elektrické topení?",
         "plumber": "Instalatér",
@@ -21,11 +21,21 @@
         "call": "Volejte",
         "email": "Napište",
         "aboutUs": "Co děláme",
-        "price": "Ceník"
+        "aboutUsList1": "Nabízímé všem vlastníkům nemovitostí veškeré služby spojené s běžným provozem a údržbou nemovitosti.",
+        "aboutUsList2": "Diagnostika závad, návrhy optimálního řešení, realizace doporučených opatření.",
+        "aboutUsList3": "Preventivní prohlídky s následným doporučením návrhu oprav (prevence vyšších nákladů v důsledku neřešených závad).",
+        "aboutUsList4": "Práci elektro dle vyhlášky č.50/1978 Sb.",
+        "aboutUsList5": "Co neumíme zajistíme.",
+        "price": "Ceník",
+        "priceList1": "Diagnostika, konzultace",
+        "priceList2": "Po - Pá 300 Kč/h",
+        "priceList3": "So - Ne 350 Kč/h",
+        "priceList4": "Svátky 350 Kč/h",
+        "priceList5": "ZDARMA"
     },
     "contact": {
         "name": "Jaroslav Císař",
-        "phone": "739936909",
+        "phone": "+420&nbsp;739&nbsp;936&nbsp;909",
         "email": "info@jc-servis.cz",
         "addressTitle": "Provozovna",
         "address": "Kraví hora 12, 602 00 Brno-střed",
@@ -46,5 +56,9 @@
     },
     "other": {
         "more": "Více"
+    },
+    "form": {
+        "send": "Odeslat",
+        "close": "Zavřít"
     }
 }

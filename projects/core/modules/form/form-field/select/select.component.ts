@@ -64,9 +64,8 @@ export class FormFieldSelectComponent extends FormFieldAbstract {
                 ? this.appService.http.get(restUrl)
                 : this.appService.http.load(restUrl);
             // po nacteni se vytvori options
-            if (this._subscriptions.load) this._subscriptions.load.unsubscribe();
-            this._subscriptions.load = subscriber
-                .subscribe(data => this._onLoad(data, restOptions.value, restOptions.label));
+            this._subscriptions.load?.unsubscribe();
+            this._subscriptions.load = subscriber.subscribe(data => this._onLoad(data, restOptions.value, restOptions.label));
         }
     }
 

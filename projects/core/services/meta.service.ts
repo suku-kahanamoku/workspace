@@ -42,9 +42,7 @@ export class MetaService implements OnDestroy {
      * @memberof MetaService
      */
     ngOnDestroy(): void {
-        ITERATE(this._subscriptions, (subscriber: Subscription) => {
-            if (subscriber) subscriber.unsubscribe();
-        });
+        ITERATE(this._subscriptions, (subscriber: Subscription) => subscriber.unsubscribe());
     }
 
     /**

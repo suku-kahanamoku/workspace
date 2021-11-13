@@ -72,21 +72,19 @@ export abstract class Formable extends Loadable {
      * Rekurzivni funkce
      *
      * @protected
-     * @param {*} fields
+     * @param {IFormField} fields
      * @param {FormGroup} group
-     * @param {string} path
-     * @param {FormGroup} root
-     * @param {IFormField[]} [allFields]
+     * @param {string} [path]
      * @memberof Formable
      */
-    protected _initReactiveForm(fields: any, group: FormGroup, path?: string): void {
+    protected _initReactiveForm(fields: IFormField, group: FormGroup, path?: string): void {
         if (fields) {
             // inicializuji se vsechny fieldy a vlozi se do seznamu a do groupu
             ITERATE(fields, (field: IFormField, name: string) => {
                 // pokud je to konecny field, inicializuje se
                 if (field.type) {
                     // vlozi formControl do groupCotrol
-                    group.addControl(name, this.formService.getFormControl(field));
+                    group.addControl(name, this.formService.getFormControl(field, name));
                 }
                 // jinak se vytvori subgroup a v ni se nainicializuji fieldy
                 else {
@@ -113,28 +111,28 @@ export abstract class Formable extends Loadable {
             let subscriber;
             const fields = this.group.value;
             switch (this.config.params.method) {
-                case 'post':
+                case 'POST':
                     subscriber = this.appService.http.post(this.config.params.submitUrl, fields);
                     break;
 
-                case 'put':
+                case 'PUT':
                     subscriber = this.appService.http.put(this.config.params.submitUrl, fields);
                     break;
 
-                case 'patch':
+                case 'PATCH':
                     /* subscriber = this.appService.http.patch(this.config.params.submitUrl, fields, this.item._etag); */
                     break;
 
-                case 'delete':
+                case 'DELETE':
                     subscriber = this.appService.http.delete(this.config.params.submitUrl);
                     break;
 
-                case 'get':
+                case 'GET':
 
                     break;
             }
             if (subscriber) {
-                if (this._subscriptions.submit) this._subscriptions.submit.unsubscribe();
+                this._subscriptions.submit?.unsubscribe();
                 this._subscriptions.submit = subscriber.subscribe(successClbk, errorClbk);
             }
         } else {

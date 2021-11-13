@@ -6,13 +6,13 @@
       <mat-divider></mat-divider>
       <div class="mt-3">
         <div>
-          <a mat-button href="mailto:info@jc-servis.cz">
-            <mat-icon color="primary">mail</mat-icon>info@jc-servis.cz
+          <a mat-button href="mailto:{{ 'contact.email' | translate }}">
+            <mat-icon color="primary">mail</mat-icon>{{ 'contact.email' | translate }}
           </a>
         </div>
         <div>
-          <a mat-button href="tel:+420111222333">
-            <mat-icon color="primary">phone</mat-icon>+420&nbsp;111&nbsp;222&nbsp;333
+          <a mat-button href="tel:{{ 'contact.phone' | translate }}">
+            <mat-icon color="primary">phone</mat-icon><span innerHTML="{{ 'contact.phone' | translate }}"></span>
           </a>
         </div>
       </div>

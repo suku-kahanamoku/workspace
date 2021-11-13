@@ -5,10 +5,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 
 import { MetaService } from './meta.service';
-import { NotificationService } from './notification.service';
 import { ITERATE } from '../utils/modify-object.functions';
 import { HttpService } from './http.service';
 import { ScrollService } from './scroll.service';
+import { NotificationService } from '../modules/notification/notification.service';
 
 @Injectable({
     providedIn: 'root'
@@ -50,9 +50,7 @@ export class AppService {
      * @memberof AppService
      */
     ngOnDestroy(): void {
-        ITERATE(this._subscriptions, (subscriber: Subscription) => {
-            if (subscriber) subscriber.unsubscribe();
-        });
+        ITERATE(this._subscriptions, (subscriber: Subscription) => subscriber?.unsubscribe());
     }
 
     /**
@@ -62,7 +60,7 @@ export class AppService {
      * @memberof AppService
      */
     protected _listenTab(): void {
-        if (this._subscriptions.tab) this._subscriptions.tab.unsubscribe();
+        this._subscriptions.tab?.unsubscribe();
         this._subscriptions.tab = this.tab$.subscribe(data => {
 
         });

@@ -52,5 +52,45 @@
                 "url": "**"
             }
         }
-    ]
+    ],
+    "contactForm": {
+        "name": {
+            "label": "Jméno",
+            "type": "text",
+            "required": true,
+            "icon": {
+                "value": "font_download"
+            }
+        },
+        "lastname": {
+            "label": "Příjmeni",
+            "type": "text",
+            "required": true,
+            "icon": {
+                "value": "font_download"
+            }
+        },
+        "phone": {
+            "label": "Telefon",
+            "type": "text",
+            "icon": {
+                "value": "phone"
+            }
+        },
+        "email": {
+            "label": "E-mail",
+            "type": "text",
+            "required": true,
+            "icon": {
+                "value": "email"
+            }
+        },
+        "message": {
+            "label": "Zpráva",
+            "type": "textarea",
+            "icon": {
+                "value": "help"
+            }
+        }
+    }
 }

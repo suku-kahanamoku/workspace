@@ -61,6 +61,7 @@ import { SharedModule } from '../shared.module';
         FormFieldDatetimeComponent,
         /* FormFieldFileComponent, */
         FormFieldPasswordComponent,
+        ReactiveFormsModule,
         SharedModule,
     ],
     imports: [

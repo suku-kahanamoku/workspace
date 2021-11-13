@@ -3,10 +3,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { filter, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-import { NotificationService } from './notification.service';
 import { RTRIM, TRIM } from '../utils/modify-string.functions';
 import { IS_DEFINED, IS_NUMERIC, IS_OBJECT } from '../utils/check-basic.functions';
 import { ITERATE, STRINGIFY } from '../utils/modify-object.functions';
+import { NotificationService } from '../modules/notification/notification.service';
 
 /**
  * Service pro komunikaci s endpointama
