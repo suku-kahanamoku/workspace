@@ -39,11 +39,8 @@
         <a mat-icon-button href="/">
           <mat-icon color="primary">home</mat-icon>
         </a>
-        <a mat-button href="/">
-          Prvni
-        </a>
-        <a mat-button href="/">
-          Druhy
+        <a *ngFor="let menu of itemList" mat-button [routerLink]="menu.url">
+          {{ menu.name | translate }}
         </a>
       </div>
       <!-- todo zde musi byt vycet ostatni menu -->

@@ -687,7 +687,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/jc-servis",
+            "outputPath": "projects/jc-servis/dist/jc-servis",
             "index": "projects/jc-servis/src/index.html",
             "main": "projects/jc-servis/src/main.ts",
             "polyfills": "projects/jc-servis/src/polyfills.ts",

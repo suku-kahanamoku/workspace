@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CalendarView } from 'angular-calendar';
-import { IConfig } from 'projects/core/interfaces/config.interface';
+
 import { IItem } from 'projects/core/interfaces/item.interface';
 import { IS_DEFINED } from 'projects/core/utils/check-basic.functions';
 import { GET_VALUE, ITERATE } from 'projects/core/utils/modify-object.functions';
@@ -69,6 +69,7 @@ export class CalendarComponent extends Formable {
           break;
       }
     }
+    super.ngOnInit();
   }
 
   /**

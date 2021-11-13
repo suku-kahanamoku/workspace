@@ -80,6 +80,17 @@ export abstract class Themeable extends Loadable {
     /**
      *
      *
+     * @readonly
+     * @type {ITreeItem[]}
+     * @memberof Themeable
+     */
+    get itemList(): ITreeItem[] {
+        return <ITreeItem[]>super.itemList;
+    }
+
+    /**
+     *
+     *
      * @memberof Themeable
      */
     @Input()
