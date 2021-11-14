@@ -27,7 +27,10 @@ const CMP_LIST = [
 ];
 
 @NgModule({
-  declarations: CMP_LIST,
+  declarations: [
+    AppComponent,
+    PageNotFoundComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

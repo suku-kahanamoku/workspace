@@ -13,6 +13,8 @@ import data from '../../assets/data/data.json';
 })
 export class HomeComponent extends Themeable {
 
+  static title = 'HomeComponent';
+
   /**
    * Vrati seznam objektu
    *

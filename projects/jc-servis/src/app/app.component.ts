@@ -14,7 +14,7 @@ import { routeAnimations } from 'projects/core/animations/route.animations';
 })
 export class AppComponent extends Themeable {
 
-  title = 'jc-servis';
+  static title = 'AppComponent';
 
   constructor(
     public readonly appService: AppService

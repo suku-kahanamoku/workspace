@@ -11,6 +11,8 @@ import { AppService } from 'projects/core/services/app.service';
 })
 export class ReferenceComponent extends Themeable {
 
+  static title = 'ReferenceComponent';
+
   /**
    * Vrati seznam objektu
    *

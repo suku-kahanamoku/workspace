@@ -11,6 +11,8 @@ import { AppService } from 'projects/core/services/app.service';
 })
 export class ContactComponent extends Themeable {
 
+  static title = 'ContactComponent';
+
   /**
    * Vrati seznam objektu
    *

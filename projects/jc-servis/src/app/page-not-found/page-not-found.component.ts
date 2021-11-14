@@ -11,6 +11,8 @@ import { AppService } from 'projects/core/services/app.service';
 })
 export class PageNotFoundComponent extends Themeable {
 
+  static title = 'PageNotFoundComponent';
+
   constructor(public readonly appService: AppService) {
     super()
   }
