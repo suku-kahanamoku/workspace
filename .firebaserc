@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "jc-servis"
+  },
+  "targets": {
+    "jc-servis": {
+      "hosting": {
+        "jc-servis": [
+          "jc-servis"
+        ]
+      }
+    }
   }
 }
