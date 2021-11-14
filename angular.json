@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/jaspar",
+            "outputPath": "projects/jaspar/dist",
             "index": "projects/jaspar/src/index.html",
             "main": "projects/jaspar/src/main.ts",
             "polyfills": "projects/jaspar/src/polyfills.ts",
@@ -151,7 +151,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/charter-agency",
+            "outputPath": "projects/charter-agency/dist",
             "index": "projects/charter-agency/src/index.html",
             "main": "projects/charter-agency/src/main.ts",
             "polyfills": "projects/charter-agency/src/polyfills.ts",
@@ -285,7 +285,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/prasentace",
+            "outputPath": "projects/prasentace/dist",
             "index": "projects/prasentace/src/index.html",
             "main": "projects/prasentace/src/main.ts",
             "polyfills": "projects/prasentace/src/polyfills.ts",
@@ -419,7 +419,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/starter",
+            "outputPath": "projects/starter/dist",
             "index": "projects/starter/src/index.html",
             "main": "projects/starter/src/main.ts",
             "polyfills": "projects/starter/src/polyfills.ts",
@@ -553,7 +553,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/conference",
+            "outputPath": "projects/conference/dist",
             "index": "projects/conference/src/index.html",
             "main": "projects/conference/src/main.ts",
             "polyfills": "projects/conference/src/polyfills.ts",

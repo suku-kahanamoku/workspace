@@ -7,6 +7,9 @@
       "hosting": {
         "jc-servis": [
           "jc-servis"
+        ],
+        "test-f7bad": [
+          "test-f7bad"
         ]
       }
     }
