@@ -687,7 +687,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "projects/jc-servis/dist",
+            "outputPath": "functions/dist/browser",
             "index": "projects/jc-servis/src/index.html",
             "main": "projects/jc-servis/src/main.ts",
             "polyfills": "projects/jc-servis/src/polyfills.ts",
@@ -791,6 +791,14 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "functions/dist/server",
+            "main": "projects/jc-servis/src/main.server.ts",
+            "tsConfig": "projects/jc-servis/src/tsconfig.server.json"
           }
         },
         "e2e": {

@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import data from '../../assets/data/data.json';
 import { AboutUsComponent } from './about-us';
-import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
+import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from '../../core/utils/modify-object.functions';
 
 const CMP_LIST = [
   AboutUsComponent

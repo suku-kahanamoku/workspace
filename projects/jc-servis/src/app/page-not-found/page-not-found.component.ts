@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { Themeable } from 'projects/core/abstracts/themeable.abstract';
-import { IConfig } from 'projects/core/interfaces/config.interface';
-import { AppService } from 'projects/core/services/app.service';
+import { Themeable } from '../../core/abstracts/themeable.abstract';
+import { IConfig } from '../../core/interfaces/config.interface';
+import { AppService } from '../../core/services/app.service';
 
 @Component({
   selector: 'app-page-not-found',

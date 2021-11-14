@@ -10,15 +10,14 @@ import data from '../assets/data/data.json';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProjectMenuModule } from '../modules/menu/menu.module';
-import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
+import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from '../core/utils/modify-object.functions';
 import { FormBuilder } from '@angular/forms';
 
 const MODULES = {
   HomeModule: () => import('./home/home.module').then(m => m.HomeModule),
   ContactModule: () => import('./contact/contact.module').then(m => m.ContactModule),
   AboutUsModule: () => import('./about-us/about-us.module').then(m => m.AboutUsModule),
-  ReferenceModule: () => import('./reference/blog.module').then(m => m.ReferenceModule),
-  ServiceModule: () => import('./service/service.module').then(m => m.ServiceModule),
+  ReferenceModule: () => import('./reference/blog.module').then(m => m.ReferenceModule)
 }
 
 const CMP_LIST = [
@@ -32,7 +31,9 @@ const CMP_LIST = [
     PageNotFoundComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({
+      appId: 'project_name'
+    }),
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot(GET_ROUTES(data.menu.filter(menu => !menu.parentId), CMP_LIST, MODULES)),
@@ -41,7 +42,7 @@ const CMP_LIST = [
     ProjectMenuModule,
   ],
   providers: [
-      FormBuilder
+    FormBuilder
   ],
   bootstrap: [AppComponent]
 })

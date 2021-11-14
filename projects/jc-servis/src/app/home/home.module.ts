@@ -6,9 +6,9 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
 
 import data from '../../assets/data/data.json';
 import { HomeComponent } from './home';
-import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
-import { DirectiveModule } from 'projects/core/directives/directive.module';
-import { SharedModule } from 'projects/core/modules/shared.module';
+import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from '../../core/utils/modify-object.functions';
+import { DirectiveModule } from '../../core/directives/directive.module';
+import { SharedModule } from '../../core/modules/shared.module';
 import { ProjectFormModule } from '../../modules/form/form.module';
 
 const CMP_LIST = [

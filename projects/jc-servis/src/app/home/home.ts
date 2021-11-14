@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 
-import { Themeable } from 'projects/core/abstracts/themeable.abstract';
-import { IMenu } from 'projects/core/interfaces/menu.interface';
-import { AppService } from 'projects/core/services/app.service';
-import { CLONE } from 'projects/core/utils/modify-object.functions';
+import { Themeable } from '../../core/abstracts/themeable.abstract';
+import { IMenu } from '../../core/interfaces/menu.interface';
+import { AppService } from '../../core/services/app.service';
+import { CLONE } from '../../core/utils/modify-object.functions';
 import data from '../../assets/data/data.json';
 
 @Component({

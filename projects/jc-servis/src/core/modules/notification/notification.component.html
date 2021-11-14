@@ -1,0 +1,49 @@
+<div *ngIf="type === 'modal'; then dialog; else snack"></div>
+
+<ng-template #dialog>
+    <button mat-icon-button mat-dialog-close class="mat-dialog-close" (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+    <div mat-dialog-title class="mat-dialog-title" [innerHTML]="params?.title || 'Upozornění'"></div>
+    <div mat-dialog-content class="mat-dialog-content">
+
+        <div>
+            <ng-container *ngIf="icons; then icons"></ng-container>
+            <span [innerHTML]="text"></span>
+        </div>
+
+    </div>
+    <div *ngIf="params?.successBtnText" mat-dialog-actions>
+        <button mat-flat-button color="primary" mat-dialog-close (click)="close()">
+            {{ params?.successBtnText }}
+        </button>
+    </div>
+    <!-- potvrzovaci tlacitka -->
+    <ng-container *ngIf="params?.buttons?.length; then confirmButtons"></ng-container>
+</ng-template>
+
+<ng-template #snack>
+    <div class="mp-snack mp-snack-{{ state || 'info' }}"
+        (click)="!params?.buttons?.length && type === 'snack' && close()">
+        <ng-container *ngIf="icons; then icons"></ng-container>
+        <div [innerHTML]="text"></div>
+        <!-- potvrzovaci tlacitka -->
+        <ng-container *ngIf="params?.buttons?.length; then confirmButtons"></ng-container>
+    </div>
+</ng-template>
+
+<ng-template #icons>
+    <ng-container [ngSwitch]="state">
+        <i *ngSwitchCase="'success'" class="fas fa-check-circle me-1"></i>
+        <i *ngSwitchCase="'warning'" class="fas fa-exclamation-circle me-1"></i>
+        <i *ngSwitchCase="'danger'" class="fas fa-exclamation-circle me-1"></i>
+        <i *ngSwitchDefault class="fas fa-info-circle me-1"></i>
+    </ng-container>
+</ng-template>
+
+<ng-template #confirmButtons>
+    <ng-container *ngFor="let button of params?.buttons">
+        <button [color]="button?.color" (click)="close(button?.value)" mat-button [innerHTML]="button?.label">
+        </button>
+    </ng-container>
+</ng-template>

@@ -5,10 +5,10 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import data from '../../assets/data/data.json';
 import { ContactComponent } from './contact';
-import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
-import { SharedModule } from 'projects/core/modules/shared.module';
+import { GET_ROUTES, TRANSLATE_MODULE_CONFIG } from '../../core/utils/modify-object.functions';
+import { SharedModule } from '../../core/modules/shared.module';
 import { ProjectFormModule } from '../../modules/form/form.module';
-import { DirectiveModule } from 'projects/core/directives/directive.module';
+import { DirectiveModule } from '../../core/directives/directive.module';
 
 const CMP_LIST = [
   ContactComponent

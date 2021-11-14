@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { IConfig } from 'projects/core/interfaces/config.interface';
+import { IConfig } from '../../../core/interfaces/config.interface';
 
 import data from '../../../assets/data/data.json';
-import { Formable } from 'projects/core/modules/form/formable.abstract';
+import { Formable } from '../../../core/modules/form/formable.abstract';
 
 @Component({
   selector: 'app-contact-form',

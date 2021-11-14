@@ -3,10 +3,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 
-import { MenuModule } from 'projects/core/modules/menu/menu.module';
+import { MenuModule } from '../../core/modules/menu/menu.module';
 import { MainMenuComponent } from './main-menu/main-menu';
 import { FooterMenuComponent } from './footer-menu/footer-menu';
-import { TRANSLATE_MODULE_CONFIG } from 'projects/core/utils/modify-object.functions';
+import { TRANSLATE_MODULE_CONFIG } from '../../core/utils/modify-object.functions';
 import { SideMenuComponent } from './side-menu/side-menu';
 
 

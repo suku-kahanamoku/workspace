@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { Themeable } from 'projects/core/abstracts/themeable.abstract';
-import { AppService } from 'projects/core/services/app.service';
+import { Themeable } from '../../../core/abstracts/themeable.abstract';
+import { AppService } from '../../../core/services/app.service';
 
 @Component({
   selector: 'app-side-menu',

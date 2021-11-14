@@ -1,0 +1,45 @@
+<section *ngIf="field && formControl" [formGroup]="group" [attr.id]="id || undefined" [attr.data-qid]="id"
+    [ngClass]="{'D(n)':field.type === 'hidden'}">
+
+    <!-- md field -->
+    <mat-form-field [floatLabel]="field.floatLabel" [ngClass]="class">
+        <!-- label -->
+        <mat-label *ngIf="field.label">
+            <span [innerHTML]="field.label | translate"></span>
+        </mat-label>
+        <!-- input -->
+        <textarea #formElement [formControl]="formControl" type="text" [required]="field.required"
+            [readonly]="field.readonly" [placeholder]="field.placeholder | translate" matInput
+            [pattern]="field.validation?.rule" [minlength]="field.minlength" [maxlength]="field.maxlength"
+            [autocomplete]="field.autocomplete || 'on'" [tabindex]="field.tabindex">
+        </textarea>
+        <!-- errors -->
+        <mat-error *ngIf="formControl?.touched && formControl?.value?.length && formControl?.errors">
+            {{ 'errororororo' | translate }}
+        </mat-error>
+        <!-- hints -->
+        <mat-hint *ngIf="field.hint" [innerHTML]="field.hint | translate"></mat-hint>
+        <!-- icon prefix -->
+        <mat-icon *ngIf="field.icon?.value && (icon?.position === 'prefix' || !icon?.position)" class="notranslate"
+            [color]="field.icon?.color || 'primary'" matPrefix>
+            {{ field.icon?.value }}
+        </mat-icon>
+        <!-- icon suffix -->
+        <mat-icon *ngIf="field.icon?.value && field.icon?.position === 'suffix'" class="notranslate"
+            [color]="field.icon?.color || 'primary'" matSuffix>
+            {{ field.icon?.value }}
+        </mat-icon>
+        <!-- operators -->
+        <!-- <mat-select *ngIf="field.operator?.display" class="operator" matPrefix [(value)]="field.operator.value"
+            (click)="$event.stopPropagation()">
+            <mat-option *ngFor="let operator of field.operator?.options" [value]="operator.key"
+                [matTooltip]="('wibo_' + operator.key) | translate:'wibo_operator':'syscode'">
+                {{ operator.value }}
+            </mat-option>
+        </mat-select> -->
+
+    </mat-form-field>
+
+
+
+</section>
