@@ -16,6 +16,8 @@ export class AppComponent extends Themeable {
 
   static title = 'AppComponent';
 
+  title = 'fdsa';
+
   constructor(
     public readonly appService: AppService
   ) {
