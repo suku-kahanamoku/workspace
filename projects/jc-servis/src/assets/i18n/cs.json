@@ -1,5 +1,6 @@
 {
     "route": {
+        "booking": "Rezevační kalendář",
         "reference": "Reference",
         "contact": "Kontakt"
     },

@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
 
+    <!-- kontakt -->
     <div class="col-sm-6 col-md-3 mt-5">
       <h3 [innerHTML]="'footer.contact' | translate"></h3>
       <mat-divider></mat-divider>
@@ -18,6 +19,7 @@
       </div>
     </div>
 
+    <!-- socialni site -->
     <div class="col-sm-6 col-md-4 mt-5">
       <h3 [innerHTML]="'footer.services' | translate"></h3>
       <mat-divider></mat-divider>
@@ -31,6 +33,7 @@
       <!-- todo zde musi byt vycet service menu -->
     </div>
 
+    <!-- dalsi -->
     <div class="col-sm-12 col-md-5 my-5">
       <h3 [innerHTML]="'footer.next' | translate"></h3>
       <mat-divider></mat-divider>
@@ -39,17 +42,19 @@
         <a mat-icon-button href="/">
           <mat-icon color="primary">home</mat-icon>
         </a>
-        <a *ngFor="let menu of itemList" mat-button [routerLink]="menu.url">
-          {{ menu.name | translate }}
-        </a>
+        <ng-container *ngFor="let menu of itemList">
+          <a *ngIf="menu._id !== '2'" mat-button [routerLink]="menu.url">
+            {{ menu.name | translate }}
+          </a>
+        </ng-container>
       </div>
       <!-- todo zde musi byt vycet ostatni menu -->
       <div>
         <a mat-button href="/">
           <mat-icon color="primary">pin_drop</mat-icon>Mapa servisu
         </a>
-        <a mat-button href="/">
-          <mat-icon color="primary">edit_calendar</mat-icon>Rezervacni kalendar
+        <a mat-button [routerLink]="getItem('2').url">
+          <mat-icon color="primary">edit_calendar</mat-icon>{{ 'route.booking' | translate }}
         </a>
       </div>
     </div>

@@ -61,7 +61,7 @@ export abstract class Formable extends Loadable {
      */
     ngOnInit(): void {
         if (this.config) {
-            this.fields = Object.values(this.config.params.fields);
+            this.fields = Object.values(this.config.params.fields || {});
             this._initReactiveForm(this.config.params.fields, this.group);
             this.load(this.config);
         }

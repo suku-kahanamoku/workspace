@@ -18,7 +18,7 @@ import { Formable } from '../form/formable.abstract';
  * @extends {MpFormModelComponent}
  */
 @Component({
-  selector: 'mp-calendar',
+  selector: 'app-calendar',
   templateUrl: './calendar.component.html'
 })
 export class CalendarComponent extends Formable {
@@ -55,7 +55,7 @@ export class CalendarComponent extends Formable {
    */
   ngOnInit(): void {
     if (this.config) {
-      switch (this.config.params.calendarConfig.view) {
+      switch (this.config.params?.calendarConfig?.view) {
         case CalendarView.Day:
           this.view = CalendarView.Day;
           break;
@@ -68,8 +68,8 @@ export class CalendarComponent extends Formable {
           this.view = CalendarView.Month;
           break;
       }
+      super.ngOnInit();
     }
-    super.ngOnInit();
   }
 
   /**

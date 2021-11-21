@@ -1,15 +1,17 @@
 import { Component, Input } from '@angular/core';
-
 import { Themeable } from 'projects/core/abstracts/themeable.abstract';
+
 import { IMenu } from 'projects/core/interfaces/menu.interface';
 import { AppService } from 'projects/core/services/app.service';
 
 @Component({
-  selector: 'app-about-us',
-  templateUrl: './about-us.html',
-  styleUrls: ['./about-us.scss']
+  selector: 'app-booking',
+  templateUrl: './booking.html',
+  styleUrls: ['./booking.scss']
 })
-export class AboutUsComponent extends Themeable {
+export class BookingComponent extends Themeable {
+
+  static title = 'BookingComponent';
 
   /**
    * Vrati seznam objektu
